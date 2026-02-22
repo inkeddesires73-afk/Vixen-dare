@@ -1,485 +1,521 @@
-/* ==========================================================================
-   THE VIXEN DARE - MASTER LUXURY STYLESHEET (COMPLETE 500+ EDITION)
-   ========================================================================== */
-
+/* --- THE VIXEN DARE: AESTHETIC --- */
 :root {
-    /* Basfärger */
-    --bg-color: #080808;
-    --card-bg: #121212;
-    --panel-bg: #0f0f0f;
-    --text-main: #e0e0e0;
-    --text-dim: #888888;
-    
-    /* Vixen Signatur Guld */
+    --bg-color: #0d0d0d;
+    --card-bg: #1a1a1a;
+    --text-color: #e0e0e0;
+    --accent-n1: #2ecc71; /* Grön */
+    --accent-n2: #f1c40f; /* Gul */
+    --accent-n3: #e67e22; /* Orange */
+    --accent-n4: #e74c3c; /* Röd */
+    --accent-n5: #9b59b6; /* Lila */
     --vixen-gold: #c5a059;
-    --vixen-gold-glow: rgba(197, 160, 89, 0.4);
-    
-    /* Level-specifika metallfärger (Djupa & Mättade) */
-    --n1-champagne: #d4af37;
-    --n1-bg: #1a1608;
-    
-    --n2-gold: #c5a059;
-    --n2-bg: #1a1407;
-    
-    --n3-bronze: #cd7f32;
-    --n3-bg: #1a1005;
-    
-    --n4-danger: #ff3333;
-    --n4-bg: #220505;
-    
-    --n5-obsidian: #ffffff;
-    --n5-bg: #000000;
 }
 
-/* ==========================================
-   1. GRUNDLÄGGANDE RESET & SETUP
-   ========================================== */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: transparent; /* Tar bort blå blixt vid tryck på mobil */
-}
-
-html, body {
-    height: 100%;
-    background-color: var(--bg-color);
-    overscroll-behavior: none; /* Stoppar "bounce" på iPhone */
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    color: var(--text-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    padding: env(safe-area-inset-top) 20px env(safe-area-inset-bottom) 20px;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
 }
 
-/* ==========================================
-   2. HEADER & DEN PULSERANDE LOGGAN
-   ========================================== */
 header {
-    padding: 30px 0 20px 0;
+    padding: 30px 20px;
     text-align: center;
-    border-bottom: 1px solid #1a1a1a;
-    margin-bottom: 20px;
-}
-
-.logo-container {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 15px auto;
-    position: relative;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Guldglöden */
-    animation: goldPulse 3s ease-in-out infinite alternate;
-    z-index: 1;
-}
-
-.header-logo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    /* Rakar bort de svarta kanterna från bilden */
-    transform: scale(1.09);
-    clip-path: circle(46.5%);
-}
-
-@keyframes goldPulse {
-    from { box-shadow: 0 0 10px var(--vixen-gold-glow), inset 0 0 5px var(--vixen-gold-glow); }
-    to { box-shadow: 0 0 35px var(--vixen-gold), inset 0 0 15px var(--vixen-gold-glow); }
+    border-bottom: 1px solid #333;
 }
 
 h1 {
-    font-size: 1.3rem;
+    letter-spacing: 4px;
     font-weight: 300;
-    letter-spacing: 5px;
     color: var(--vixen-gold);
-    text-transform: uppercase;
-    margin: 10px 0;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 #stats {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
 }
 
-/* ==========================================
-   3. NAVIGATION & GUIDANCE-KNAPP
-   ========================================== */
-.top-nav {
-    margin-bottom: 25px;
-    text-align: center;
+main {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.top-guide-btn {
-    display: inline-block;
-    padding: 10px 25px;
-    border: 1px solid var(--vixen-gold);
-    color: var(--vixen-gold);
-    text-decoration: none;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    background: rgba(197, 160, 89, 0.03);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.top-guide-btn:active {
-    background: var(--vixen-gold);
-    color: #000;
-    box-shadow: 0 0 15px var(--vixen-gold);
-}
-
-/* ==========================================
-   4. DE SEXIGA LEVEL-KNAPPARNA (FIXADE)
-   ========================================== */
+/* KONTROLLER */
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-    margin: 20px 0 30px 0;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-.level-btn {
-    width: 100%;
-    padding: 22px 0;
-    border-radius: 8px;
-    font-weight: 700;
+.btn-grid button {
+    padding: 15px 5px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid rgba(255,255,255,0.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.1s;
 }
 
-/* N1 - Champagne */
-.btn-n1 { 
-    background: linear-gradient(145deg, var(--n1-bg), #050505) !important; 
-    color: var(--n1-champagne) !important; 
-    border-color: #4a3d12 !important; 
-}
-/* N2 - Vixen Gold */
-.btn-n2 { 
-    background: linear-gradient(145deg, var(--n2-bg), #050505) !important; 
-    color: var(--n2-gold) !important; 
-    border-color: #5c4a1b !important; 
-}
-/* N3 - Bronze */
-.btn-n3 { 
-    background: linear-gradient(145deg, var(--n3-bg), #050505) !important; 
-    color: var(--n3-bronze) !important; 
-    border-color: #5c3512 !important; 
-}
-/* N4 - Danger Red */
-.btn-n4 { 
-    background: linear-gradient(145deg, var(--n4-bg), #050505) !important; 
-    color: var(--n4-danger) !important; 
-    border-color: #610e0e !important; 
-}
-/* N5 - Obsidian */
-.btn-n5 { 
-    background: linear-gradient(145deg, #222, #000) !important; 
-    color: var(--n5-obsidian) !important; 
-    border-color: #444 !important; 
-}
+.btn-grid button:active { transform: scale(0.95); }
 
-.level-btn:active {
-    transform: scale(0.92);
-    filter: brightness(1.6);
-    box-shadow: 0 0 20px currentColor;
-}
+.btn-n1 { background: var(--accent-n1); color: #000; }
+.btn-n2 { background: var(--accent-n2); color: #000; }
+.btn-n3 { background: var(--accent-n3); color: #000; }
+.btn-n4 { background: var(--accent-n4); color: #000; }
+.btn-n5 { background: var(--accent-n5); color: #fff; }
 
-/* ==========================================
-   5. UPPDRAGSKORTEN (TASK CARDS)
-   ========================================== */
+/* KORTEN */
 .task-card {
     background: var(--card-bg);
-    border: 1px solid rgba(197, 160, 89, 0.15);
-    border-radius: 12px;
-    padding: 28px 20px;
-    margin-bottom: 25px;
-    position: relative;
-    animation: cardEntry 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-left: 5px solid var(--vixen-gold);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--vixen-gold);
+    animation: fadeIn 0.4s ease-out;
 }
 
-@keyframes cardEntry {
-    from { opacity: 0; transform: translateY(20px) scale(0.95); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Färgmatchade kanter på korten */
-.task-card.n1 { border-left-color: var(--n1-champagne); }
-.task-card.n2 { border-left-color: var(--n2-gold); }
-.task-card.n3 { border-left-color: var(--n3-bronze); }
-.task-card.n4 { border-left-color: var(--n4-danger); }
-.task-card.n5 { border-left-color: var(--n5-obsidian); }
-.task-card.skipped { border-left-color: #333; opacity: 0.7; }
-
-/* Krysset för att stänga felöppnade uppdrag */
-.close-card-x {
-    position: absolute;
-    top: 8px;
-    right: 15px;
-    font-size: 28px;
-    color: var(--vixen-gold);
-    cursor: pointer;
-    opacity: 0.5;
-    line-height: 1;
-    transition: opacity 0.2s;
-}
-.close-card-x:hover { opacity: 1; }
+.task-card.n1 { border-left-color: var(--accent-n1); }
+.task-card.n2 { border-left-color: var(--accent-n2); }
+.task-card.n3 { border-left-color: var(--accent-n3); }
+.task-card.n4 { border-left-color: var(--accent-n4); }
+.task-card.n5 { border-left-color: var(--accent-n5); }
+.task-card.skipped { border-left-color: #555; opacity: 0.8; }
 
 .task-card p {
-    font-size: 1.15rem;
-    color: #eee;
-    line-height: 1.6;
-    margin: 10px 0 25px 0;
-    text-align: left;
+    font-size: 1.1rem;
+    margin-top: 0;
 }
 
 .card-btns {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 }
 
-.done-btn {
-    flex: 2;
-    padding: 16px;
-    background: var(--vixen-gold);
-    color: #000;
-    border: none;
-    border-radius: 6px;
-    font-weight: 800;
+button {
+    font-family: inherit;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.skip-btn, .retry-btn {
-    flex: 1;
-    padding: 16px;
-    background: #1a1a1a;
-    border: 1px solid #333;
-    color: #888;
-    border-radius: 6px;
-    font-weight: bold;
-    text-transform: uppercase;
+.done-btn, .retry-btn {
+    flex: 2;
+    padding: 12px;
+    background: #222;
+    border: 1px solid var(--vixen-gold);
+    color: var(--vixen-gold);
+    border-radius: 4px;
 }
 
-/* ==========================================
-   6. HISTORIK & COLLAPSIBLE SECTIONS
-   ========================================== */
-.collapsible-section {
-    background: var(--panel-bg);
-    border-radius: 10px;
-    margin-bottom: 18px;
+.skip-btn {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    border-radius: 4px;
+}
+
+/* HISTORIK-BOX: SCROLLBAR OCH SNYGGARE */
+.history-box {
+    background: #000;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #999;
+    max-height: 300px; /* Boxen blir aldrig högre än så här */
+    overflow-y: auto;  /* Gör boxen scrollbar internt */
     border: 1px solid #1a1a1a;
+}
+
+.history-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-box li {
+    padding: 10px 0;
+    border-bottom: 1px solid #111;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.history-lvl {
+    background: #222;
+    color: var(--vixen-gold);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Anpassa scrollbaren så den ser exklusiv ut (fungerar i Chrome/Safari) */
+.history-box::-webkit-scrollbar {
+    width: 4px;
+}
+.history-box::-webkit-scrollbar-track {
+    background: #000;
+}
+.history-box::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+/* THE VAULT */
+.vault-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #111;
+    border: 1px dashed #333;
+    border-radius: 8px;
+}
+
+.vault-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: #ccc;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+textarea, input {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    color: var(--accent-n1);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: monospace;
+}
+
+/* UPPDATERAD PANIK-KNAPP (Synlig och farlig) */
+.panic-btn {
+    width: 100%;
+    background: transparent;
+    /* Använd vår ljusare accent-röd istället för den mörka */
+    color: var(--accent-n4); 
+    border: 1px solid rgba(231, 76, 60, 0.3); /* En subtil röd kant */
+    padding: 20px;
+    font-size: 0.8rem;
+    margin-top: 40px; /* Lite luft ovanför */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+/* Gör den extra tydlig när man hovrar/trycker */
+.panic-btn:hover, .panic-btn:active {
+     background: rgba(231, 76, 60, 0.1);
+     color: #ff0000;
+     border-color: #ff0000;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+}
+
+.separator {
+    border: 0;
+    border-top: 1px solid #222;
+    margin: 40px 0;
+}
+/* --- COLLAPSIBLE STYLING --- */
+.collapsible-section {
+    background: #111;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #222;
     overflow: hidden;
 }
 
 .collapsible-section summary {
-    padding: 18px 22px;
+    padding: 15px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: bold;
     color: var(--vixen-gold);
+    list-style: none; /* Döljer standard-pilen i vissa webbläsare */
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    list-style: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
+/* Lägg till en egen diskret pil */
 .collapsible-section summary::after {
     content: '▼';
-    font-size: 0.7rem;
-    opacity: 0.4;
+    font-size: 0.6rem;
     transition: transform 0.3s;
+    color: #444;
 }
 
 .collapsible-section[open] summary::after {
     transform: rotate(180deg);
 }
 
-.history-box {
-    background: #000;
-    padding: 5px 20px;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.history-box li {
-    padding: 15px 0;
-    border-bottom: 1px solid #111;
-    display: flex;
-    gap: 15px;
-    font-size: 0.9rem;
-    color: #aaa;
-    text-align: left;
-}
-
-.history-lvl {
-    color: var(--vixen-gold);
-    font-weight: bold;
-    min-width: 40px;
-}
-
-/* Snygg scrollbar för historiken */
-.history-box::-webkit-scrollbar { width: 5px; }
-.history-box::-webkit-scrollbar-track { background: #000; }
-.history-box::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
-
-/* ==========================================
-   7. THE VAULT (VIXEN KEY & BACKUP)
-   ========================================== */
-.vault-section {
-    padding: 25px;
-    background: #080808;
-    border-top: 1px solid #1a1a1a;
-}
-
-textarea, input {
-    width: 100%;
-    background: #000;
-    border: 1px solid #222;
-    color: var(--vixen-gold);
-    padding: 14px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.85rem;
-}
-
-textarea:focus, input:focus {
+.collapsible-section summary:focus {
     outline: none;
-    border-color: var(--vixen-gold);
 }
 
-.vault-btn {
-    width: 100%;
-    padding: 16px;
-    background: #1a1a1a;
-    color: #ccc;
-    border: 1px solid #333;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    font-weight: bold;
+.collapsible-section[open] {
+    padding-bottom: 15px;
 }
 
-.export-btn-primary {
-    background: rgba(197, 160, 89, 0.1);
-    border-color: var(--vixen-gold);
-    color: var(--vixen-gold);
+/* Justering för knapparna med emojis */
+.btn-grid button {
+    font-size: 1.2rem; /* Gör emojierna tydliga */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* Varnings-puls för osparade framsteg */
-.pulsing-warning {
-    animation: warningPulse 1s infinite alternate;
-    color: #ff3333 !important;
-    border-color: #ff3333 !important;
+.btn-grid button {
+    font-size: 0.9rem; /* Justera ner lite om 5 peppar inte får plats på en rad */
+    padding: 14px 2px;
+    letter-spacing: -1px; /* Drar ihop pepparfrukterna lite för en tätare look */
 }
-
-@keyframes warningPulse {
-    from { box-shadow: 0 0 5px rgba(255, 51, 51, 0.2); }
-    to { box-shadow: 0 0 20px rgba(255, 51, 51, 0.5); }
-}
-
-/* ==========================================
-   8. WELCOME MODAL (ONBOARDING)
-   ========================================== */
+/* --- MODAL / POPUP --- */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.94);
-    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex; /* Ändras till 'none' av JS efter start */
     justify-content: center;
     align-items: center;
-    z-index: 9999;
-    backdrop-filter: blur(12px);
+    z-index: 1000;
     padding: 20px;
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
-    background: #111;
-    border: 1px solid var(--vixen-gold);
-    padding: 40px 30px;
-    border-radius: 16px;
-    max-width: 450px;
+    background: #1a1a1a;
+    border: 2px solid var(--vixen-gold);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .modal-content h2 {
-    color: var(--vixen-gold);
+    margin-top: 0;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
-.modal-text {
-    font-size: 0.95rem;
-    color: #ccc;
-    margin-bottom: 30px;
+.instruction-step {
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: left;
+    border-left: 3px solid #333;
+}
+
+.instruction-step strong {
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.instruction-step p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #999;
 }
 
 .start-btn {
     background: var(--vixen-gold);
     color: #000;
     width: 100%;
-    padding: 18px;
+    padding: 15px;
     border: none;
-    border-radius: 8px;
-    font-weight: 900;
+    border-radius: 6px;
+    font-weight: bold;
     font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+/* --- VARNINGS-ANIMATION --- */
+@keyframes pulseWarning {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); border-color: var(--accent-n4); }
+    70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); border-color: var(--accent-n4); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); border-color: var(--accent-n4); }
 }
 
-/* ==========================================
-   9. PANIC BUTTON & FOOTER
-   ========================================== */
-.panic-btn {
-    width: 100%;
-    background: transparent;
-    color: #441111;
-    border: 1px solid #221111;
-    padding: 22px;
-    margin-top: 80px;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 4px;
-    border-radius: 4px;
-    transition: all 0.3s;
+.pulsing-warning {
+    animation: pulseWarning 2s infinite;
+    color: var(--accent-n4) !important; /* Tvinga texten till röd */
+    font-weight: bold;
 }
-
-.panic-btn:active {
-    background: #441111;
-    color: #fff;
-}
-
-footer {
-    padding: 40px 20px 60px 20px;
+/* --- LOGO-CONTAINER (Här bor glöden) --- */
+.logo-container {
     text-align: center;
-    font-size: 0.7rem;
-    opacity: 0.3;
+    margin: 25px auto;
+    width: 100px; 
+    height: 100px;
+    position: relative;
+    
+    /* Animationen för guldskenet */
+    border-radius: 50%;
+    animation: goldGlow 3s ease-in-out infinite alternate;
+    
+    /* Säkerställer att inget utanför containern stör */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- SJÄLVA BILDEN (Zoom & Shave) --- */
+.header-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    /* 1. Vi zoomar in 5% för att tvinga ut de svarta kanterna "utanför bild" */
+    transform: scale(1.075); 
+    
+    /* 2. Vi klipper cirkeln lite snävare (48% istället för 50%) 
+       Detta rakar bort den absolut yttersta pixelraden där det svarta bor */
+    clip-path: circle(47%); 
+    
+    border-radius: 50%;
+    display: block;
+    background: transparent;
+}
+
+/* --- GULD-PULSEN (Ojusterad så den syns bra) --- */
+@keyframes goldGlow {
+    from {
+        box-shadow: 0 0 15px rgba(197, 160, 89, 0.3), 0 0 30px rgba(197, 160, 89, 0.1);
+    }
+    to {
+        box-shadow: 0 0 40px rgba(197, 160, 89, 0.7), 0 0 70px rgba(197, 160, 89, 0.3);
+    }
+}
+.top-guide-btn {
+    display: inline-block;
+    margin: 10px auto 20px auto; /* Centrerar och ger luft under */
+    padding: 8px 25px;
+    border: 1px solid var(--vixen-gold);
+    color: var(--vixen-gold);
+    text-decoration: none;
+    font-size: 0.75rem;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: rgba(197, 160, 89, 0.05); /* En extremt svag guldton i bakgrunden */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.1);
+}
+
+/* Effekt när man trycker på knappen */
+.top-guide-btn:active {
+    background: var(--vixen-gold);
+    color: #000;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
+/* Behållaren för uppdraget måste ha position: relative för att krysset ska hamna rätt */
+#task-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.close-task-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--vixen-gold);
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.close-task-btn:hover {
+    opacity: 1;
+}
+.close-card-x {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    font-size: 22px;
+    color: var(--vixen-gold);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.close-card-x:hover {
+    opacity: 1;
+}
+
+/* Säkerställ att kortet kan hålla krysset på plats */
+.task-card {
+    position: relative;
+}
+/* ==========================================
+   LEVEL BUTTONS - LUXURY EDITION
+   ========================================== */
+
+.level-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.btn-n1 { border: 1px solid #d4af37; color: #d4af37; }
+.btn-n2 { border: 1px solid var(--vixen-gold); color: var(--vixen-gold); }
+.btn-n3 { border: 1px solid #cd7f32; color: #cd7f32; }
+.btn-n4 { border: 1px solid #a52a2a; color: #a52a2a; }
+.btn-n5 { border: 1px solid #fff; color: #fff; background: #000; }
+
+.level-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
 }
