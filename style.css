@@ -1,0 +1,424 @@
+/* --- THE VIXEN DARE: AESTHETIC --- */
+:root {
+    --bg-color: #0d0d0d;
+    --card-bg: #1a1a1a;
+    --text-color: #e0e0e0;
+    --accent-n1: #2ecc71; /* Grön */
+    --accent-n2: #f1c40f; /* Gul */
+    --accent-n3: #e67e22; /* Orange */
+    --accent-n4: #e74c3c; /* Röd */
+    --accent-n5: #9b59b6; /* Lila */
+    --vixen-gold: #c5a059;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+header {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+h1 {
+    letter-spacing: 4px;
+    font-weight: 300;
+    color: var(--vixen-gold);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#stats {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+main {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* KONTROLLER */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-grid button {
+    padding: 15px 5px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.btn-grid button:active { transform: scale(0.95); }
+
+.btn-n1 { background: var(--accent-n1); color: #000; }
+.btn-n2 { background: var(--accent-n2); color: #000; }
+.btn-n3 { background: var(--accent-n3); color: #000; }
+.btn-n4 { background: var(--accent-n4); color: #000; }
+.btn-n5 { background: var(--accent-n5); color: #fff; }
+
+/* KORTEN */
+.task-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--vixen-gold);
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-card.n1 { border-left-color: var(--accent-n1); }
+.task-card.n2 { border-left-color: var(--accent-n2); }
+.task-card.n3 { border-left-color: var(--accent-n3); }
+.task-card.n4 { border-left-color: var(--accent-n4); }
+.task-card.n5 { border-left-color: var(--accent-n5); }
+.task-card.skipped { border-left-color: #555; opacity: 0.8; }
+
+.task-card p {
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+.card-btns {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.done-btn, .retry-btn {
+    flex: 2;
+    padding: 12px;
+    background: #222;
+    border: 1px solid var(--vixen-gold);
+    color: var(--vixen-gold);
+    border-radius: 4px;
+}
+
+.skip-btn {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid #444;
+    color: #888;
+    border-radius: 4px;
+}
+
+/* HISTORIK-BOX: SCROLLBAR OCH SNYGGARE */
+.history-box {
+    background: #000;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #999;
+    max-height: 300px; /* Boxen blir aldrig högre än så här */
+    overflow-y: auto;  /* Gör boxen scrollbar internt */
+    border: 1px solid #1a1a1a;
+}
+
+.history-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-box li {
+    padding: 10px 0;
+    border-bottom: 1px solid #111;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.history-lvl {
+    background: #222;
+    color: var(--vixen-gold);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Anpassa scrollbaren så den ser exklusiv ut (fungerar i Chrome/Safari) */
+.history-box::-webkit-scrollbar {
+    width: 4px;
+}
+.history-box::-webkit-scrollbar-track {
+    background: #000;
+}
+.history-box::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+/* THE VAULT */
+.vault-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #111;
+    border: 1px dashed #333;
+    border-radius: 8px;
+}
+
+.vault-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: #ccc;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+textarea, input {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    color: var(--accent-n1);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: monospace;
+}
+
+/* UPPDATERAD PANIK-KNAPP (Synlig och farlig) */
+.panic-btn {
+    width: 100%;
+    background: transparent;
+    /* Använd vår ljusare accent-röd istället för den mörka */
+    color: var(--accent-n4); 
+    border: 1px solid rgba(231, 76, 60, 0.3); /* En subtil röd kant */
+    padding: 20px;
+    font-size: 0.8rem;
+    margin-top: 40px; /* Lite luft ovanför */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+/* Gör den extra tydlig när man hovrar/trycker */
+.panic-btn:hover, .panic-btn:active {
+     background: rgba(231, 76, 60, 0.1);
+     color: #ff0000;
+     border-color: #ff0000;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+}
+
+.separator {
+    border: 0;
+    border-top: 1px solid #222;
+    margin: 40px 0;
+}
+/* --- COLLAPSIBLE STYLING --- */
+.collapsible-section {
+    background: #111;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #222;
+    overflow: hidden;
+}
+
+.collapsible-section summary {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--vixen-gold);
+    list-style: none; /* Döljer standard-pilen i vissa webbläsare */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Lägg till en egen diskret pil */
+.collapsible-section summary::after {
+    content: '▼';
+    font-size: 0.6rem;
+    transition: transform 0.3s;
+    color: #444;
+}
+
+.collapsible-section[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.collapsible-section summary:focus {
+    outline: none;
+}
+
+.collapsible-section[open] {
+    padding-bottom: 15px;
+}
+
+/* Justering för knapparna med emojis */
+.btn-grid button {
+    font-size: 1.2rem; /* Gör emojierna tydliga */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-grid button {
+    font-size: 0.9rem; /* Justera ner lite om 5 peppar inte får plats på en rad */
+    padding: 14px 2px;
+    letter-spacing: -1px; /* Drar ihop pepparfrukterna lite för en tätare look */
+}
+/* --- MODAL / POPUP --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex; /* Ändras till 'none' av JS efter start */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #1a1a1a;
+    border: 2px solid var(--vixen-gold);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.instruction-step {
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: left;
+    border-left: 3px solid #333;
+}
+
+.instruction-step strong {
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.instruction-step p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.start-btn {
+    background: var(--vixen-gold);
+    color: #000;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+/* --- VARNINGS-ANIMATION --- */
+@keyframes pulseWarning {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); border-color: var(--accent-n4); }
+    70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); border-color: var(--accent-n4); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); border-color: var(--accent-n4); }
+}
+
+.pulsing-warning {
+    animation: pulseWarning 2s infinite;
+    color: var(--accent-n4) !important; /* Tvinga texten till röd */
+    font-weight: bold;
+}
+/* --- LOGO-CONTAINER (Här bor glöden) --- */
+.logo-container {
+    text-align: center;
+    margin: 25px auto;
+    width: 100px; 
+    height: 100px;
+    position: relative;
+    
+    /* Animationen för guldskenet */
+    border-radius: 50%;
+    animation: goldGlow 3s ease-in-out infinite alternate;
+    
+    /* Säkerställer att inget utanför containern stör */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- SJÄLVA BILDEN (Zoom & Shave) --- */
+.header-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    /* 1. Vi zoomar in 5% för att tvinga ut de svarta kanterna "utanför bild" */
+    transform: scale(1.075); 
+    
+    /* 2. Vi klipper cirkeln lite snävare (48% istället för 50%) 
+       Detta rakar bort den absolut yttersta pixelraden där det svarta bor */
+    clip-path: circle(47%); 
+    
+    border-radius: 50%;
+    display: block;
+    background: transparent;
+}
+
+/* --- GULD-PULSEN (Ojusterad så den syns bra) --- */
+@keyframes goldGlow {
+    from {
+        box-shadow: 0 0 15px rgba(197, 160, 89, 0.3), 0 0 30px rgba(197, 160, 89, 0.1);
+    }
+    to {
+        box-shadow: 0 0 40px rgba(197, 160, 89, 0.7), 0 0 70px rgba(197, 160, 89, 0.3);
+    }
+}
