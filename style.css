@@ -444,3 +444,48 @@ textarea, input {
     color: #000;
     box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
 }
+/* Behållaren för uppdraget måste ha position: relative för att krysset ska hamna rätt */
+#task-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.close-task-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--vixen-gold);
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.close-task-btn:hover {
+    opacity: 1;
+}
+.close-card-x {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    font-size: 22px;
+    color: var(--vixen-gold);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.close-card-x:hover {
+    opacity: 1;
+}
+
+/* Säkerställ att kortet kan hålla krysset på plats */
+.task-card {
+    position: relative;
+}
