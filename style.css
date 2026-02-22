@@ -1,17 +1,19 @@
-/* --- THE VIXEN DARE: LUXURY AESTHETIC --- */
+/* ==========================================
+   THE VIXEN DARE - FULL LUXURY STYLE
+   ========================================== */
+
 :root {
-    --bg-color: #0d0d0d;
+    --bg-color: #0a0a0a;
     --card-bg: #111111;
     --text-color: #e0e0e0;
-    
-    /* NYA SEXIGA METALL-FÄRGER (Bort med pastell!) */
-    --accent-n1: #d4af37; /* Champagne Gold */
-    --accent-n2: #c5a059; /* Vixen Gold */
-    --accent-n3: #cd7f32; /* Deep Bronze */
-    --accent-n4: #a52a2a; /* Rich Copper / Dark Red */
-    --accent-n5: #ffffff; /* Obsidian / Silver */
-    
     --vixen-gold: #c5a059;
+    
+    /* Djupa metalliska färger för knapparna */
+    --n1-gold: #d4af37;
+    --n2-vixen: #c5a059;
+    --n3-bronze: #cd7f32;
+    --n4-red: #ff4444;
+    --n5-black: #ffffff;
 }
 
 * {
@@ -22,306 +24,31 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.5;
 }
 
+/* --- HEADER & LOGO --- */
 header {
-    padding: 30px 20px;
+    padding: 20px;
     text-align: center;
     border-bottom: 1px solid #222;
 }
 
-h1 {
-    letter-spacing: 4px;
-    font-weight: 300;
-    color: var(--vixen-gold);
-    margin: 0;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-}
-
-#stats {
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 10px;
-    letter-spacing: 1px;
-}
-
-main {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* --- GUIDE-KNAPPEN (TOPP) --- */
-.top-guide-btn {
-    display: inline-block;
-    margin: 15px auto;
-    padding: 8px 25px;
-    border: 1px solid var(--vixen-gold);
-    color: var(--vixen-gold);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    background: rgba(197, 160, 89, 0.05);
-    transition: all 0.3s ease;
-}
-
-.top-guide-btn:active {
-    background: var(--vixen-gold);
-    color: #000;
-}
-
-/* --- LEVEL SELECTOR (KNAPPARNA) --- */
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-grid button {
-    padding: 18px 5px;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s;
-    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-.btn-grid button:active { transform: scale(0.92); filter: brightness(1.5); }
-
-/* --- SEXIGARE LEVEL-KNAPPAR (DEEP METALLIC) --- */
-.level-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 20px 5px; /* Lite högre knappar för mer tyngd */
-    font-size: 1.2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
-    position: relative;
-    overflow: hidden;
-}
-
-/* N1 - Soft Gold / Silk */
-.btn-n1 { 
-    background: linear-gradient(145deg, #2a2210, #151108); 
-    color: #d4af37; 
-    border-color: #5c4b1a !important; 
-}
-
-/* N2 - Pure Vixen Gold */
-.btn-n2 { 
-    background: linear-gradient(145deg, #3d3011, #1a1407); 
-    color: #c5a059; 
-    border-color: #8a6d2d !important;
-    box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
-}
-
-/* N3 - Burnt Bronze / Lust */
-.btn-n3 { 
-    background: linear-gradient(145deg, #3d1f0a, #1a0d04); 
-    color: #cd7f32; 
-    border-color: #804a19 !important; 
-}
-
-/* N4 - Deep Blood Red / Danger */
-.btn-n4 { 
-    background: linear-gradient(145deg, #4d0b0b, #260505); 
-    color: #ff4444; 
-    border-color: #801010 !important;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
-}
-
-/* N5 - Obsidian / Midnight No Limits */
-.btn-n5 { 
-    background: linear-gradient(145deg, #111, #000); 
-    color: #ffffff; 
-    border-color: #444 !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-/* Tryck-effekt: Knappen ska "glöda" till när man trycker */
-.level-btn:active {
-    transform: scale(0.9);
-    filter: brightness(1.5);
-    box-shadow: 0 0 25px currentColor; /* Glöder i knappens egen färg */
-}
-/* --- UPPDRAGSKORTEN --- */
-.task-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 25px 20px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(197, 160, 89, 0.2);
-    border-left: 4px solid var(--vixen-gold);
-    animation: fadeIn 0.4s ease-out;
-    position: relative; /* För krysset */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Matcha kortens kanter med de nya färgerna */
-.task-card.n1 { border-left-color: var(--accent-n1); }
-.task-card.n2 { border-left-color: var(--accent-n2); }
-.task-card.n3 { border-left-color: var(--accent-n3); }
-.task-card.n4 { border-left-color: var(--accent-n4); }
-.task-card.n5 { border-left-color: var(--accent-n5); box-shadow: 0 0 15px rgba(255,255,255,0.05); }
-.task-card.skipped { border-left-color: #444; opacity: 0.8; }
-
-.task-card p {
-    font-size: 1.1rem;
-    margin-top: 10px;
-    color: #ddd;
-    line-height: 1.6;
-}
-
-/* Kryss-knappen i kortet */
-.close-card-x {
-    position: absolute;
-    top: 8px;
-    right: 15px;
-    font-size: 24px;
-    color: var(--vixen-gold);
-    cursor: pointer;
-    opacity: 0.5;
-    transition: 0.2s;
-}
-.close-card-x:hover { opacity: 1; }
-
-.card-btns {
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.done-btn, .retry-btn {
-    flex: 2;
-    padding: 14px;
-    background: var(--vixen-gold);
-    border: none;
-    color: #000;
-    border-radius: 6px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.skip-btn {
-    flex: 1;
-    padding: 14px;
-    background: #222;
-    border: 1px solid #444;
-    color: #888;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-/* --- HISTORIK & COLLAPSIBLES --- */
-.collapsible-section {
-    background: #111;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #222;
-    overflow: hidden;
-}
-
-.collapsible-section summary {
-    padding: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    color: var(--vixen-gold);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-}
-
-.history-box {
-    background: #000;
-    padding: 10px 15px;
-    max-height: 300px;
-    overflow-y: auto;
-    border-top: 1px solid #1a1a1a;
-}
-
-.history-box li {
-    padding: 12px 0;
-    border-bottom: 1px solid #111;
-    display: flex;
-    gap: 12px;
-    color: #999;
-}
-
-.history-lvl {
-    color: var(--vixen-gold);
-    font-weight: bold;
-    min-width: 35px;
-}
-
-/* --- THE VAULT --- */
-.vault-section {
-    margin-top: 40px;
-    padding: 25px;
-    background: #0a0a0a;
-    border: 1px dashed #333;
-    border-radius: 12px;
-}
-
-textarea, input {
-    width: 100%;
-    background: #000;
-    border: 1px solid #333;
-    color: var(--accent-n1);
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    font-family: monospace;
-}
-
-.vault-btn {
-    width: 100%;
-    padding: 15px;
-    background: #222;
-    color: #ccc;
-    border: 1px solid #444;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* --- LOGO & GLOW --- */
 .logo-container {
     text-align: center;
-    margin: 30px auto;
-    width: 110px; 
-    height: 110px;
+    margin: 15px auto;
+    width: 100px;
+    height: 100px;
     position: relative;
     border-radius: 50%;
     animation: goldGlow 3s ease-in-out infinite alternate;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .header-logo {
@@ -330,57 +57,190 @@ textarea, input {
     object-fit: cover;
     transform: scale(1.08); 
     clip-path: circle(47%); 
-    border-radius: 50%;
 }
 
 @keyframes goldGlow {
     from { box-shadow: 0 0 15px rgba(197, 160, 89, 0.3); }
-    to { box-shadow: 0 0 45px rgba(197, 160, 89, 0.7); }
+    to { box-shadow: 0 0 40px rgba(197, 160, 89, 0.7); }
 }
 
-/* --- VARNINGS-ANIMATION (VIXEN KEY) --- */
-@keyframes pulseWarning {
-    0% { border-color: var(--accent-n4); }
-    100% { border-color: #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.3); }
-}
-
-.pulsing-warning {
-    animation: pulseWarning 1s infinite alternate;
-    color: #ff4444 !important;
-}
-
-/* --- PANIK-KNAPPEN --- */
-.panic-btn {
-    width: 100%;
-    background: transparent;
-    color: #661111; 
-    border: 1px solid #331111;
-    padding: 15px;
-    font-size: 0.75rem;
-    margin-top: 50px;
+h1 {
+    letter-spacing: 4px;
+    color: var(--vixen-gold);
+    font-size: 1.3rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    border-radius: 4px;
+    margin: 10px 0;
 }
 
-/* --- WELCOME MODAL --- */
+/* --- GUIDE-KNAPPEN --- */
+.top-guide-btn {
+    display: inline-block;
+    margin: 10px auto;
+    padding: 10px 25px;
+    border: 1px solid var(--vixen-gold);
+    color: var(--vixen-gold);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: rgba(197, 160, 89, 0.05);
+}
+
+/* --- DE SEXIGA KNAPPARNA (FIXADE!) --- */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 0 10px;
+}
+
+.btn-grid button {
+    padding: 20px 0;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* N1 - Champagne */
+.btn-n1 { 
+    background: linear-gradient(145deg, #2a2210, #050505) !important; 
+    color: var(--n1-gold) !important; 
+    border-color: #5c4b1a !important; 
+}
+/* N2 - Vixen Gold */
+.btn-n2 { 
+    background: linear-gradient(145deg, #3d3011, #050505) !important; 
+    color: var(--n2-vixen) !important; 
+    border-color: #8a6d2d !important; 
+}
+/* N3 - Bronze */
+.btn-n3 { 
+    background: linear-gradient(145deg, #3d1f0a, #050505) !important; 
+    color: var(--n3-bronze) !important; 
+    border-color: #804a19 !important; 
+}
+/* N4 - Danger Red */
+.btn-n4 { 
+    background: linear-gradient(145deg, #4d0b0b, #050505) !important; 
+    color: var(--n4-red) !important; 
+    border-color: #801010 !important; 
+}
+/* N5 - Obsidian */
+.btn-n5 { 
+    background: linear-gradient(145deg, #222, #000) !important; 
+    color: #fff !important; 
+    border-color: #444 !important; 
+}
+
+.btn-grid button:active {
+    transform: scale(0.9);
+    filter: brightness(1.5);
+}
+
+/* --- TASK CARDS --- */
+.task-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Krysset i hörnet */
+.close-card-x {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 24px;
+    color: var(--vixen-gold);
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.done-btn {
+    background: var(--vixen-gold);
+    color: #000;
+    width: 65%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.skip-btn {
+    background: #222;
+    color: #888;
+    width: 30%;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+
+/* --- THE VAULT & BACKUP --- */
+.vault-section {
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid #222;
+    background: #0d0d0d;
+}
+
+textarea, input {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    color: var(--vixen-gold);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* --- MODAL / WELCOME --- */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top:0; left:0; width:100%; height:100%;
     background: rgba(0,0,0,0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(8px);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000; backdrop-filter: blur(10px);
 }
 
 .modal-content {
     background: #111;
     border: 1px solid var(--vixen-gold);
-    padding: 35px;
+    padding: 30px;
     border-radius: 15px;
-    max-width: 450px;
+    max-width: 400px;
     text-align: center;
 }
 
+/* Animationer */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Panikknappen */
+.panic-btn {
+    width: 100%;
+    background: transparent;
+    color: #441111;
+    border: 1px solid #220000;
+    padding: 15px;
+    margin-top: 60px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
