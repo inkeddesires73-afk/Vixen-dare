@@ -70,11 +70,74 @@ main {
 
 .btn-grid button:active { transform: scale(0.95); }
 
-.btn-n1 { background: var(--accent-n1); color: #000; }
-.btn-n2 { background: var(--accent-n2); color: #000; }
-.btn-n3 { background: var(--accent-n3); color: #000; }
-.btn-n4 { background: var(--accent-n4); color: #000; }
-.btn-n5 { background: var(--accent-n5); color: #fff; }
+/* --- SEXIGARE LEVEL-KNAPPAR --- */
+
+/* Gemensam stil för alla knappar */
+.level-btn {
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    color: #eee;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* N1 - Champagne Gold (Den mjukaste) */
+.btn-n1 { 
+    border-color: #d4af37; 
+    color: #d4af37; 
+    box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+/* N2 - Classic Vixen Gold */
+.btn-n2 { 
+    border-color: var(--vixen-gold); 
+    color: var(--vixen-gold);
+    box-shadow: inset 0 0 15px rgba(197, 160, 89, 0.15);
+}
+
+/* N3 - Deep Amber / Bronze */
+.btn-n3 { 
+    border-color: #cd7f32; 
+    color: #cd7f32; 
+}
+
+/* N4 - Burnt Copper (Nu börjar det bli allvar) */
+.btn-n4 { 
+    border-color: #a52a2a; 
+    color: #a52a2a; 
+    text-shadow: 0 0 5px rgba(165, 42, 42, 0.3);
+}
+
+/* N5 - Midnight Gold / Obsidian (Den farligaste nivån) */
+.btn-n5 { 
+    border: 1px solid #444;
+    background: linear-gradient(145deg, #000, #111);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Hover & Active effekter - så de känns exklusiva att trycka på */
+.level-btn:active {
+    transform: scale(0.96);
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
+
+/* --- JUSTERING FÖR SJÄLVA KORTEN (När de öppnats) --- */
+.task-card {
+    background: #111 !important;
+    border: 1px solid rgba(197, 160, 89, 0.3) !important;
+    color: #ccc !important;
+}
+
+.task-card h3 {
+    color: var(--vixen-gold);
+}
 
 /* KORTEN */
 .task-card {
@@ -488,72 +551,4 @@ textarea, input {
 /* Säkerställ att kortet kan hålla krysset på plats */
 .task-card {
     position: relative;
-}
-/* --- SEXIGARE LEVEL-KNAPPAR --- */
-
-/* Gemensam stil för alla knappar */
-.level-btn {
-    border: 1px solid rgba(197, 160, 89, 0.3);
-    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-    color: #eee;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-
-/* N1 - Champagne Gold (Den mjukaste) */
-.btn-n1 { 
-    border-color: #d4af37; 
-    color: #d4af37; 
-    box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
-}
-
-/* N2 - Classic Vixen Gold */
-.btn-n2 { 
-    border-color: var(--vixen-gold); 
-    color: var(--vixen-gold);
-    box-shadow: inset 0 0 15px rgba(197, 160, 89, 0.15);
-}
-
-/* N3 - Deep Amber / Bronze */
-.btn-n3 { 
-    border-color: #cd7f32; 
-    color: #cd7f32; 
-}
-
-/* N4 - Burnt Copper (Nu börjar det bli allvar) */
-.btn-n4 { 
-    border-color: #a52a2a; 
-    color: #a52a2a; 
-    text-shadow: 0 0 5px rgba(165, 42, 42, 0.3);
-}
-
-/* N5 - Midnight Gold / Obsidian (Den farligaste nivån) */
-.btn-n5 { 
-    border: 1px solid #444;
-    background: linear-gradient(145deg, #000, #111);
-    color: #fff;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-}
-
-/* Hover & Active effekter - så de känns exklusiva att trycka på */
-.level-btn:active {
-    transform: scale(0.96);
-    filter: brightness(1.2);
-    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
-}
-
-/* --- JUSTERING FÖR SJÄLVA KORTEN (När de öppnats) --- */
-.task-card {
-    background: #111 !important;
-    border: 1px solid rgba(197, 160, 89, 0.3) !important;
-    color: #ccc !important;
-}
-
-.task-card h3 {
-    color: var(--vixen-gold);
 }
