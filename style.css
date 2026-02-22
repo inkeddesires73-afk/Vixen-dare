@@ -422,3 +422,25 @@ textarea, input {
         box-shadow: 0 0 40px rgba(197, 160, 89, 0.7), 0 0 70px rgba(197, 160, 89, 0.3);
     }
 }
+.top-guide-btn {
+    display: inline-block;
+    margin: 10px auto 20px auto; /* Centrerar och ger luft under */
+    padding: 8px 25px;
+    border: 1px solid var(--vixen-gold);
+    color: var(--vixen-gold);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: rgba(197, 160, 89, 0.05); /* En extremt svag guldton i bakgrunden */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.1);
+}
+
+/* Effekt när man trycker på knappen */
+.top-guide-btn:active {
+    background: var(--vixen-gold);
+    color: #000;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
