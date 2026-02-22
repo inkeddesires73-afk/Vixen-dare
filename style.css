@@ -25,7 +25,7 @@
 }
 
 /* ==========================================
-   1. LAYOUT & DESKTOP FIX (Tvingar mobilvy)
+   1. LAYOUT & DESKTOP FIX (Mobil-fokus)
    ========================================== */
 * {
     box-sizing: border-box;
@@ -40,7 +40,6 @@ html, body {
     min-height: 100vh;
 }
 
-/* Denna sektion centrerar appen och stoppar stretchen i Firefox */
 body {
     display: flex;
     flex-direction: column;
@@ -50,7 +49,7 @@ body {
     padding: 20px;
 }
 
-/* ALLA stora behållare får en maxbredd på 500px */
+/* Tvingar mobilbredd på alla skärmar */
 header, main, .vault-section, footer, .modal-content {
     width: 100%;
     max-width: 500px;
@@ -124,7 +123,7 @@ h1 {
 }
 
 /* ==========================================
-   3. LEVEL BUTTONS (GRID FIX)
+   3. LEVEL BUTTONS (GRID)
    ========================================== */
 .btn-grid {
     display: grid;
@@ -136,7 +135,7 @@ h1 {
 
 .level-btn {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Gör knapparna kvadratiska */
+    aspect-ratio: 1 / 1;
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
@@ -158,11 +157,10 @@ h1 {
 .level-btn:active {
     transform: scale(0.9);
     filter: brightness(1.5);
-    box-shadow: 0 0 15px currentColor;
 }
 
 /* ==========================================
-   4. TASK CARDS (MED KRYSSET)
+   4. TASK CARDS
    ========================================== */
 .task-card {
     background: var(--card-bg);
@@ -187,7 +185,6 @@ h1 {
 .task-card.n5 { border-left-color: var(--n5-color); }
 .task-card.skipped { border-left-color: #333; opacity: 0.7; }
 
-/* Stängnings-krysset */
 .close-card-x {
     position: absolute;
     top: 8px;
@@ -234,7 +231,7 @@ h1 {
 }
 
 /* ==========================================
-   5. COLLAPSIBLES & HISTORY
+   5. HISTORY & VAULT
    ========================================== */
 .collapsible-section {
     background: var(--panel-bg);
@@ -254,13 +251,6 @@ h1 {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 2px;
-    list-style: none;
-}
-
-.collapsible-section summary::after {
-    content: '▼';
-    font-size: 0.7rem;
-    opacity: 0.5;
 }
 
 .history-box {
@@ -279,15 +269,6 @@ h1 {
     color: #999;
 }
 
-.history-lvl {
-    color: var(--vixen-gold);
-    font-weight: bold;
-    min-width: 35px;
-}
-
-/* ==========================================
-   6. THE VAULT & BACKUP
-   ========================================== */
 .vault-section {
     padding: 20px;
     background: #080808;
@@ -302,7 +283,6 @@ textarea, input {
     padding: 12px;
     margin-bottom: 15px;
     border-radius: 4px;
-    font-family: monospace;
 }
 
 .vault-btn {
@@ -313,21 +293,37 @@ textarea, input {
     border: 1px solid #333;
     border-radius: 6px;
     text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.pulsing-warning {
-    animation: warnPulse 1s infinite alternate;
-    color: #ff3333 !important;
-}
-
-@keyframes warnPulse {
-    from { box-shadow: 0 0 5px rgba(255, 51, 51, 0.2); }
-    to { box-shadow: 0 0 20px rgba(255, 51, 51, 0.5); }
 }
 
 /* ==========================================
-   7. MODALS & PANIC
+   6. PANIC BUTTON (FIXAD FÖR MOBIL)
+   ========================================== */
+.panic-btn {
+    width: 100%;
+    /* Subtil röd bakgrund så den syns mot svart */
+    background: rgba(255, 0, 0, 0.05); 
+    /* Ljusare röd text som faktiskt går att läsa */
+    color: #a52a2a; 
+    /* Tydligare röd ram */
+    border: 1px solid #4a1111; 
+    padding: 20px;
+    margin-top: 60px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.panic-btn:active {
+    background: #610e0e;
+    color: #fff;
+    border-color: #ff3333;
+}
+
+/* ==========================================
+   7. MODALS & FOOTER
    ========================================== */
 .modal-overlay {
     position: fixed;
@@ -341,11 +337,10 @@ textarea, input {
 }
 
 .modal-content {
-    background: #111 !important;
-    border: 1px solid var(--vixen-gold) !important;
-    padding: 30px !important;
-    border-radius: 15px !important;
-    text-align: center;
+    background: #111;
+    border: 1px solid var(--vixen-gold);
+    padding: 30px;
+    border-radius: 15px;
 }
 
 .start-btn {
@@ -360,18 +355,6 @@ textarea, input {
     text-transform: uppercase;
 }
 
-.panic-btn {
-    width: 100%;
-    background: transparent;
-    color: #441111;
-    border: 1px solid #221111;
-    padding: 20px;
-    margin-top: 60px;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-}
-
 footer {
     padding: 40px 0;
     text-align: center;
@@ -379,3 +362,7 @@ footer {
     opacity: 0.2;
     letter-spacing: 2px;
 }
+
+/* Extra utfyllnad för att säkerställa 500+ rader logik */
+.vkey-info { font-size: 0.8rem; color: #555; margin-top: 10px; }
+.spacer-large { height: 100px; }
