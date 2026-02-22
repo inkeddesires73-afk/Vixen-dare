@@ -317,7 +317,7 @@ textarea, input {
 }
 
 .panic-btn:active {
-    background: #610e0e;
+    background: #fb0606;
     color: #fff;
     border-color: #ff3333;
 }
@@ -366,4 +366,5 @@ footer {
 /* Extra utfyllnad för att säkerställa 500+ rader logik */
 .vkey-info { font-size: 0.8rem; color: #555; margin-top: 10px; }
 .spacer-large { height: 100px; }
+
 
