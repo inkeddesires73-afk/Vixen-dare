@@ -303,7 +303,7 @@ textarea, input {
     /* Subtil röd bakgrund så den syns mot svart */
     background: rgba(255, 0, 0, 0.05); 
     /* Ljusare röd text som faktiskt går att läsa */
-    color: #a52a2a; 
+    color: #f61010; 
     /* Tydligare röd ram */
     border: 1px solid #4a1111; 
     padding: 20px;
@@ -366,3 +366,4 @@ footer {
 /* Extra utfyllnad för att säkerställa 500+ rader logik */
 .vkey-info { font-size: 0.8rem; color: #555; margin-top: 10px; }
 .spacer-large { height: 100px; }
+
