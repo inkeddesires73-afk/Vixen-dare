@@ -102,13 +102,67 @@ main {
 
 .btn-grid button:active { transform: scale(0.92); filter: brightness(1.5); }
 
-/* Luxury Glow för knapparna */
-.btn-n1 { color: var(--accent-n1); border-color: var(--accent-n1) !important; }
-.btn-n2 { color: var(--accent-n2); border-color: var(--accent-n2) !important; }
-.btn-n3 { color: var(--accent-n3); border-color: var(--accent-n3) !important; }
-.btn-n4 { color: var(--accent-n4); border-color: var(--accent-n4) !important; }
-.btn-n5 { color: var(--accent-n5); border-color: var(--accent-n5) !important; background: #000 !important; }
+/* --- SEXIGARE LEVEL-KNAPPAR (DEEP METALLIC) --- */
+.level-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 5px; /* Lite högre knappar för mer tyngd */
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    position: relative;
+    overflow: hidden;
+}
 
+/* N1 - Soft Gold / Silk */
+.btn-n1 { 
+    background: linear-gradient(145deg, #2a2210, #151108); 
+    color: #d4af37; 
+    border-color: #5c4b1a !important; 
+}
+
+/* N2 - Pure Vixen Gold */
+.btn-n2 { 
+    background: linear-gradient(145deg, #3d3011, #1a1407); 
+    color: #c5a059; 
+    border-color: #8a6d2d !important;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
+}
+
+/* N3 - Burnt Bronze / Lust */
+.btn-n3 { 
+    background: linear-gradient(145deg, #3d1f0a, #1a0d04); 
+    color: #cd7f32; 
+    border-color: #804a19 !important; 
+}
+
+/* N4 - Deep Blood Red / Danger */
+.btn-n4 { 
+    background: linear-gradient(145deg, #4d0b0b, #260505); 
+    color: #ff4444; 
+    border-color: #801010 !important;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
+}
+
+/* N5 - Obsidian / Midnight No Limits */
+.btn-n5 { 
+    background: linear-gradient(145deg, #111, #000); 
+    color: #ffffff; 
+    border-color: #444 !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Tryck-effekt: Knappen ska "glöda" till när man trycker */
+.level-btn:active {
+    transform: scale(0.9);
+    filter: brightness(1.5);
+    box-shadow: 0 0 25px currentColor; /* Glöder i knappens egen färg */
+}
 /* --- UPPDRAGSKORTEN --- */
 .task-card {
     background: var(--card-bg);
@@ -329,3 +383,4 @@ textarea, input {
     max-width: 450px;
     text-align: center;
 }
+
