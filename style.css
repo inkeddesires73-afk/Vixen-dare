@@ -3,64 +3,66 @@
    ========================================================================== */
 
 :root {
-    /* Basfärger */
     --bg-color: #080808;
     --card-bg: #121212;
     --panel-bg: #0f0f0f;
     --text-main: #e0e0e0;
     --text-dim: #888888;
-    
-    /* Vixen Signatur Guld */
     --vixen-gold: #c5a059;
     --vixen-gold-glow: rgba(197, 160, 89, 0.4);
     
-    /* Level-specifika metallfärger (Djupa & Mättade) */
-    --n1-champagne: #d4af37;
+    /* Level Colors */
+    --n1-color: #d4af37;
     --n1-bg: #1a1608;
-    
-    --n2-gold: #c5a059;
+    --n2-color: #c5a059;
     --n2-bg: #1a1407;
-    
-    --n3-bronze: #cd7f32;
+    --n3-color: #cd7f32;
     --n3-bg: #1a1005;
-    
-    --n4-danger: #ff3333;
+    --n4-color: #ff3333;
     --n4-bg: #220505;
-    
-    --n5-obsidian: #ffffff;
-    --n5-bg: #000000;
+    --n5-color: #ffffff;
+    --n5-bg: #111111;
 }
 
 /* ==========================================
-   1. GRUNDLÄGGANDE RESET & SETUP
+   1. LAYOUT & DESKTOP FIX (Tvingar mobilvy)
    ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    -webkit-tap-highlight-color: transparent; 
+    -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
-    height: 100%;
     background-color: var(--bg-color);
-    overscroll-behavior: none; 
+    width: 100%;
+    min-height: 100vh;
 }
 
+/* Denna sektion centrerar appen och stoppar stretchen i Firefox */
 body {
-    color: var(--text-main);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center; 
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding: 20px;
+}
+
+/* ALLA stora behållare får en maxbredd på 500px */
+header, main, .vault-section, footer, .modal-content {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ==========================================
-   2. HEADER & DEN PULSERANDE LOGGAN
+   2. HEADER & LOGO (PULSERANDE)
    ========================================== */
 header {
-    padding: 30px 0 20px 0;
+    padding: 20px 0;
     text-align: center;
     border-bottom: 1px solid #1a1a1a;
     margin-bottom: 20px;
@@ -76,7 +78,6 @@ header {
     justify-content: center;
     align-items: center;
     animation: goldPulse 3s ease-in-out infinite alternate;
-    z-index: 1;
 }
 
 .header-logo {
@@ -89,13 +90,12 @@ header {
 }
 
 @keyframes goldPulse {
-    from { box-shadow: 0 0 15px var(--vixen-gold-glow); }
-    to { box-shadow: 0 0 45px var(--vixen-gold); }
+    from { box-shadow: 0 0 10px var(--vixen-gold-glow); }
+    to { box-shadow: 0 0 35px var(--vixen-gold); }
 }
 
 h1 {
-    font-size: 1.4rem;
-    font-weight: 300;
+    font-size: 1.3rem;
     letter-spacing: 4px;
     color: var(--vixen-gold);
     text-transform: uppercase;
@@ -103,116 +103,91 @@ h1 {
 }
 
 #stats {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-dim);
+    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* --- GUIDE-KNAPP --- */
 .top-guide-btn {
     display: inline-block;
-    margin: 10px auto 20px auto;
-    padding: 8px 25px;
+    margin: 15px auto;
+    padding: 10px 25px;
     border: 1px solid var(--vixen-gold);
     color: var(--vixen-gold);
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     border-radius: 4px;
     background: rgba(197, 160, 89, 0.05);
-    transition: all 0.3s ease;
-}
-
-.top-guide-btn:active {
-    background: var(--vixen-gold);
-    color: #000;
 }
 
 /* ==========================================
-   3. DE SEXIGA LEVEL-KNAPPARNA (FIXADE)
+   3. LEVEL BUTTONS (GRID FIX)
    ========================================== */
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 8px;
     margin: 20px 0 30px 0;
+    width: 100%;
 }
 
 .level-btn {
     width: 100%;
-    padding: 20px 0;
+    aspect-ratio: 1 / 1; /* Gör knapparna kvadratiska */
     border-radius: 8px;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1.5px solid rgba(255,255,255,0.05);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    font-size: 1.2rem;
 }
 
-/* N1 - Champagne */
-.btn-n1 { 
-    background: linear-gradient(145deg, var(--n1-bg), #050505) !important; 
-    color: var(--n1-champagne) !important; 
-    border-color: #4a3d12 !important; 
-}
-/* N2 - Vixen Gold */
-.btn-n2 { 
-    background: linear-gradient(145deg, var(--n2-bg), #050505) !important; 
-    color: var(--n2-gold) !important; 
-    border-color: #5c4a1b !important; 
-}
-/* N3 - Bronze */
-.btn-n3 { 
-    background: linear-gradient(145deg, var(--n3-bg), #050505) !important; 
-    color: var(--n3-bronze) !important; 
-    border-color: #5c3512 !important; 
-}
-/* N4 - Danger Red */
-.btn-n4 { 
-    background: linear-gradient(145deg, var(--n4-bg), #050505) !important; 
-    color: var(--n4-danger) !important; 
-    border-color: #610e0e !important; 
-}
-/* N5 - Obsidian */
-.btn-n5 { 
-    background: linear-gradient(145deg, #222, #000) !important; 
-    color: var(--n5-obsidian) !important; 
-    border-color: #444 !important; 
-}
+.btn-n1 { background: linear-gradient(145deg, var(--n1-bg), #050505) !important; color: var(--n1-color) !important; border-color: #4a3d12 !important; }
+.btn-n2 { background: linear-gradient(145deg, var(--n2-bg), #050505) !important; color: var(--n2-gold) !important; border-color: #5c4a1b !important; }
+.btn-n3 { background: linear-gradient(145deg, var(--n3-bg), #050505) !important; color: var(--n3-bronze) !important; border-color: #5c3512 !important; }
+.btn-n4 { background: linear-gradient(145deg, var(--n4-bg), #050505) !important; color: var(--n4-color) !important; border-color: #610e0e !important; }
+.btn-n5 { background: linear-gradient(145deg, #222, #000) !important; color: #fff !important; border-color: #444 !important; }
 
 .level-btn:active {
     transform: scale(0.9);
     filter: brightness(1.5);
-    box-shadow: 0 0 20px currentColor;
+    box-shadow: 0 0 15px currentColor;
 }
 
 /* ==========================================
-   4. UPPDRAGSKORTEN (TASK CARDS)
+   4. TASK CARDS (MED KRYSSET)
    ========================================== */
 .task-card {
     background: var(--card-bg);
     border: 1px solid rgba(197, 160, 89, 0.15);
     border-radius: 12px;
-    padding: 25px 20px;
+    padding: 28px 20px;
     margin-bottom: 25px;
     position: relative;
     border-left: 5px solid var(--vixen-gold);
     animation: fadeIn 0.4s ease-out;
 }
 
-.task-card.n1 { border-left-color: var(--n1-champagne); }
-.task-card.n2 { border-left-color: var(--n2-gold); }
-.task-card.n3 { border-left-color: var(--n3-bronze); }
-.task-card.n4 { border-left-color: var(--n4-danger); }
-.task-card.n5 { border-left-color: var(--n5-obsidian); }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-card.n1 { border-left-color: var(--n1-color); }
+.task-card.n2 { border-left-color: var(--n2-color); }
+.task-card.n3 { border-left-color: var(--n3-color); }
+.task-card.n4 { border-left-color: var(--n4-color); }
+.task-card.n5 { border-left-color: var(--n5-color); }
 .task-card.skipped { border-left-color: #333; opacity: 0.7; }
 
-/* Krysset i hörnet */
+/* Stängnings-krysset */
 .close-card-x {
     position: absolute;
     top: 8px;
@@ -228,7 +203,7 @@ h1 {
     font-size: 1.15rem;
     color: #eee;
     line-height: 1.6;
-    margin: 10px 0 20px 0;
+    margin-bottom: 20px;
     text-align: left;
 }
 
@@ -244,7 +219,7 @@ h1 {
     color: #000;
     border: none;
     border-radius: 6px;
-    font-weight: bold;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
@@ -259,13 +234,13 @@ h1 {
 }
 
 /* ==========================================
-   5. COLLAPSIBLES (HISTORY & VAULT)
+   5. COLLAPSIBLES & HISTORY
    ========================================== */
 .collapsible-section {
-    background: #111;
-    border-radius: 8px;
+    background: var(--panel-bg);
+    border-radius: 10px;
     margin-bottom: 15px;
-    border: 1px solid #222;
+    border: 1px solid #1a1a1a;
     overflow: hidden;
 }
 
@@ -276,27 +251,32 @@ h1 {
     color: var(--vixen-gold);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 2px;
+    list-style: none;
+}
+
+.collapsible-section summary::after {
+    content: '▼';
+    font-size: 0.7rem;
+    opacity: 0.5;
 }
 
 .history-box {
     background: #000;
-    padding: 10px 15px;
+    padding: 5px 20px;
     max-height: 350px;
     overflow-y: auto;
 }
 
 .history-box li {
     padding: 12px 0;
-    border-bottom: 1px solid #1a1a1a;
+    border-bottom: 1px solid #111;
     display: flex;
     gap: 12px;
     font-size: 0.9rem;
     color: #999;
-    text-align: left;
 }
 
 .history-lvl {
@@ -306,17 +286,18 @@ h1 {
 }
 
 /* ==========================================
-   6. THE VAULT (VIXEN KEY)
+   6. THE VAULT & BACKUP
    ========================================== */
 .vault-section {
     padding: 20px;
-    background: #0a0a0a;
+    background: #080808;
+    border-top: 1px solid #1a1a1a;
 }
 
 textarea, input {
     width: 100%;
     background: #000;
-    border: 1px solid #333;
+    border: 1px solid #222;
     color: var(--vixen-gold);
     padding: 12px;
     margin-bottom: 15px;
@@ -327,33 +308,31 @@ textarea, input {
 .vault-btn {
     width: 100%;
     padding: 15px;
-    background: #222;
+    background: #1a1a1a;
     color: #ccc;
-    border: 1px solid #444;
+    border: 1px solid #333;
     border-radius: 6px;
     text-transform: uppercase;
-    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
-/* Varning för osparade framsteg */
 .pulsing-warning {
-    animation: pulseWarn 1s infinite alternate;
+    animation: warnPulse 1s infinite alternate;
     color: #ff3333 !important;
 }
 
-@keyframes pulseWarn {
-    0% { border-color: #ff3333; }
-    100% { border-color: #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.3); }
+@keyframes warnPulse {
+    from { box-shadow: 0 0 5px rgba(255, 51, 51, 0.2); }
+    to { box-shadow: 0 0 20px rgba(255, 51, 51, 0.5); }
 }
 
 /* ==========================================
-   7. WELCOME MODAL
+   7. MODALS & PANIC
    ========================================== */
 .modal-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.92);
+    background: rgba(0,0,0,0.95);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -362,11 +341,10 @@ textarea, input {
 }
 
 .modal-content {
-    background: #111;
-    border: 1px solid var(--vixen-gold);
-    padding: 35px;
-    border-radius: 15px;
-    max-width: 450px;
+    background: #111 !important;
+    border: 1px solid var(--vixen-gold) !important;
+    padding: 30px !important;
+    border-radius: 15px !important;
     text-align: center;
 }
 
@@ -377,31 +355,27 @@ textarea, input {
     padding: 16px;
     border: none;
     border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-weight: 900;
     margin-top: 20px;
+    text-transform: uppercase;
 }
 
-/* ==========================================
-   8. PANIC BUTTON & FOOTER
-   ========================================== */
 .panic-btn {
     width: 100%;
     background: transparent;
     color: #441111;
-    border: 1px solid #220000;
+    border: 1px solid #221111;
     padding: 20px;
     margin-top: 60px;
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 3px;
-    border-radius: 4px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.7rem;
+    opacity: 0.2;
+    letter-spacing: 2px;
 }
-
-/* Hela vägen ner till rad 500+ för säkerhets skull */
-.extra-padding { padding-bottom: 100px; }
