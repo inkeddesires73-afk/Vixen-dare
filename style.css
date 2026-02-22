@@ -489,3 +489,33 @@ textarea, input {
 .task-card {
     position: relative;
 }
+/* ==========================================
+   LEVEL BUTTONS - LUXURY EDITION
+   ========================================== */
+
+.level-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.btn-n1 { border: 1px solid #d4af37; color: #d4af37; }
+.btn-n2 { border: 1px solid var(--vixen-gold); color: var(--vixen-gold); }
+.btn-n3 { border: 1px solid #cd7f32; color: #cd7f32; }
+.btn-n4 { border: 1px solid #a52a2a; color: #a52a2a; }
+.btn-n5 { border: 1px solid #fff; color: #fff; background: #000; }
+
+.level-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
