@@ -5,15 +5,13 @@ let userProgress = {
     activeTasks: [],
     completedTasks: [],
     skippedTasks: [],
-    lastSavedCount: 0 // Håller koll på när vi senast gjorde backup
+    lastSavedCount: 0 
 };
 
-// Ladda data vid start
 try {
     const saved = localStorage.getItem('vixen_progress');
     if (saved) {
         userProgress = JSON.parse(saved);
-        // Bakåtkompatibilitet
         if (!userProgress.skippedTasks) userProgress.skippedTasks = [];
         if (typeof userProgress.lastSavedCount === 'undefined') {
             userProgress.lastSavedCount = userProgress.completedTasks.length;
@@ -23,7 +21,6 @@ try {
     console.error("Kunde inte läsa från minnet:", e);
 }
 
-// Spara till enhetens minne (Lokalt)
 function saveToDevice() {
     localStorage.setItem('vixen_progress', JSON.stringify(userProgress));
     renderLists();
@@ -52,7 +49,6 @@ function drawTasks(level) {
         return; 
     }
 
-    // Drar 3 till 5 uppdrag (Pentagon-motorn)
     const randomAmount = Math.floor(Math.random() * 3) + 3;
     const count = Math.min(randomAmount, available.length);
     const shuffled = [...available].sort(() => 0.5 - Math.random());
@@ -90,12 +86,10 @@ function reactivateTask(id) {
     saveToDevice();
 }
 
-// NYTT: Funktion för att stänga ett felöppnat uppdrag (Krysset)
+// FIX: Varningsrutan är nu helt borttagen. Uppdraget stängs direkt vid klick på krysset.
 function cancelActiveTask(id) {
-    if(confirm("Vill du ta bort detta uppdrag utan att spara det i historiken?")) {
-        userProgress.activeTasks = userProgress.activeTasks.filter(tid => tid !== id);
-        saveToDevice();
-    }
+    userProgress.activeTasks = userProgress.activeTasks.filter(tid => tid !== id);
+    saveToDevice();
 }
 
 // ==========================================
@@ -114,7 +108,7 @@ function exportProgress() {
         area.value = vixenKey;
         area.style.display = 'block';
         area.select();
-        alert("Ny Vixen Key genererad. Dina nuvarande framsteg är säkrade i denna nyckel.");
+        alert("Ny Vixen Key genererad. Spara denna kod!");
         checkUnsavedProgress(); 
     }
 }
@@ -122,34 +116,30 @@ function exportProgress() {
 function importProgress() {
     const key = document.getElementById('import-key-input').value.trim();
     if (!key) return;
-    if(!confirm("VARNING: Detta skriver över dina nuvarande framsteg med datan från nyckeln. Vill du fortsätta?")) return;
+    if(!confirm("Detta skriver över nuvarande data. Fortsätt?")) return;
 
     try {
         const decoded = decodeURIComponent(escape(atob(key)));
         const data = JSON.parse(decoded);
         if (data.completedTasks) {
             userProgress = data;
-            if (typeof userProgress.lastSavedCount === 'undefined') {
-                 userProgress.lastSavedCount = userProgress.completedTasks.length;
-            }
             saveToDevice();
             location.reload();
         }
     } catch (e) {
-        alert("Nyckeln är ogiltig.");
+        alert("Ogiltig nyckel.");
     }
 }
 
-// PANIK-KNAPPEN (Nödbromsen)
 function panicReset() {
-    if(confirm("⚠️ VARNING ⚠️\n\nDetta raderar ALLA dina framsteg permanent från denna enhet.\n\nÄr du absolut säker?")) {
+    if(confirm("Radera ALLA framsteg permanent?")) {
         localStorage.clear();
         location.reload();
     }
 }
 
 // ==========================================
-// 4. RENDERING & UI-HJÄLP
+// 4. RENDERING
 // ==========================================
 
 function checkUnsavedProgress() {
@@ -159,12 +149,10 @@ function checkUnsavedProgress() {
 
     if (unsavedCount >= 3) { 
         if (vaultBtn) vaultBtn.classList.add('pulsing-warning');
-        if (vaultInfo) vaultInfo.innerHTML = `⚠️ Du har <strong>${unsavedCount}</strong> osparade framsteg! Generera en ny nyckel nu.`;
-        if (vaultInfo) vaultInfo.style.color = '#ff4444'; 
+        if (vaultInfo) vaultInfo.innerHTML = `⚠️ Du har <strong>${unsavedCount}</strong> osparade framsteg!`;
     } else {
         if (vaultBtn) vaultBtn.classList.remove('pulsing-warning');
         if (vaultInfo) vaultInfo.innerHTML = "Säkra din resa med en <strong>Vixen Key</strong>.";
-        if (vaultInfo) vaultInfo.style.color = '#999';
     }
 }
 
@@ -174,7 +162,6 @@ function renderLists() {
     const historyEl = document.getElementById('history-list');
     const statsEl = document.getElementById('stats');
 
-    // AKTIVA UPPDRAG (PENTAGON-VY)
     if (activeEl) {
         activeEl.innerHTML = '';
         userProgress.activeTasks.forEach(id => {
@@ -193,7 +180,6 @@ function renderLists() {
         });
     }
 
-    // SKIPPADE UPPDRAG (VILANDE)
     if (skippedEl) {
         skippedEl.innerHTML = '';
         userProgress.skippedTasks.forEach(id => {
@@ -208,45 +194,30 @@ function renderLists() {
         });
     }
 
-    // HISTORIK (KOMMER IHÅG ALLT)
     if (historyEl) {
         historyEl.innerHTML = '';
-        if (userProgress.completedTasks.length === 0) {
-            historyEl.innerHTML = '<li style="opacity:0.5;">Ingen historik än...</li>';
-        } else {
-            userProgress.completedTasks.slice().reverse().forEach(id => {
-                const t = VIXEN_DATABASE.find(x => x.id === id);
-                if(t) historyEl.innerHTML += `<li><span class="history-lvl">N${t.level}</span> ${t.text}</li>`;
-            });
-        }
+        userProgress.completedTasks.slice().reverse().forEach(id => {
+            const t = VIXEN_DATABASE.find(x => x.id === id);
+            if(t) historyEl.innerHTML += `<li><span class=\"history-lvl\">N${t.level}</span> ${t.text}</li>`;
+        });
     }
 
-    // STATISTIK I HEADERN
     if (statsEl) {
         statsEl.innerText = `Klarade: ${userProgress.completedTasks.length} | Vilande: ${userProgress.skippedTasks.length}`;
     }
 }
 
-// ONBOARDING & MODALS
 function closeWelcomeModal() {
     localStorage.setItem('vixen_visited_before', 'true');
     const modal = document.getElementById('welcome-modal');
     if (modal) modal.style.display = 'none';
 }
 
-function checkFirstTimeVisitor() {
-    const hasVisited = localStorage.getItem('vixen_visited_before');
-    const modal = document.getElementById('welcome-modal');
-    if (!hasVisited && modal) { 
-        modal.style.display = 'flex'; 
-    } else if (modal) { 
-        modal.style.display = 'none'; 
-    }
-}
-
-// STARTA SYSTEMET
 window.onload = function() {
     renderLists();
     checkUnsavedProgress(); 
-    checkFirstTimeVisitor();
+    if (!localStorage.getItem('vixen_visited_before')) {
+        const modal = document.getElementById('welcome-modal');
+        if (modal) modal.style.display = 'flex';
+    }
 };
