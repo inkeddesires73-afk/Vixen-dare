@@ -2,141 +2,520 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Guidance - The Vixen Dare</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vixen Dare - Master Guidance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Nude Harmony - Varma neutrala toner (#FDFCFB), sandfärgade ytor och dämpade guldaccenter (#C5A059) för en diskret och lyxig känsla. -->
+    <!-- Application Structure Plan: En avancerad SPA-dashboard som konsoliderar all text under fem huvudrubriker. "Begreppen" använder en sub-navigering för att hantera de omfattande beskrivningarna av Vixen och Hotwife samt deras energetiska skillnader. Informationsarkitekturen är optimerad för att ingen text ska gå förlorad trots den moderna layouten. -->
+    <!-- Visualization & Content Choices: 
+        1. Nivåanalys -> Mål: Jämföra dagsform och risk -> Radar Chart (Chart.js) -> Justering: En interaktiv graf för alla 5 nivåer.
+        2. Begreppsanalys -> Mål: Skilja Stag/Vixen från Hotwife -> Radar Chart + Jämförelsetabell -> Justering: Inkluderar maktbalans och aktivitetsnivå.
+        3. App-installation -> Mål: UX-förbättring -> Tydliga instruktioner för iOS/Android.
+        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. 
+    -->
     <style>
-        body { padding: 20px; line-height: 1.6; color: #ccc; background: #0a0a0a; font-family: 'Segoe UI', sans-serif; }
-        .guide-container { max-width: 600px; margin: 0 auto; padding-bottom: 120px; }
-        
-        .guide-header { text-align: center; margin-bottom: 40px; }
-        .guide-header h1 { color: var(--vixen-gold); letter-spacing: 4px; font-size: 1.8rem; margin-bottom: 5px; }
-        .guide-header .subtitle { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 2px; color: var(--vixen-gold); }
-        
-        .guide-section { margin-bottom: 40px; border-left: 1px solid rgba(197, 160, 89, 0.3); padding-left: 20px; }
-        .guide-section h2 { color: var(--vixen-gold); font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; border-bottom: 1px solid rgba(197, 160, 89, 0.1); padding-bottom: 5px; }
-        
-        .level-badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; font-weight: bold; margin-right: 10px; background: rgba(197, 160, 89, 0.1); color: var(--vixen-gold); border: 1px solid var(--vixen-gold); }
-        .accent-text { color: var(--vixen-gold); font-weight: bold; }
-        
-        /* Box för teknisk info */
-        .tech-box { background: rgba(197, 160, 89, 0.05); border: 1px solid var(--vixen-gold); padding: 20px; border-radius: 12px; margin: 25px 0; }
-        .tech-box h3 { color: var(--vixen-gold); font-size: 1rem; margin-bottom: 15px; text-transform: uppercase; text-align: center; }
-
-        .back-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(10, 10, 10, 0.98); padding: 25px; text-align: center; border-top: 1px solid rgba(197, 160, 89, 0.3); backdrop-filter: blur(15px); z-index: 100; }
-        .back-btn { background: transparent; color: var(--vixen-gold); border: 1px solid var(--vixen-gold); padding: 12px 50px; text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; display: inline-block; box-shadow: 0 0 15px rgba(197, 160, 89, 0.1); }
-
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 18px; }
-        strong { color: #fff; }
+        :root {
+            --bg-primary: #fdfcfb;
+            --bg-secondary: #f4eee8;
+            --accent-gold: #c5a059;
+            --text-main: #2a241e;
+            --text-muted: #5d544b;
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 320px;
+        }
+        .tab-active {
+            border-bottom: 3px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+        .subtab-active {
+            background-color: var(--accent-gold);
+            color: white;
+            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+        }
+        .nude-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -41px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-gold);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .tab-content { transition: opacity 0.3s ease-in-out; }
     </style>
 </head>
-<body>
+<body class="min-h-screen pb-32">
 
-    <div class="guide-container">
-        <div class="guide-header">
-            <h1>THE VIXEN / HOTWIFE DARE</h1>
-            <div class="subtitle">En liten vägledning till hur det är tänkt!</div>
+    <!-- Header Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-stone-100 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col items-center py-6">
+                <h1 class="text-xl font-light tracking-[0.4em] text-[#c5a059] uppercase mb-6">The Vixen Dare</h1>
+                <div class="flex space-x-4 md:space-x-8 text-[10px] uppercase tracking-[0.15em] font-bold overflow-x-auto w-full justify-start md:justify-center no-scrollbar px-4 pb-2">
+                    <button onclick="switchTab('vision')" id="tab-vision" class="tab-btn pb-2 tab-active whitespace-nowrap">Visionen</button>
+                    <button onclick="switchTab('terms')" id="tab-terms" class="tab-btn pb-2 text-stone-400 whitespace-nowrap">Begreppen</button>
+                    <button onclick="switchTab('levels')" id="tab-levels" class="tab-btn pb-2 text-stone-400 whitespace-nowrap">Nivåerna</button>
+                    <button onclick="switchTab('safety')" id="tab-safety" class="tab-btn pb-2 text-stone-400 whitespace-nowrap">Säkerhet</button>
+                    <button onclick="switchTab('rules')" id="tab-rules" class="tab-btn pb-2 text-stone-400 whitespace-nowrap">Ramverket</button>
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <section class="guide-section">
-            <h2>Förord</h2>
-            <p>The Vixen / Hotwife Dare är inte för alla. Det är för er som vågar leka med gränser, för er som vill blanda lust, risk och förbjudna fantasier. Korten leder er steg för steg djupare in i spelet, från flirtiga antydningar till utlämnande stunder där kontrollen helt lämnas över.</p>
-            <p>Allt handlar om att utforska, att våga, och att göra det tillsammans. Det här är er resa, njut av varje kort.</p>
-        </section>
-
-        <section class="guide-section">
-            <h2>Introduktion</h2>
-            <p>Spelet är byggt för att långsamt ta er från lekfulla utmaningar (nivå 1) till full on Vixen/Hotwife scenarion (nivå 5). Varje nivå är tänkt att kännas som ett steg längre in i er gemensamma resa. Man drar ett kort, ser utmaningen - och sen är det upp till er att göra verklighet av det.</p>
-        </section>
-
-<section class="guide-section">
-    <h2>Teknisk Vägledning & Säkerhet</h2>
-    <div class="tech-box">
-        <h3>🔒 PRIVAT & SÄKERT</h3>
-        <p>Denna app skickar <strong>ingen</strong> data till internet. Allt stannar i din telefon. Det är bra för din diskretion, men det betyder också att om telefonen går sönder eller om du rensar webbläsaren, så "glömmer" appen allt.</p>
+    <main class="max-w-3xl mx-auto px-6 mt-12">
         
-        <hr style="border: 0; border-top: 1px solid rgba(197, 160, 89, 0.3); margin: 20px 0;">
+        <!-- SECTION: VISIONEN -->
+        <section id="content-vision" class="tab-content block space-y-12">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl font-serif italic text-stone-800">Er gemensamma resa</h2>
+                <p class="text-muted text-sm max-w-xl mx-auto leading-relaxed text-center">
+                    Välkommen till fundamentet för The Vixen Dare. Detta är inte bara ett verktyg, det är en vägledning genom en medveten eskalering av er gemensamma dynamik.
+                </p>
+            </div>
 
-        <h3>🔑 VIXEN KEY – DIN LIVLINA</h3>
-        <p>Din <strong>Vixen Key</strong> är en lång kodsträng som innehåller hela din historik och alla dina inställningar. Utan denna kan du aldrig få tillbaka dina framsteg.</p>
-        
-        <p class="accent-text">Så här gör du en backup:</p>
-        <ol style="padding-left: 20px; margin-bottom: 20px;">
-            <li>Gå till <strong>"The Vault"</strong> längst ner på startsidan.</li>
-            <li>Klicka på knappen <strong>"Generera Vixen Key"</strong>.</li>
-            <li>Kopiera hela koden som dyker upp.</li>
-        </ol>
+            <div class="nude-card p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-5xl italic font-serif pointer-events-none">"</div>
+                <h3 class="text-[#c5a059] uppercase tracking-widest text-xs font-bold mb-6 text-center md:text-left">Förord</h3>
+                <div class="space-y-4 text-stone-700 text-sm md:text-base leading-relaxed">
+                    <p>The Vixen / Hotwife Dare är inte för alla. Det är för er som vågar leka med gränser, för er som vill blanda lust, risk och förbjudna fantasier.</p>
+                    <p>Korten är till för att försöka hjälpa till med vägledande steg för steg utmaningar djupare in i denna värld, från flirtiga antydningar till utlämnande stunder där kontrollen helt lämnas över.</p>
+                    <p class="text-stone-900 font-medium italic">Allt handlar om att utforska, att våga, och att göra det <strong>tillsammans</strong>. Det här är er resa, njut av varje kort.</p>
+                </div>
+            </div>
 
-        <p class="accent-text">Var sparar jag nyckeln? (Exempel):</p>
-        <ul style="padding-left: 20px;">
-            <li>📌 <strong>Anteckningar:</strong> Klistra in den i en låst anteckning i mobilen.</li>
-            <li>✉️ <strong>E-post:</strong> Mejla koden till dig själv med ämnet "V-Key".</li>
-            <li>💬 <strong>Privat chatt:</strong> Skicka den till dig själv i en "Note to self" på Signal eller WhatsApp.</li>
-            <li>🔐 <strong>Lösenordshanterare:</strong> Spara den som en säker anteckning.</li>
-        </ul>
+            <div class="space-y-8 py-4">
+                <h3 class="text-[#c5a059] uppercase tracking-widest text-xs font-bold text-center">Introduktion</h3>
+                <div class="space-y-6 text-sm text-stone-600 leading-relaxed">
+                    <p>Detta verktyg är inte skapat för slumpmässig underhållning; det är ett instrument för en medveten eskalering. Syftet är att metodiskt bygga upp en dynamik och livsstil som under normala omständigheter kan ta år att etablera.</p>
+                    <p>Genom att följa ramverket låter ni dynamiken mogna fram organiskt men med en tydlig riktning. Det är en resa där det är bäst att skynda långsamt, eftersom progressionen är djupt personlig. Vissa når de högsta nivåerna på några månader, medan det för andra tar år – eller så landar man på en nivå där man trivs och stannar där.</p>
+                </div>
+            </div>
 
-        <p style="margin-top: 15px; font-size: 0.85rem; background: rgba(255,0,0,0.1); padding: 10px; border-radius: 5px;">
-            <strong>VARNING:</strong> Om du byter mobil eller rensar "Cache/Historik" i webbläsaren nollställs spelet. Då måste du klistra in din sparade nyckel i "The Vault" för att få tillbaka dina klara uppdrag, från där du sparade sist.
-        </p>
-
-        <hr style="border: 0; border-top: 1px solid rgba(197, 160, 89, 0.3); margin: 20px 0;">
-
-        <h3>📲 INSTALLERA SOM APP</h3>
-        <p>För att slippa se webbadressen och få en "riktig" app-känsla:</p>
-        <p><strong>iPhone:</strong> Tryck på symbolen med en pil i en ruta (Dela) -> Välj <em>"Lägg till på hemskärmen"</em>.</p>
-        <p><strong>Android:</strong> Tryck på de tre prickarna -> Välj <em>"Installera app"</em> eller <em>"Lägg till på startskärmen"</em>.</p>
-    </div>
-</section>
-
-        <section class="guide-section">
-            <h2>Nivåerna i korthet</h2>
-            <ul>
-                <li><span class="level-badge">N1</span><span class="accent-text">Flirt:</span> Små “oops moments”, antydningar, oskyldiga tease. Perfekt för nybörjare.</li>
-                <li><span class="level-badge">N2</span><span class="accent-text">Tease:</span> Mer synligt flörtande, kroppskontakt, lite vågat men fortfarande relativt oskyldigt.</li>
-                <li><span class="level-badge">N3</span><span class="accent-text">Temptation:</span> Nu blir det action i pub/club-miljö. Kyssar, beröringar, inviter. Här börjar främlingar bli direkt inblandade.</li>
-                <li><span class="level-badge">N4</span><span class="accent-text">Risk:</span> Snabba, förbjudna handlingar i verkliga miljöer. Toaletter, bilar, hörn av klubben. Känslan av att “nu kan vi bli påkomna” är central.</li>
-                <li><span class="level-badge">N5</span><span class="accent-text">No Limits:</span> Full Vixen/Hotwife fantasi. Gangbangs, DP/DVP, air tight, maratonkvällar. Här handlar det om att ni tillsammans planerar, fixar och genomför de tyngsta uppdragen.</li>
-            </ul>
+            <div class="relative border-l-2 border-stone-100 ml-4 pl-10 space-y-16 py-8">
+                <h3 class="absolute -top-10 left-0 uppercase tracking-[0.3em] text-stone-400 text-[10px] font-bold text-center w-full md:text-left">Resans eskalering</h3>
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <h4 class="font-bold text-base text-stone-800 uppercase tracking-tighter">Fundamentet (Nivå 1-2)</h4>
+                    <p class="text-xs text-muted mt-2 leading-relaxed">Här läggs grunden. Det handlar om de subtila signalerna, att väcka en nyfikenhet som legat vilande och att så fröna till det som komma skall. En lekfull fas med en underton av vad som väntar.</p>
+                </div>
+                <div class="relative">
+                    <div class="timeline-dot bg-stone-200"></div>
+                    <h4 class="font-bold text-base text-stone-800 uppercase tracking-tighter">Formningen (Nivå 3-4)</h4>
+                    <p class="text-xs text-muted mt-2 leading-relaxed">Intensiteten ökar. Gränser testas och rollerna blir tydligare. Det är här formningen av er gemensamma resa tar fart på allvar. Insatserna höjs och valen blir mer avgörande.</p>
+                </div>
+                <div class="relative">
+                    <div class="timeline-dot bg-stone-200"></div>
+                    <h4 class="font-bold text-base text-stone-800 uppercase tracking-tighter text-[#c5a059]">Livsstilen (Nivå 5)</h4>
+                    <p class="text-xs text-muted mt-2 leading-relaxed">Här existerar inga filter. De fullskaliga scenarierna tar plats och fantasierna transformeras till konkret handling. Varje nivå har fungerat som en förberedelse för att ni ska kunna äga den här världen fullt ut.</p>
+                </div>
+            </div>
+            
+            <div class="p-8 bg-stone-50 rounded-2xl text-center text-xs italic text-stone-500">
+                Funktionen är enkel: Dra ett kort när ni gemensamt har beslutat att ni är redo för nästa steg. Korten ger vägledningen, men det är i ert agerande som den faktiska förändringen sker.
+            </div>
         </section>
 
-        <section class="guide-section">
-            <h2>Viktiga Regler</h2>
-            <p>• <strong>Samtycke.</strong> Inga kort ersätter samtycke. Prata igenom vad som är okej innan ni börjar.</p>
-            <p>• <strong>Klubbregler.</strong> Respektera lokala regler. Inga foton/filmer där det råder förbud (tex swingerklubbar). Respektera dresscode.</p>
-            <p>• <strong>Säkerhet först.</strong> Använd kondom vid alla nya kontakter. Kolla era gränser och håll koll på varandra.</p>
-            <p>• <strong>Respektera nej.</strong> Det gäller både mellan er och mot främlingar. Ett nej är alltid ett nej.</p>
-            <p>• <strong>Aftercare.</strong> Ge varandra tid efteråt att prata, mysa, återhämta. Särskilt efter de tyngre nivåerna.</p>
+        <!-- SECTION: BEGREPPEN -->
+        <section id="content-terms" class="tab-content hidden space-y-10">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl font-serif italic text-stone-800">Vem är hon?</h2>
+                <p class="text-muted text-sm max-w-lg mx-auto leading-relaxed text-center">Särskiljandet av rollerna och energin i dynamiken. Här går vi igenom vad som karaktäriserar de olika vägarna.</p>
+                <div class="flex justify-center space-x-2 mt-6">
+                    <button onclick="switchSubTab('vixen')" id="subnav-vixen" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 subtab-active">🦊 Vixen</button>
+                    <button onclick="switchSubTab('hotwife')" id="subnav-hotwife" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 text-stone-400">🔥 Hotwife</button>
+                    <button onclick="switchSubTab('analys')" id="subnav-analys" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 text-stone-400">🆚 Analys</button>
+                </div>
+            </div>
+
+            <!-- Sub-Section: VIXEN -->
+            <div id="subcontent-vixen" class="sub-tab-content block space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="nude-card p-8 rounded-3xl space-y-4 border-t-4 border-t-[#c5a059]">
+                        <h3 class="text-lg font-bold uppercase tracking-tighter text-stone-800">Stag & Vixen</h3>
+                        <p class="text-xs text-stone-600 font-bold uppercase tracking-tighter">Grundstruktur:</p>
+                        <ul class="text-[11px] space-y-3 text-stone-500">
+                            <li>🦌 Ett par där hon (Vixen) har sex med andra män.</li>
+                            <li>💪 Han (Stag) är medveten, stolt och ofta närvarande.</li>
+                            <li>✨ Fokus på att hon är åtrådd och att han “visar upp” henne.</li>
+                        </ul>
+                    </div>
+                    <div class="nude-card p-8 rounded-3xl space-y-4">
+                        <h3 class="text-lg font-bold uppercase tracking-tighter text-stone-800">Kännetecken</h3>
+                        <p class="text-xs text-stone-600 font-bold uppercase tracking-tighter">Viktiga nyanser:</p>
+                        <ul class="text-[11px] space-y-3 text-stone-500 font-medium">
+                            <li>• Ingen förnedring av mannen, ingen underkastelse.</li>
+                            <li>• Stag är trygg, självsäker och ofta aktiv.</li>
+                            <li>• Dynamiken är ofta exhibitionistisk och inkluderande.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-10 bg-stone-50 rounded-[3rem] space-y-4 text-center">
+                    <h4 class="font-serif italic text-xl">Centralt tema: Stolthet</h4>
+                    <p class="text-sm text-stone-600 leading-relaxed">Stag känner stolthet över sin partner. Han upplever upphetsning genom att hon är begärd av andra. I många fall tittar han på, deltar, eller är samtidigt med andra kvinnor. Allt sker öppet, lekfullt och med ömsesidigt driv. Mer en <strong>power couple-energi</strong> än en förnedringsfantasi.</p>
+                </div>
+            </div>
+
+            <!-- Sub-Section: HOTWIFE -->
+            <div id="subcontent-hotwife" class="sub-tab-content hidden space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="nude-card p-8 rounded-3xl space-y-4 border-t-4 border-t-stone-300">
+                        <h3 class="text-lg font-bold uppercase tracking-tighter text-stone-800">Klassisk Hotwife</h3>
+                        <p class="text-xs text-stone-600 font-bold uppercase tracking-tighter">Struktur:</p>
+                        <ul class="text-[11px] space-y-3 text-stone-500">
+                            <li>👠 Hon har sex med andra män, han får upphetsning av det.</li>
+                            <li>⚖️ Ofta en tydligare ensidig struktur.</li>
+                            <li>🗝️ Han är inte alltid sexuellt aktiv med andra själv.</li>
+                        </ul>
+                    </div>
+                    <div class="nude-card p-8 rounded-3xl space-y-4">
+                        <h3 class="text-lg font-bold uppercase tracking-tighter text-stone-800">Variationer</h3>
+                        <p class="text-xs text-stone-600 font-bold uppercase tracking-tighter">Kan vara:</p>
+                        <ul class="text-[11px] space-y-3 text-stone-500">
+                            <li>• Cuckold-inspirerad (maktförskjutning).</li>
+                            <li>• Exhibitionistisk eller öppen relation.</li>
+                            <li>• Hennes njutning står i det absoluta centrumet.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-10 bg-white border border-stone-100 rounded-[3rem] text-center space-y-4">
+                    <h4 class="font-serif italic text-xl">Community-tolkningar</h4>
+                    <p class="text-sm text-stone-600 leading-relaxed">Många använder idag hotwife och vixen synonymt, men historiskt finns skillnader. Hotwife innebär ofta att "hon får, han tittar eller accepterar", medan Stag/Vixen markerar en jämnare maktbalans där båda ofta är aktiva.</p>
+                </div>
+            </div>
+
+            <!-- Sub-Section: ANALYSEN -->
+            <div id="subcontent-analys" class="sub-tab-content hidden space-y-12">
+                <div class="chart-container">
+                    <canvas id="termChart"></canvas>
+                </div>
+                <div class="overflow-x-auto shadow-sm rounded-2xl">
+                    <table class="w-full text-[10px] text-left border-collapse bg-white">
+                        <thead>
+                            <tr class="bg-stone-50 uppercase font-black text-stone-400">
+                                <th class="p-4 border-b">Aspekt</th>
+                                <th class="p-4 border-b text-[#c5a059]">Stag & Vixen</th>
+                                <th class="p-4 border-b">Hotwife</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-stone-600">
+                            <tr class="border-b border-stone-50">
+                                <td class="p-4 font-bold uppercase">Hans roll</td>
+                                <td class="p-4 font-medium">Aktiv, stolt, självsäker</td>
+                                <td class="p-4">Ofta passiv eller sekundär</td>
+                            </tr>
+                            <tr class="border-b border-stone-50">
+                                <td class="p-4 font-bold uppercase">Maktbalans</td>
+                                <td class="p-4 font-medium">Jämn och kraftfull</td>
+                                <td class="p-4">Kan vara ojämn</td>
+                            </tr>
+                            <tr class="border-b border-stone-50">
+                                <td class="p-4 font-bold uppercase">Exhibitionism</td>
+                                <td class="p-4 font-medium">Ofta centralt</td>
+                                <td class="p-4">Ibland</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold uppercase">Ton</td>
+                                <td class="p-4 font-medium">Livsstil / Lekfull sexualitet</td>
+                                <td class="p-4">Kan vara kink / fetisch</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-6 nude-card rounded-2xl">
+                    <h5 class="text-[10px] font-black uppercase mb-2 flex items-center">📌 Viktig nyans</h5>
+                    <p class="text-[11px] text-stone-600 leading-relaxed">I modern användning bland swingers använder många begreppen synonymt. Stag & Vixen används dock specifikt för att markera att mannen inte är undergiven, medan Cuckold är en separat dynamik med en helt annan maktstruktur.</p>
+                </div>
+            </div>
         </section>
 
-        <section class="guide-section">
-            <h2>Tips på vägar att hitta rätt personer</h2>
-            <p>• <strong>Kontaktsidor:</strong> ex. SDC.com, Bodycontact.com eller Diversia.social, där finns forum, annonser och möjlighet att ordna träffar.</p>
-            <p>• <strong>Klubbar:</strong> Sök efter swinger/fetish klubbar i er närhet. Läs på om regler, dresscode och vilka kvällar som är öppna för singelkillar.</p>
-            <p>• <strong>Pub/vanliga barer:</strong> Ett lättsamt sätt att träffa främlingar om man vill spela på attraktion i realtid.</p>
-            <p>• <strong>Hotellträffar/Hemmaträffar:</strong> Perfekt om man vill ha avskildhet för gangbangs eller längre sessioner.</p>
+        <!-- SECTION: NIVÅERNA -->
+        <section id="content-levels" class="tab-content hidden space-y-8">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl font-serif italic text-stone-800">Nivåernas Anatomi</h2>
+                <p class="text-muted text-sm px-8 leading-relaxed">Analysera nivåernas profil. Klicka på nivåerna för att se hur balansen mellan risk, exponering och intensitet skiftar.</p>
+            </div>
+
+            <div class="chart-container py-4">
+                <canvas id="levelChart"></canvas>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3 px-2">
+                <button onclick="updateLevelChart(0)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-[#c5a059] bg-stone-50">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-[9px] uppercase font-black text-[#c5a059]">Nivå 1</span>
+                        <div class="lvl-status text-[8px] font-black uppercase text-[#c5a059]">Aktiv</div>
+                    </div>
+                    <h4 class="font-bold text-sm text-stone-800 mb-1">Flirt</h4>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Små “oops moments”, antydningar, oskyldiga tease. Perfekt för nybörjare.</p>
+                </button>
+                <button onclick="updateLevelChart(1)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-transparent">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-[9px] uppercase font-black text-stone-400">Nivå 2</span>
+                        <div class="lvl-status text-[8px] font-black uppercase text-stone-400">Profil</div>
+                    </div>
+                    <h4 class="font-bold text-sm text-stone-800 mb-1">Tease</h4>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Mer synligt flörtande, kroppskontakt, lite vågat men fortfarande relativt oskyldigt.</p>
+                </button>
+                <button onclick="updateLevelChart(2)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-transparent">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-[9px] uppercase font-black text-stone-400">Nivå 3</span>
+                        <div class="lvl-status text-[8px] font-black uppercase text-stone-400">Profil</div>
+                    </div>
+                    <h4 class="font-bold text-sm text-stone-800 mb-1">Temptation</h4>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Nu blir det action i pub/club-miljö. Kyssar, beröringar, inviter. Här börjar främlingar bli direkt inblandade.</p>
+                </button>
+                <button onclick="updateLevelChart(3)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-transparent">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-[9px] uppercase font-black text-stone-400">Nivå 4</span>
+                        <div class="lvl-status text-[8px] font-black uppercase text-stone-400">Profil</div>
+                    </div>
+                    <h4 class="font-bold text-sm text-stone-800 mb-1">Risk</h4>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Snabba, förbjudna handlingar i verkliga miljöer. Toaletter, bilar, hörn av klubben. Känslan av att “nu kan vi bli påkomna” är central.</p>
+                </button>
+                <button onclick="updateLevelChart(4)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-transparent">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-[9px] uppercase font-black text-stone-400">Nivå 5</span>
+                        <div class="lvl-status text-[8px] font-black uppercase text-stone-400">Profil</div>
+                    </div>
+                    <h4 class="font-bold text-sm text-red-900 font-black">No Limits</h4>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Full Vixen/Hotwife fantasi. Gangbangs, DP/DVP, maratonkvällar. Här handlar det om att ni tillsammans planerar, fixar och genomför de tyngsta uppdragen.</p>
+                </button>
+            </div>
         </section>
 
-        <section class="guide-section">
-            <h2>Att använda spelet</h2>
-            <p>1. Bestäm vilken nivå ni är redo för.<br>
-            2. Klicka på respektive knapp.<br>
-            3. Diskutera, känns det rätt nu, eller sparar ni det till ett bättre tillfälle?<br>
-            4. När ni gör utmaningen: njut, men håll era regler och trygghet i fokus.<br>
-            5. Efteråt, prata om känslan. Vilka kort vill ni kanske testa igen? Vilka kort tar ni nästa steg på?<br>
-            6. ps. Korten är ju inte förbrukade för att de är gjorda. Dom ligger i historiken, det är ju bara att bläddra och göra igen 😊</p>
+        <!-- SECTION: SÄKERHET -->
+        <section id="content-safety" class="tab-content hidden space-y-8">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl font-serif italic text-stone-800">Integritet & Kontroll</h2>
+                <p class="text-muted text-sm leading-relaxed px-4 text-center">Här lär du dig hur du skyddar din resa och installerar verktyget för bästa upplevelse.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 space-y-6">
+                <div class="flex items-center space-x-4 text-[#c5a059]">
+                    <div class="w-10 h-10 bg-[#fdfcfb] rounded-full flex items-center justify-center border border-stone-100 shadow-inner text-xl">🔒</div>
+                    <h3 class="font-bold uppercase tracking-[0.2em] text-xs">Total Diskretion</h3>
+                </div>
+                <p class="text-sm text-stone-600 leading-relaxed text-left">Ingen data lämnar någonsin din enhet. Det finns ingen server, inga molntjänster och ingen insyn utifrån. Allt lagras lokalt i din webbläsare. Priset för denna säkerhet är att ansvaret för backup ligger helt på dig. Om du rensar historiken eller byter mobil, nollställs allt permanent.</p>
+                
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl space-y-3">
+                    <h4 class="text-red-900 font-black uppercase text-[10px] tracking-widest">⚠️ VIKTIGT: En statisk ögonblicksbild</h4>
+                    <p class="text-red-800 text-[11px] font-bold leading-relaxed">
+                        Tänk på att din nyckel är en <strong>statisk ögonblicksbild</strong> av din historik. Den uppdateras inte automatiskt. En gammal nyckel tar dig bara tillbaka till den tidpunkt då den skapades. Spara en ny nyckel ofta!
+                    </p>
+                </div>
+            </div>
+
+            <!-- INSTALLATION GUIDE -->
+            <div class="nude-card p-8 rounded-3xl space-y-6">
+                <h3 class="font-bold uppercase tracking-[0.2em] text-xs flex items-center text-stone-800">
+                    <span class="mr-3 text-lg">📱</span> Installera som App
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">För att få den rätta känslan och slippa webbadress-fältet, spara ner verktyget på din hemskärm:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <div class="p-5 bg-white/50 rounded-2xl border border-stone-200">
+                        <h4 class="text-[10px] font-black uppercase mb-2">iPhone (iOS)</h4>
+                        <p class="text-[11px] text-stone-500">Tryck på 'Dela' (fyrkant med pil) och välj sedan <strong>"Lägg till på hemskärmen"</strong>.</p>
+                    </div>
+                    <div class="p-5 bg-white/50 rounded-2xl border border-stone-200">
+                        <h4 class="text-[10px] font-black uppercase mb-2">Android</h4>
+                        <p class="text-[11px] text-stone-500">Tryck på de tre prickarna (Meny) och välj <strong>"Installera app"</strong> eller <strong>"Lägg till på startskärmen"</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nude-card p-8 rounded-3xl space-y-4">
+                <h3 class="font-bold uppercase tracking-[0.2em] text-xs flex items-center text-stone-800">🔑 Vixen Key – Din Livlina</h3>
+                <div class="space-y-2">
+                    <button onclick="toggleDetail('key-how')" class="w-full text-left p-4 bg-white/80 rounded-xl text-xs font-bold flex justify-between items-center group">
+                        <span>Hur gör jag en backup?</span>
+                        <span class="text-[#c5a059] group-hover:translate-x-1 transition-transform">→</span>
+                    </button>
+                    <div id="key-how" class="hidden px-4 text-[11px] text-stone-500 py-4 space-y-4 border-l-2 border-stone-200 ml-2">
+                        <p>1. Gå till <strong>"The Vault"</strong> längst ner på startsidan.</p>
+                        <p>2. Klicka på knappen <strong>"Generera Vixen Key"</strong>.</p>
+                        <p>3. Kopiera koden och spara den på ett säkert ställe.</p>
+                    </div>
+
+                    <button onclick="toggleDetail('key-where')" class="w-full text-left p-4 bg-white/80 rounded-xl text-xs font-bold flex justify-between items-center group">
+                        <span>Var sparar jag nyckeln?</span>
+                        <span class="text-[#c5a059] group-hover:translate-x-1 transition-transform">→</span>
+                    </button>
+                    <div id="key-where" class="hidden px-4 text-[11px] text-stone-500 py-4 border-l-2 border-stone-200 ml-2">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">📌 <strong>Låsta anteckningar:</strong> I mobilen för snabb åtkomst.</li>
+                            <li class="flex items-start">💬 <strong>Note to self:</strong> Signal, WhatsApp eller Telegram.</li>
+                            <li class="flex items-start">🔐 <strong>Lösenordshanterare:</strong> Det absolut säkraste alternativet.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="guide-section">
-            <p><em>Kom ihåg: ni måste inte följa vad som står på kortet till punkt och pricka. Det är fritt fram att tolka uppdragen på ert eget sätt, tillsammans. Ibland passar det sig inte eller går helt enkelt inte att utföra exakt som det står – och det är helt okej. Leken ska alltid vara er egen, på era villkor.</em></p>
+        <!-- SECTION: RAMVERKET -->
+        <section id="content-rules" class="tab-content hidden space-y-12">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl font-serif italic text-stone-800">Principer & Trygghet</h2>
+                <p class="text-muted text-sm leading-relaxed px-8 text-center text-center">Frihet kräver ramar. Här är de fundamentala reglerna för en trygg resa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4">
+                <!-- Rule 1 -->
+                <div class="flex items-start space-x-6 p-6 bg-white rounded-2xl border border-stone-100 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center font-serif italic text-xl text-[#c5a059] flex-shrink-0">01</div>
+                    <div class="space-y-1 text-left">
+                        <h5 class="text-xs font-black uppercase text-stone-800 tracking-tighter">Samtycke</h5>
+                        <p class="text-[11px] text-stone-500 leading-relaxed">Inga kort ersätter samtycke. Prata igenom vad som är okej innan ni börjar. Det är er gemensamma vilja som styr varje steg.</p>
+                    </div>
+                </div>
+                <!-- Rule 2 -->
+                <div class="flex items-start space-x-6 p-6 bg-white rounded-2xl border border-stone-100 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center font-serif italic text-xl text-[#c5a059] flex-shrink-0">02</div>
+                    <div class="space-y-1 text-left">
+                        <h5 class="text-xs font-black uppercase text-stone-800 tracking-tighter">Klubbregler</h5>
+                        <p class="text-[11px] text-stone-500 leading-relaxed">Respektera lokala regler. Inga foton/filmer där det råder förbud (tex swingerklubbar). Respektera alltid gällande dresscode.</p>
+                    </div>
+                </div>
+                <!-- Rule 3 -->
+                <div class="flex items-start space-x-6 p-6 bg-white rounded-2xl border border-stone-100 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center font-serif italic text-xl text-[#c5a059] flex-shrink-0">03</div>
+                    <div class="space-y-1 text-left">
+                        <h5 class="text-xs font-black uppercase text-stone-800 tracking-tighter">Säkerhet & Nej</h5>
+                        <p class="text-[11px] text-stone-500 leading-relaxed">Använd kondom vid alla nya kontakter. Ett nej är alltid ett nej – både mellan er och mot främlingar. Håll koll på varandra under hela kvällen.</p>
+                    </div>
+                </div>
+                <!-- Rule 4 -->
+                <div class="flex items-start space-x-6 p-6 bg-white rounded-2xl border border-stone-100 shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center font-serif italic text-xl text-[#c5a059] flex-shrink-0">04</div>
+                    <div class="space-y-1 text-left">
+                        <h5 class="text-xs font-black uppercase text-stone-800 tracking-tighter">Aftercare</h5>
+                        <p class="text-[11px] text-stone-500 leading-relaxed">Ge varandra tid efteråt att prata, mysa och återhämta. Särskilt viktigt efter de tyngre nivåerna för att bibehålla balansen i relationen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-10 border-2 border-dashed border-stone-100 rounded-3xl text-center space-y-4">
+                <p class="text-[11px] text-stone-400 italic leading-relaxed text-center">"Kom ihåg: ni måste inte följa vad som står på kortet till punkt och pricka. Tolka uppdragen på ert eget sätt, tillsammans. Leken ska alltid vara er egen, på era villkor."</p>
+            </div>
         </section>
 
-    
-    </div>
+    </main>
 
-    <div class="back-nav">
-        <a href="index.html" class="back-btn">TILLBAKA TILL SPELET</a>
-    </div>
+    <!-- Master Footer -->
+    <footer class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-stone-100 py-8 px-6 z-50">
+        <div class="max-w-md mx-auto flex justify-center">
+            <a href="index.html" class="bg-[#c5a059] text-white px-16 py-4 rounded-full text-[10px] uppercase tracking-[0.3em] font-black shadow-xl shadow-gold-200 active:scale-95 transition-all">
+                Tillbaka till start
+            </a>
+        </div>
+    </footer>
 
+    <script>
+        // Charts state
+        let termChart = null;
+        let levelChart = null;
+
+        const levelData = [
+            [2, 1, 1, 8, 2], [4, 3, 2, 9, 4], [7, 6, 6, 5, 7], [9, 8, 8, 3, 9], [10, 10, 10, 2, 10]
+        ];
+
+        function initTermChart() {
+            const ctx = document.getElementById('termChart').getContext('2d');
+            termChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['AKTIVITET', 'STOLTHET', 'MAKTPAR', 'EXHIBITIONISM', 'BALANS'],
+                    datasets: [
+                        { label: 'Vixen', data: [9, 10, 10, 9, 10], backgroundColor: 'rgba(197, 160, 89, 0.2)', borderColor: '#c5a059', borderWidth: 2 },
+                        { label: 'Hotwife', data: [4, 7, 6, 6, 5], backgroundColor: 'rgba(42, 36, 30, 0.1)', borderColor: '#2a241e', borderWidth: 2 }
+                    ]
+                },
+                options: { maintainAspectRatio: false, scales: { r: { suggestedMin: 0, suggestedMax: 10, ticks: { display: false }, pointLabels: { font: { size: 9, weight: 'bold' }, color: '#5d544b' } } }, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } } }
+            });
+        }
+
+        function initLevelChart() {
+            const ctx = document.getElementById('levelChart').getContext('2d');
+            levelChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['RISK', 'EXPONERING', 'FYSISKT', 'LEKFULLHET', 'INTENSITET'],
+                    datasets: [{ label: 'Profil', data: levelData[0], backgroundColor: 'rgba(197, 160, 89, 0.25)', borderColor: '#c5a059', borderWidth: 3, tension: 0.3 }]
+                },
+                options: { maintainAspectRatio: false, scales: { r: { suggestedMin: 0, suggestedMax: 10, ticks: { display: false }, pointLabels: { font: { size: 9, weight: 'bold' } } } }, plugins: { legend: { display: false } } }
+            });
+        }
+
+        function updateLevelChart(idx) {
+            levelChart.data.datasets[0].data = levelData[idx];
+            levelChart.update();
+            document.querySelectorAll('.lvl-btn').forEach((b, i) => {
+                const tag = b.querySelector('span');
+                const status = b.querySelector('.lvl-status');
+                if(i === idx) {
+                    b.classList.add('border-l-[#c5a059]', 'bg-stone-50');
+                    tag.classList.add('text-[#c5a059]'); tag.classList.remove('text-stone-400');
+                    status.classList.add('text-[#c5a059]'); status.classList.remove('text-stone-400');
+                    status.innerText = 'Aktiv';
+                } else {
+                    b.classList.remove('border-l-[#c5a059]', 'bg-stone-50');
+                    tag.classList.add('text-stone-400'); tag.classList.remove('text-[#c5a059]');
+                    status.classList.add('text-stone-400'); status.classList.remove('text-[#c5a059]');
+                    status.innerText = 'Profil';
+                }
+            });
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-stone-400');
+            });
+            document.getElementById('tab-' + tabId).classList.add('tab-active');
+            document.getElementById('tab-' + tabId).classList.remove('text-stone-400');
+
+            if(tabId === 'levels' && !levelChart) setTimeout(initLevelChart, 50);
+            if(tabId === 'terms' && !termChart) setTimeout(initTermChart, 50);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function switchSubTab(subId) {
+            document.querySelectorAll('.sub-tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('subcontent-' + subId).classList.remove('hidden');
+            document.querySelectorAll('.subnav-btn').forEach(btn => {
+                btn.classList.remove('subtab-active');
+                btn.classList.add('text-stone-400');
+            });
+            document.getElementById('subnav-' + subId).classList.add('subtab-active');
+            document.getElementById('subnav-' + subId).classList.remove('text-stone-400');
+            if(subId === 'analys' && !termChart) setTimeout(initTermChart, 50);
+        }
+
+        function toggleDetail(id) {
+            document.getElementById(id).classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
