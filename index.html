@@ -71,22 +71,34 @@
     <footer>
         <button class="panic-btn" onclick="panicReset()">RADERA ALL DATA PERMANENT</button>
     </footer>
+<!-- NY PREMIUM VÄLKOMSTMODAL -->
 <div id="welcome-modal" class="modal-overlay">
     <div class="modal-content">
-        <h2>Välkommen till <span style="color: var(--vixen-gold);">Vixen Dare</span></h2>
-        <p>Detta är ett privat verktyg för din utveckling. Ingen data lämnar din enhet.</p>
+        <div class="logo-container" style="width: 70px; height: 70px; margin-bottom: 20px;">
+            <img src="Vixen.png" alt="Logo" class="header-logo" onerror="this.style.display='none'">
+        </div>
+        <h2>Välkommen till <span style="color: #c5a059;">Vixen Dare</span></h2>
+        <p class="modal-intro">Detta är ett privat instrument för din utveckling. All data stannar lokalt på din enhet.</p>
         
-        <div class="instruction-step">
-            <strong>📲 Installera som App:</strong>
-            <p>För bästa upplevelse, tryck på din webbläsares "Dela"-knapp och välj <em>"Lägg till på hemskärmen"</em>.</p>
+        <div class="instruction-box">
+            <div class="instruction-step">
+                <span class="step-icon">📲</span>
+                <div class="step-text">
+                    <h4>Installera som App</h4>
+                    <p>Tryck på webbläsarens <strong>Dela</strong>-knapp och välj <em>Lägg till på hemskärmen</em> för en fullständig upplevelse.</p>
+                </div>
+            </div>
+
+            <div class="instruction-step">
+                <span class="step-icon">🔑</span>
+                <div class="step-text">
+                    <h4>Din Vixen Key</h4>
+                    <p>Skapa en nyckel i <strong>The Vault</strong> regelbundet. Det är din enda livlina om du byter enhet eller rensar cache.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="instruction-step">
-            <strong>🔑 Din Vixen Key:</strong>
-            <p>I "The Vault" längst ner kan du skapa en säkerhetsnyckel. Spara den! Det är enda sättet att återställa dina framsteg om du byter mobil.</p>
-        </div>
-
-        <button onclick="closeWelcomeModal()" class="start-btn">JAG FÖRSTÅR - STARTA</button>
+        <button onclick="closeWelcomeModal()" class="start-btn">Jag förstår — Starta</button>
     </div>
 </div>
     <script src="tasks.js"></script>
