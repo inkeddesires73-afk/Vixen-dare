@@ -23,11 +23,11 @@
     <section class="controls">
         <h2>Dra nya instruktioner</h2>
 <div class="btn-grid">
-    <button onclick="drawTasks(1)" class="btn-n1" title="Vanilla">🍦</button>
-    <button onclick="drawTasks(2)" class="btn-n2" title="Spicy">🌶️🌶️</button>
-    <button onclick="drawTasks(3)" class="btn-n3" title="Hot">🌶️🌶️🌶️</button>
-    <button onclick="drawTasks(4)" class="btn-n4" title="Extra Hot">🌶️🌶️🌶️🌶️</button>
-    <button onclick="drawTasks(5)" class="btn-n5" title="Insane">🌶️🌶️🌶️🌶️🌶️</button>
+    <button onclick="drawTasks(1)" class="level-btn btn-n1" title="Vanilla">🍦</button>
+    <button onclick="drawTasks(2)" class="level-btn btn-n2" title="Spicy">🌶️🌶️</button>
+    <button onclick="drawTasks(3)" class="level-btn btn-n3" title="Hot">🌶️🌶️🌶️</button>
+    <button onclick="drawTasks(4)" class="level-btn btn-n4" title="Extra Hot">🌶️🌶️🌶️🌶️</button>
+    <button onclick="drawTasks(5)" class="level-btn btn-n5" title="Insane">🌶️🌶️🌶️🌶️🌶️</button>
 </div>
     </section>
 
@@ -56,10 +56,11 @@
 
 <section class="vault-section">
         <h3>The Vault</h3>
-        <p class="vault-info" id="vault-info-text">Säkra din resa med en <strong>Vixen Key</strong>.</p>
+        <p class="vault-info" id="vault-info-text">Spara din backup med en <strong>Vixen Key</strong>.</p>
         <div class="backup-box">
-            <button class="vault-btn" id="export-btn" onclick="exportProgress()">GENERERA BACKUP-NYCKEL</button>
+            <button class="vault-btn" id="export-btn" onclick="exportProgress()">SKAPA BACKUP-NYCKEL</button>
             <textarea id="backup-key-area" readonly style="display:none;"></textarea>
+            <button class="vault-btn secondary-vault-btn" id="copy-backup-btn" onclick="copyBackupKey()">KOPIERA NYCKEL</button>
         </div>
         <div class="import-box">
             <input type="text" id="import-key-input" placeholder="Klistra in nyckel...">
@@ -101,9 +102,15 @@
         <button onclick="closeWelcomeModal()" class="start-btn">Jag förstår — Starta</button>
     </div>
 </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch(() => {});
+            });
+        }
+    </script>
     <script src="tasks.js"></script>
     <script src="script.js"></script>
 
 </body>
 </html>
-

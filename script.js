@@ -96,20 +96,58 @@ function cancelActiveTask(id) {
 // 3. THE VAULT & SÄKERHET
 // ==========================================
 
-function exportProgress() {
+function buildVixenKey() {
     userProgress.lastSavedCount = userProgress.completedTasks.length;
-    saveToDevice(); 
+    saveToDevice();
 
     const dataString = JSON.stringify(userProgress);
-    const vixenKey = btoa(unescape(encodeURIComponent(dataString)));
+    return btoa(unescape(encodeURIComponent(dataString)));
+}
+
+function showVixenKey(vixenKey) {
     const area = document.getElementById('backup-key-area');
-    
+    const copyBtn = document.getElementById('copy-backup-btn');
+
     if (area) {
         area.value = vixenKey;
         area.style.display = 'block';
         area.select();
-        alert("Ny Vixen Key genererad. Spara denna kod!");
-        checkUnsavedProgress(); 
+    }
+
+    if (copyBtn) {
+        copyBtn.style.display = 'block';
+    }
+}
+
+function exportProgress() {
+    const vixenKey = buildVixenKey();
+    showVixenKey(vixenKey);
+    alert("Ny Vixen Key genererad. Spara eller kopiera denna kod!");
+    checkUnsavedProgress();
+}
+
+function copyBackupKey() {
+    const area = document.getElementById('backup-key-area');
+    if (!area) return;
+
+    if (!area.value.trim()) {
+        const vixenKey = buildVixenKey();
+        showVixenKey(vixenKey);
+    }
+
+    area.focus();
+    area.select();
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(area.value)
+            .then(() => alert("Vixen Key kopierad."))
+            .catch(() => {
+                document.execCommand('copy');
+                alert("Vixen Key kopierad.");
+            });
+    } else {
+        document.execCommand('copy');
+        alert("Vixen Key kopierad.");
     }
 }
 
@@ -121,11 +159,26 @@ function importProgress() {
     try {
         const decoded = decodeURIComponent(escape(atob(key)));
         const data = JSON.parse(decoded);
-        if (data.completedTasks) {
-            userProgress = data;
-            saveToDevice();
-            location.reload();
+
+        const isValid = data &&
+            Array.isArray(data.activeTasks) &&
+            Array.isArray(data.completedTasks) &&
+            Array.isArray(data.skippedTasks);
+
+        if (!isValid) {
+            alert("Nyckeln innehåller ingen giltig Vixen Dare-backup.");
+            return;
         }
+
+        userProgress = {
+            activeTasks: data.activeTasks,
+            completedTasks: data.completedTasks,
+            skippedTasks: data.skippedTasks,
+            lastSavedCount: typeof data.lastSavedCount === 'number' ? data.lastSavedCount : data.completedTasks.length
+        };
+
+        saveToDevice();
+        location.reload();
     } catch (e) {
         alert("Ogiltig nyckel.");
     }
@@ -152,7 +205,7 @@ function checkUnsavedProgress() {
         if (vaultInfo) vaultInfo.innerHTML = `⚠️ Du har <strong>${unsavedCount}</strong> osparade framsteg!`;
     } else {
         if (vaultBtn) vaultBtn.classList.remove('pulsing-warning');
-        if (vaultInfo) vaultInfo.innerHTML = "Säkra din resa med en <strong>Vixen Key</strong>.";
+        if (vaultInfo) vaultInfo.innerHTML = "Spara din backup med en <strong>Vixen Key</strong>.";
     }
 }
 

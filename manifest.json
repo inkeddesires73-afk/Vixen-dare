@@ -1,5 +1,5 @@
 {
-    "short_name": "VixenDare",
+  "short_name": "VixenDare",
   "name": "THE VIXEN / HOTWIFE DARE",
   "description": "Ett personligt utvecklingsverktyg för Hotwife-livsstilen.",
   "icons": [
@@ -14,9 +14,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "background_color": "#0d0d0d",
   "display": "standalone",
-  "scope": "/",
+  "scope": "./",
   "theme_color": "#c5a059"
 }
