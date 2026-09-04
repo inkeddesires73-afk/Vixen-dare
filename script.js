@@ -119,7 +119,7 @@ function drawTasks(level) {
     );
 
     if (available.length === 0) { 
-        alert("Det finns inga fler passande uppdrag på nivå " + level + " i den valda miljön."); 
+        alert("Det finns inga fler passande uppdrag på nivå " + level + " i den valda miljön.");
         return; 
     }
 
