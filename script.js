@@ -6,7 +6,31 @@ let userProgress = {
     completedTasks: [],
     skippedTasks: [],
     completedTaskDetails: {},
+    environment: 'bar_pub',
     lastSavedCount: 0 
+};
+
+const ENVIRONMENTS = {
+    city: {
+        label: 'På stan',
+        description: 'Ni rör er mellan vuxna sociala platser i stan. Nya uppdrag väljs för möten som kan uppstå längs kvällen.'
+    },
+    bar_pub: {
+        label: 'Bar eller pub',
+        description: 'Ni är på en bar eller pub där samtal med nya vuxna människor får växa naturligt under kvällen.'
+    },
+    club: {
+        label: 'Uteställe eller klubb',
+        description: 'Ni är i en klubbmiljö med musik, rörelse och plats för spontana samtal med vuxna människor.'
+    },
+    private_party: {
+        label: 'Privat fest',
+        description: 'Ni är på en privat vuxenfest där stämningen och sällskapet redan känns bekant och tryggt.'
+    },
+    swingers_club: {
+        label: 'Swingersklubb',
+        description: 'Ni är på en vuxenklubb med tydliga husregler och utrymme att ta saker i er egen takt.'
+    }
 };
 
 try {
@@ -19,6 +43,7 @@ try {
                 completedTasks: Array.isArray(parsed.completedTasks) ? parsed.completedTasks : [],
                 skippedTasks: Array.isArray(parsed.skippedTasks) ? parsed.skippedTasks : [],
                 completedTaskDetails: parsed.completedTaskDetails && typeof parsed.completedTaskDetails === 'object' ? parsed.completedTaskDetails : {},
+                environment: typeof parsed.environment === 'string' ? parsed.environment : 'bar_pub',
                 lastSavedCount: typeof parsed.lastSavedCount === 'number' ? parsed.lastSavedCount : 0
             };
             if (typeof parsed.lastSavedCount === 'undefined') {
@@ -56,6 +81,7 @@ function normalizeProgress(progress) {
         completedTasks,
         skippedTasks,
         completedTaskDetails,
+        environment: ENVIRONMENTS[progress.environment] ? progress.environment : 'bar_pub',
         lastSavedCount: Math.max(0, Math.min(
             typeof progress.lastSavedCount === 'number' ? progress.lastSavedCount : completedTasks.length,
             completedTasks.length
@@ -88,11 +114,12 @@ function drawTasks(level) {
         t.level === level && 
         !userProgress.activeTasks.includes(t.id) && 
         !userProgress.completedTasks.includes(t.id) &&
-        !userProgress.skippedTasks.includes(t.id)
+        !userProgress.skippedTasks.includes(t.id) &&
+        isTaskCompatibleWithEnvironment(t, userProgress.environment)
     );
 
     if (available.length === 0) { 
-        alert("Nivå " + level + " är helt avklarad!"); 
+        alert("Det finns inga fler passande uppdrag på nivå " + level + " i den valda miljön."); 
         return; 
     }
 
@@ -109,6 +136,28 @@ function drawTasks(level) {
         userProgress.activeTasks.push(task.id); 
     });
     
+    saveToDevice();
+}
+
+function getTaskEnvironments(task) {
+    if (Array.isArray(task.environments) && task.environments.length) return task.environments;
+
+    const text = task.text.toLowerCase();
+    if (text.includes('swingersklubb')) return ['swingers_club'];
+    if (text.includes('privat fest') || text.includes('hemma') || text.includes('bjud hem')) return ['private_party'];
+    if (text.includes('klubb')) return ['club', 'swingers_club'];
+    if (text.includes('bar') || text.includes('pub') || text.includes('uteställe')) return ['bar_pub', 'club'];
+    if (text.includes('på stan') || text.includes('gatan') || text.includes('butik')) return ['city'];
+    return Object.keys(ENVIRONMENTS);
+}
+
+function isTaskCompatibleWithEnvironment(task, environment) {
+    return getTaskEnvironments(task).includes(environment);
+}
+
+function setEnvironment(environment) {
+    if (!ENVIRONMENTS[environment]) return;
+    userProgress.environment = environment;
     saveToDevice();
 }
 
@@ -277,6 +326,11 @@ function renderLists() {
     const statsEl = document.getElementById('stats');
     const journeySummaryEl = document.getElementById('journey-summary');
     const levelProgressEl = document.getElementById('level-progress');
+    const environmentSelect = document.getElementById('environment-select');
+    const environmentContextEl = document.getElementById('environment-context-text');
+
+    if (environmentSelect) environmentSelect.value = userProgress.environment;
+    if (environmentContextEl) environmentContextEl.textContent = ENVIRONMENTS[userProgress.environment].description;
 
     if (activeEl) {
         activeEl.innerHTML = '';

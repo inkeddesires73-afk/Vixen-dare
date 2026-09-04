@@ -35,8 +35,15 @@
     <aside class="evening-context" aria-labelledby="evening-context-title">
         <div class="context-mark" aria-hidden="true">✦</div>
         <div>
-            <h2 id="evening-context-title">Kvällens ram</h2>
-            <p>Uppdragen hör hemma under en utekväll på bar, klubb eller annat vuxet uteställe. När ett kort nämner någon syftar det på en vuxen person du själv har valt att ta kontakt med i stunden.</p>
+            <label id="evening-context-title" for="environment-select">Var är du i kväll?</label>
+            <select id="environment-select" onchange="setEnvironment(this.value)">
+                <option value="city">På stan</option>
+                <option value="bar_pub">Bar eller pub</option>
+                <option value="club">Uteställe eller klubb</option>
+                <option value="private_party">Privat fest</option>
+                <option value="swingers_club">Swingersklubb</option>
+            </select>
+            <p id="environment-context-text">Nya uppdrag anpassas efter den miljö du väljer.</p>
         </div>
     </aside>
 

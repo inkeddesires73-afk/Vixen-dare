@@ -209,11 +209,36 @@ h1 {
     font-size: 0.75rem;
 }
 
-.evening-context h2 {
+.evening-context label {
+    display: block;
     color: var(--vixen-gold);
     font-size: 0.67rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+}
+
+.evening-context select {
+    width: 100%;
+    margin: 7px 0 0;
+    padding: 8px 28px 8px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.38);
+    border-radius: 0;
+    background: transparent;
+    color: #f0e2c1;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    appearance: auto;
+}
+
+.evening-context select:focus {
+    outline: none;
+    border-bottom-color: var(--vixen-gold);
+}
+
+.evening-context option {
+    background: #171513;
+    color: var(--text-main);
 }
 
 .evening-context p {
