@@ -284,14 +284,17 @@ function renderLists() {
             const t = VIXEN_DATABASE.find(x => x.id === id);
             if(t) {
                 activeEl.innerHTML += `
-                <div class="task-card n${t.level}" style="position: relative;">
-                    <span class="close-card-x" onclick="cancelActiveTask('${t.id}')" title="Stäng">×</span>
+                <article class="task-card n${t.level}">
+                    <div class="task-card-top">
+                        <span class="task-level">Nivå ${t.level}</span>
+                        <button type="button" class="close-card-x" onclick="cancelActiveTask('${t.id}')" title="Stäng uppdrag" aria-label="Stäng uppdrag">×</button>
+                    </div>
                     <p>${t.text}</p>
                     <div class="card-btns">
-                        <button class="done-btn" onclick="completeTask('${t.id}')">SLUTFÖRT</button>
-                        <button class="skip-btn" onclick="skipTask('${t.id}')">SKIPPA</button>
+                        <button type="button" class="done-btn" onclick="completeTask('${t.id}')">Slutfört</button>
+                        <button type="button" class="skip-btn" onclick="skipTask('${t.id}')">Lägg åt sidan</button>
                     </div>
-                </div>`;
+                </article>`;
             }
         });
     }
@@ -302,10 +305,11 @@ function renderLists() {
             const t = VIXEN_DATABASE.find(x => x.id === id);
             if(t) {
                 skippedEl.innerHTML += `
-                <div class="task-card skipped">
-                    <p><em>N${t.level}:</em> ${t.text}</p>
-                    <button class="retry-btn" onclick="reactivateTask('${t.id}')">TA TILLBAKA</button>
-                </div>`;
+                <article class="task-card skipped">
+                    <div class="task-card-top"><span class="task-level">Nivå ${t.level} · Vilande</span></div>
+                    <p>${t.text}</p>
+                    <button type="button" class="retry-btn" onclick="reactivateTask('${t.id}')">Ta tillbaka</button>
+                </article>`;
             }
         });
     }
