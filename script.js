@@ -125,37 +125,20 @@ function drawTasks(level) {
         return; 
     }
 
-    const currentEnvironment = userProgress.environment;
-    const offered = new Set(userProgress.offeredByEnvironment[currentEnvironment] || []);
-
-    // Ett nytt drag ersätter alltid de aktiva korten. De gamla markeras som redan erbjudna.
-    userProgress.activeTasks.forEach(id => offered.add(id));
-    userProgress.offeredByEnvironment[currentEnvironment] = [...offered];
-
     const available = VIXEN_DATABASE.filter(t =>
         t.level === level && 
         !userProgress.activeTasks.includes(t.id) && 
         !userProgress.completedTasks.includes(t.id) &&
         !userProgress.skippedTasks.includes(t.id) &&
-        !offered.has(t.id) &&
         isTaskCompatibleWithEnvironment(t, userProgress.environment)
     );
-
-    const fallbackAvailable = VIXEN_DATABASE.filter(t =>
-        t.level === level &&
-        !userProgress.completedTasks.includes(t.id) &&
-        !userProgress.skippedTasks.includes(t.id) &&
-        isTaskCompatibleWithEnvironment(t, userProgress.environment)
-    );
-    const pool = available.length >= 5 ? available : fallbackAvailable;
-
-    if (pool.length === 0) {
+    if (available.length === 0) {
         alert("Det finns inga fler passande uppdrag på nivå " + level + " i den valda miljön.");
         return; 
     }
 
-    const count = Math.min(5, pool.length);
-    const shuffled = [...pool];
+    const count = Math.min(5, available.length);
+    const shuffled = [...available];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -164,8 +147,7 @@ function drawTasks(level) {
     const general = shuffled.filter(task => !hasExplicitEnvironment(task));
     const selected = [...targeted, ...general].slice(0, count);
 
-    selected.forEach(task => offered.add(task.id));
-    userProgress.offeredByEnvironment[currentEnvironment] = [...offered];
+    // Ett nytt drag ersätter alltid de aktiva korten. De gamla blir tillgängliga igen senare.
     userProgress.activeTasks = [];
     selected.forEach(task => { 
         userProgress.activeTasks.push(task.id); 
