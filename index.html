@@ -21,25 +21,14 @@
     <div id="stats">Klarade: 0 | Vilande: 0</div>
 </header>
 <main>
-    <section class="controls luxury-panel">
-        <h2>Dra nya instruktioner</h2>
-<div class="btn-grid">
-    <button onclick="drawTasks(1)" class="level-btn btn-n1" title="Vanilla">🍦</button>
-    <button onclick="drawTasks(2)" class="level-btn btn-n2" title="Spicy">🌶️🌶️</button>
-    <button onclick="drawTasks(3)" class="level-btn btn-n3" title="Hot">🌶️🌶️🌶️</button>
-    <button onclick="drawTasks(4)" class="level-btn btn-n4" title="Extra Hot">🌶️🌶️🌶️🌶️</button>
-    <button onclick="drawTasks(5)" class="level-btn btn-n5" title="Insane">🌶️🌶️🌶️🌶️🌶️</button>
-</div>
-    </section>
-
     <aside class="evening-context" aria-labelledby="evening-context-title">
         <div class="context-mark" aria-hidden="true">✦</div>
         <div>
             <label id="evening-context-title" for="environment-select">Var är du i kväll?</label>
             <select id="environment-select" onchange="setEnvironment(this.value)">
-                <option value="city">På stan</option>
+                <option value="on_the_town">På stan</option>
                 <option value="bar_pub">Bar eller pub</option>
-                <option value="club">Uteställe eller klubb</option>
+                <option value="nightclub">Uteställe eller klubb</option>
                 <option value="private_party">Privat fest</option>
                 <option value="swingers_club">Swingersklubb</option>
             </select>
@@ -47,16 +36,30 @@
         </div>
     </aside>
 
-    <section class="journey-section" aria-labelledby="journey-title">
-        <h2 id="journey-title">Din resa</h2>
-        <p id="journey-summary" class="journey-summary">Din utveckling sparas bara på den här enheten.</p>
-        <div id="level-progress" class="level-progress" aria-label="Framsteg per nivå"></div>
+    <section class="controls luxury-panel">
+        <h2>Dra nya instruktioner</h2>
+        <div class="btn-grid">
+            <button onclick="drawTasks(1)" class="level-btn btn-n1" title="Vanilla">🍦</button>
+            <button onclick="drawTasks(2)" class="level-btn btn-n2" title="Spicy">🌶️🌶️</button>
+            <button onclick="drawTasks(3)" class="level-btn btn-n3" title="Hot">🌶️🌶️🌶️</button>
+            <button onclick="drawTasks(4)" class="level-btn btn-n4" title="Extra Hot">🌶️🌶️🌶️🌶️</button>
+            <button onclick="drawTasks(5)" class="level-btn btn-n5" title="Insane">🌶️🌶️🌶️🌶️🌶️</button>
+        </div>
     </section>
 
     <section class="list-section">
         <h3>Nuvarande Uppdrag</h3>
         <div id="active-list"></div>
     </section>
+
+    <details class="collapsible-section journey-collapsible">
+        <summary>Din resa</summary>
+        <div class="journey-section" aria-labelledby="journey-title">
+            <h2 id="journey-title">Din resa</h2>
+            <p id="journey-summary" class="journey-summary">Din utveckling sparas bara på den här enheten.</p>
+            <div id="level-progress" class="level-progress" aria-label="Framsteg per nivå"></div>
+        </div>
+    </details>
 
     <hr class="separator">
 
