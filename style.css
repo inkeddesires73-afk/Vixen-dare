@@ -485,6 +485,15 @@ h1 {
     text-align: left;
 }
 
+.task-card .task-context {
+    margin: 0 0 12px;
+    color: #b9aa9b;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.92rem;
+    font-style: italic;
+    line-height: 1.45;
+}
+
 .card-btns {
     display: flex;
     gap: 8px;

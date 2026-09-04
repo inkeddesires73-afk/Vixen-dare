@@ -18,6 +18,7 @@ const STORAGE_BACKUP_KEYS = ['vixen_progress_backup_1', 'vixen_progress_backup_2
 const BACKUP_HANDLE_DB = 'vixen_dare_backup';
 const BACKUP_HANDLE_STORE = 'handles';
 let automaticBackupFile = null;
+let currentDrawLevel = null;
 
 function openBackupHandleDb() {
     return new Promise((resolve, reject) => {
@@ -138,7 +139,7 @@ const ENVIRONMENTS = {
     },
     at_home: {
         label: 'Hemma',
-        description: 'Ni är hemma i en privat och avskild miljö där ni själva styr tempo, ramar och stämning.'
+        description: 'Ni har fest hemma med inbjudna gäster och möjlighet till lekfulla möten i en bekant miljö.'
     },
     swingers_club: {
         label: 'Swingersklubb',
@@ -251,6 +252,8 @@ function drawTasks(level) {
         return;
     }
 
+    currentDrawLevel = level;
+
     const available = VIXEN_DATABASE.filter(t =>
         t.level === level && 
         !userProgress.activeTasks.includes(t.id) && 
@@ -308,7 +311,16 @@ function isTaskCompatibleWithEnvironment(task, environment) {
 
 function setEnvironment(environment) {
     if (!ENVIRONMENTS[environment]) return;
+    const previousEnvironment = userProgress.environment;
+    const activeTask = VIXEN_DATABASE.find(task => userProgress.activeTasks.includes(task.id));
+    const levelToRedraw = currentDrawLevel || activeTask?.level || null;
     userProgress.environment = environment;
+
+    if (environment !== previousEnvironment && levelToRedraw) {
+        drawTasks(levelToRedraw);
+        return;
+    }
+
     saveToDevice();
 }
 
@@ -489,12 +501,16 @@ function renderLists() {
         userProgress.activeTasks.forEach(id => {
             const t = VIXEN_DATABASE.find(x => x.id === id);
             if(t) {
+                const context = typeof t.context === 'string' && t.context.trim()
+                    ? `<p class="task-context">${t.context}</p>`
+                    : '';
                 activeEl.innerHTML += `
                 <article class="task-card n${t.level}">
                     <div class="task-card-top">
                         <span class="task-level">Nivå ${t.level}</span>
                         <button type="button" class="close-card-x" onclick="cancelActiveTask('${t.id}')" title="Stäng uppdrag" aria-label="Stäng uppdrag">×</button>
                     </div>
+                    ${context}
                     <p>${t.text}</p>
                     <div class="card-btns">
                         <button type="button" class="done-btn" onclick="completeTask('${t.id}')">Slutfört</button>
@@ -510,9 +526,13 @@ function renderLists() {
         userProgress.skippedTasks.forEach(id => {
             const t = VIXEN_DATABASE.find(x => x.id === id);
             if(t) {
+                const context = typeof t.context === 'string' && t.context.trim()
+                    ? `<p class="task-context">${t.context}</p>`
+                    : '';
                 skippedEl.innerHTML += `
                 <article class="task-card skipped">
                     <div class="task-card-top"><span class="task-level">Nivå ${t.level} · Vilande</span></div>
+                    ${context}
                     <p>${t.text}</p>
                     <button type="button" class="retry-btn" onclick="reactivateTask('${t.id}')">Ta tillbaka</button>
                 </article>`;

@@ -89,6 +89,112 @@
             }
             .levels-chart-panel .chart-container { height: 250px; }
         }
+
+        /* Vixen Dare dark luxury theme */
+        html, body {
+            background-color: #080808;
+            background-image:
+                radial-gradient(circle at 50% -8%, rgba(197, 160, 89, 0.15), transparent 34rem),
+                radial-gradient(circle at 100% 45%, rgba(117, 18, 35, 0.12), transparent 32rem);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        body { color: #e0e0e0; }
+        nav {
+            background: rgba(8, 8, 8, 0.91) !important;
+            border-color: rgba(197, 160, 89, 0.18) !important;
+            box-shadow: 0 14px 38px rgba(0, 0, 0, 0.38) !important;
+        }
+        .guide-logo {
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            animation: guideGoldPulse 3s ease-in-out infinite alternate;
+        }
+        .guide-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transform: scale(1.08);
+            clip-path: circle(46%);
+        }
+        @keyframes guideGoldPulse {
+            from { box-shadow: 0 0 8px rgba(197, 160, 89, 0.35); }
+            to { box-shadow: 0 0 28px rgba(197, 160, 89, 0.85); }
+        }
+        main { position: relative; }
+        main::before {
+            content: '';
+            position: absolute;
+            inset: -20px 0 auto;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197,160,89,.55), transparent);
+        }
+        .nude-card,
+        .levels-chart-panel {
+            color: #ded6cd;
+            background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(15,15,15,.92)) !important;
+            border-color: rgba(197,160,89,.25) !important;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.045), 0 20px 48px rgba(0,0,0,.28);
+        }
+        .bg-stone-50,
+        .bg-white,
+        .bg-white\/50 {
+            background-color: rgba(255,255,255,.035) !important;
+        }
+        .bg-red-50 { background-color: rgba(90, 10, 20, .24) !important; }
+        .border-stone-50,
+        .border-stone-100,
+        .border-stone-200 { border-color: rgba(197,160,89,.16) !important; }
+        .text-stone-900,
+        .text-stone-800,
+        .text-stone-700 { color: #eee5dc !important; }
+        .text-stone-600 { color: #c7b9aa !important; }
+        .text-stone-500 { color: #a99a8b !important; }
+        .text-stone-400 { color: #756c64 !important; }
+        .text-muted { color: #a99a8b; }
+        .tab-btn {
+            padding-left: 2px;
+            padding-right: 2px;
+            transition: color .25s, border-color .25s, text-shadow .25s;
+        }
+        .tab-active {
+            color: #d8b66f !important;
+            border-bottom-color: #c5a059;
+            text-shadow: 0 0 18px rgba(197,160,89,.32);
+        }
+        .subtab-active {
+            color: #0a0908 !important;
+            background: linear-gradient(135deg, #e0c384, #a77f35) !important;
+            box-shadow: 0 8px 24px rgba(197,160,89,.2);
+        }
+        table { background: rgba(12,12,12,.7) !important; }
+        thead tr { background: rgba(197,160,89,.08) !important; }
+        footer {
+            background: rgba(8,8,8,.92) !important;
+            border-color: rgba(197,160,89,.18) !important;
+            box-shadow: 0 -14px 38px rgba(0,0,0,.3);
+        }
+        footer a {
+            color: #d9b76f !important;
+            background: linear-gradient(135deg, rgba(197,160,89,.18), rgba(197,160,89,.035)) !important;
+            border: 1px solid #c5a059;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 8px 28px rgba(0,0,0,.35) !important;
+        }
+        footer a:hover {
+            border-color: #e4c783;
+            box-shadow: 0 0 0 4px rgba(197,160,89,.08), 0 10px 30px rgba(0,0,0,.38) !important;
+        }
+        @media (max-width: 640px) {
+            nav > div > div { padding-top: 14px !important; padding-bottom: 12px !important; }
+            .guide-logo { width: 48px; height: 48px; margin-bottom: 8px; }
+            nav h1 { margin-bottom: 12px !important; font-size: .95rem !important; }
+            main { margin-top: 34px !important; }
+            footer { padding-top: 18px !important; padding-bottom: 18px !important; }
+            footer a { padding: 13px 38px !important; }
+        }
     </style>
 </head>
 <body class="min-h-screen pb-32">
@@ -97,6 +203,7 @@
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-stone-100 shadow-sm">
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex flex-col items-center py-6">
+                <div class="guide-logo"><img src="Vixen.png" alt="Vixen Dare"></div>
                 <h1 class="text-xl font-light tracking-[0.4em] text-[#c5a059] uppercase mb-6">The Vixen Dare</h1>
                 <div class="flex space-x-4 md:space-x-8 text-[10px] uppercase tracking-[0.15em] font-bold overflow-x-auto w-full justify-start md:justify-center no-scrollbar px-4 pb-2">
                     <button onclick="switchTab('vision')" id="tab-vision" class="tab-btn pb-2 tab-active whitespace-nowrap">Visionen</button>
@@ -158,12 +265,12 @@
             </div>
             
             <div class="p-8 bg-stone-50 rounded-2xl text-center text-xs italic text-stone-500">
-                Funktionen är enkel: Dra ett kort när ni gemensamt har beslutat att ni är redo för nästa steg. Korten ger vägledningen, men det är i ert agerande som den faktiska förändringen sker.
+                Funktionen är enkel: Dra nya kort när ni gemensamt har beslutat att ni är redo för nästa steg. Korten ger vägledningen, men det är i ert agerande som den faktiska förändringen sker.
             </div>
 
             <div class="nude-card p-8 rounded-2xl space-y-3">
                 <h3 class="text-[#c5a059] uppercase tracking-widest text-xs font-bold">Välj kvällens miljö</h3>
-                <p class="text-sm text-stone-600 leading-relaxed">Varje gång ni öppnar spelet väljer ni först var ni befinner er under <strong>"Var är du ikväll?"</strong> – till exempel på stan, i en bar eller på en privat fest. När ni trycker på <strong>"Dra nya uppdrag"</strong> får ni upp till fem slumpade kort som passar den valda miljön.</p>
+                <p class="text-sm text-stone-600 leading-relaxed">Varje gång ni öppnar spelet väljer ni först var ni befinner er under <strong>"Var är du ikväll?"</strong> – på stan, i en bar eller pub, på ett uteställe, på en privat fest, hemma med inbjudna gäster eller på en swingersklubb. När ni trycker på en nivåknapp får ni upp till fem slumpade kort som passar den valda miljön.</p>
                 <p class="text-sm text-stone-600 leading-relaxed">Trycker ni igen ersätts de aktiva korten av en ny slumpad omgång. Ett kort kan dyka upp igen senare, eftersom det kanske passar bättre vid ett annat tillfälle.</p>
             </div>
         </section>
@@ -301,7 +408,7 @@
                         <div class="lvl-status text-[8px] font-black uppercase text-[#c5a059]">Aktiv</div>
                     </div>
                     <h4 class="font-bold text-sm text-stone-800 mb-1">Flirt</h4>
-                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Små “oops moments”, antydningar, oskyldiga tease. Perfekt för nybörjare.</p>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Lekfulla blickar, första kontakter och tydligt intresse för en annan man medan partnern finns i närheten.</p>
                 </button>
                 <button onclick="updateLevelChart(1)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-transparent">
                     <div class="flex justify-between items-center mb-1">
@@ -309,7 +416,7 @@
                         <div class="lvl-status text-[8px] font-black uppercase text-stone-400">Profil</div>
                     </div>
                     <h4 class="font-bold text-sm text-stone-800 mb-1">Tease</h4>
-                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Mer synligt flörtande, kroppskontakt, lite vågat men fortfarande relativt oskyldigt.</p>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Synligare flirt, retsamma inviter och kroppskontakt som för henne förbi det första flirtstadiet.</p>
                 </button>
                 <button onclick="updateLevelChart(2)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-transparent">
                     <div class="flex justify-between items-center mb-1">
@@ -317,7 +424,7 @@
                         <div class="lvl-status text-[8px] font-black uppercase text-stone-400">Profil</div>
                     </div>
                     <h4 class="font-bold text-sm text-stone-800 mb-1">Temptation</h4>
-                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Nu blir det action i pub/club-miljö. Kyssar, beröringar, inviter. Här börjar främlingar bli direkt inblandade.</p>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Kyssar, intima beröringar och djärva initiativ. Den valda mannen blir nu tydligt och fysiskt inblandad.</p>
                 </button>
                 <button onclick="updateLevelChart(3)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-transparent">
                     <div class="flex justify-between items-center mb-1">
@@ -325,7 +432,7 @@
                         <div class="lvl-status text-[8px] font-black uppercase text-stone-400">Profil</div>
                     </div>
                     <h4 class="font-bold text-sm text-stone-800 mb-1">Risk</h4>
-                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Snabba, förbjudna handlingar i verkliga miljöer. Toaletter, bilar, hörn av klubben. Känslan av att “nu kan vi bli påkomna” är central.</p>
+                    <p class="text-[10px] text-stone-500 italic leading-relaxed">Raka sexuella handlingar, oralsex och händer under kläderna. Flirten har nu blivit verklig sexuell kontakt.</p>
                 </button>
                 <button onclick="updateLevelChart(4)" class="lvl-btn nude-card p-4 rounded-2xl text-left border-l-4 border-l-transparent">
                     <div class="flex justify-between items-center mb-1">
@@ -467,6 +574,8 @@
 
     <script>
         // Charts state
+        Chart.defaults.color = '#a99a8b';
+        Chart.defaults.borderColor = 'rgba(197, 160, 89, 0.14)';
         let termChart = null;
         let levelChart = null;
 
@@ -485,7 +594,7 @@
                         { label: 'Hotwife', data: [4, 7, 6, 6, 5], backgroundColor: 'rgba(42, 36, 30, 0.1)', borderColor: '#2a241e', borderWidth: 2 }
                     ]
                 },
-                options: { maintainAspectRatio: false, scales: { r: { suggestedMin: 0, suggestedMax: 10, ticks: { display: false }, pointLabels: { font: { size: 9, weight: 'bold' }, color: '#5d544b' } } }, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } } }
+                options: { maintainAspectRatio: false, scales: { r: { suggestedMin: 0, suggestedMax: 10, ticks: { display: false }, pointLabels: { font: { size: 9, weight: 'bold' }, color: '#bcae9f' } } }, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } } }
             });
         }
 
