@@ -110,7 +110,7 @@ function drawTasks(level) {
         return; 
     }
 
-    const available = VIXEN_DATABASE.filter(t => 
+    const available = VIXEN_DATABASE.filter(t =>
         t.level === level && 
         !userProgress.activeTasks.includes(t.id) && 
         !userProgress.completedTasks.includes(t.id) &&
@@ -130,7 +130,9 @@ function drawTasks(level) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    const selected = shuffled.slice(0, count);
+    const targeted = shuffled.filter(task => hasExplicitEnvironment(task));
+    const general = shuffled.filter(task => !hasExplicitEnvironment(task));
+    const selected = [...targeted, ...general].slice(0, count);
 
     selected.forEach(task => { 
         userProgress.activeTasks.push(task.id); 
@@ -140,15 +142,23 @@ function drawTasks(level) {
 }
 
 function getTaskEnvironments(task) {
-    if (Array.isArray(task.environments) && task.environments.length) return task.environments;
+    if (Array.isArray(task.environments) && task.environments.length) {
+        const explicit = task.environments.filter(environment => ENVIRONMENTS[environment]);
+        if (explicit.length) return explicit;
+    }
 
     const text = task.text.toLowerCase();
-    if (text.includes('swingersklubb')) return ['swingers_club'];
-    if (text.includes('privat fest') || text.includes('hemma') || text.includes('bjud hem')) return ['private_party'];
-    if (text.includes('klubb')) return ['club', 'swingers_club'];
-    if (text.includes('bar') || text.includes('pub') || text.includes('uteställe')) return ['bar_pub', 'club'];
-    if (text.includes('på stan') || text.includes('gatan') || text.includes('butik')) return ['city'];
+    if (/\bswingersklubb\b/.test(text)) return ['swingers_club'];
+    if (/\b(privat fest|hemma|hem|bjud hem)\b/.test(text)) return ['private_party'];
+    if (/\b(klubb|dansgolv|bås|toalett)\b/.test(text)) return ['club', 'swingers_club'];
+    if (/\b(bar|pub|uteställe|drink|bardisk)\b/.test(text)) return ['bar_pub', 'club'];
+    if (/\b(på stan|stan|gatan|butik|taxi|tåg)\b/.test(text)) return ['city'];
     return Object.keys(ENVIRONMENTS);
+}
+
+function hasExplicitEnvironment(task) {
+    return Array.isArray(task.environments) && task.environments.length > 0 ||
+        getTaskEnvironments(task).length < Object.keys(ENVIRONMENTS).length;
 }
 
 function isTaskCompatibleWithEnvironment(task, environment) {
