@@ -575,7 +575,7 @@ const VIXEN_DATABASE = [
     "level": 2,
     "text": "Välj ut någon på dansgolvet och dansa så nära att personen tydligt känner din kropp.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -871,7 +871,7 @@ const VIXEN_DATABASE = [
     "level": 2,
     "text": "Rör höfterna långsamt på dansgolvet medan du håller kvar blicken på någon.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -914,7 +914,7 @@ const VIXEN_DATABASE = [
     "level": 2,
     "text": "Glid nära någon på dansgolvet och dra dig undan precis när kontakten börjar kännas tydlig.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1000,7 +1000,7 @@ const VIXEN_DATABASE = [
     "level": 2,
     "text": "Vänd ryggen mot någon på dansgolvet och låt kroppen röra sig nära innan du möter blicken igen.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1181,7 +1181,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Be personen bakom dig hålla om dig på dansgolvet och rör dig långsamt mot kroppen.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1242,7 +1242,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Ställ dig bakom någon på dansgolvet och pressa höften lätt mot personens rumpa.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1311,7 +1311,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Gnid kroppen mot killen på dansgolvet och håll kvar blicken när han svarar.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1380,7 +1380,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Låt partnern se när du trycker rumpan mot killen på dansgolvet.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1513,7 +1513,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Kyss mannen från dansgolvet kort på halsen och fortsätt prata som om inget hänt.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1544,7 +1544,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Vänd dig om på dansgolvet och pressa hela kroppen mot personen bakom dig medan du rör dig i takt.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1572,7 +1572,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Dra personen du valt till dig på dansgolvet medan partnern ser att valet är ditt.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1634,7 +1634,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Luta dig bakåt mot killen bakom dig på dansgolvet och låt rumpan hitta hans kropp.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1680,7 +1680,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Vänd dig mot personen du valt på dansgolvet och låt munnen stanna en centimeter från hans innan du kysser honom.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1688,7 +1688,7 @@ const VIXEN_DATABASE = [
     "level": 3,
     "text": "Dra personen du flirtat med närmare på dansgolvet och låt honom känna att flirten har gått över gränsen.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1721,7 +1721,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med främlingen från dansgolvet till ett mörkt område utanför lokalen och låt honom ta dig snabbt mot väggen.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1734,7 +1734,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med killen från baren till toaletten och låt honom ta dig mot väggen innan ni går tillbaka.",
     "environments": [
-      "club",
+      "nightclub",
       "bar_pub"
     ]
   },
@@ -1779,7 +1779,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Sätt dig i knäet på främlingen från dansgolvet och gnid dig mot hans skrev tills han tydligt reagerar.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1810,7 +1810,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Dra ner gylfen på främlingen från dansgolvet i bilen och ge honom några sug innan ni avbryter.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1823,7 +1823,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Låt främlingen från dansgolvet stå bakom dig på dansgolvets kant och trycka skrevet mot din rumpa genom kläderna.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1836,7 +1836,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med killen från baren till toaletten och ge honom en snabb avsugning innan ni går tillbaka.",
     "environments": [
-      "club",
+      "nightclub",
       "bar_pub"
     ]
   },
@@ -1845,7 +1845,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Sätt dig på huk framför främlingen från dansgolvet i ett privat rum och ta honom i munnen en kort stund.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1905,7 +1905,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Gå undan med främlingen från dansgolvet till ett mörkt område utanför lokalen och ta honom i munnen en kort stund.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1931,7 +1931,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Ta handen på främlingen från dansgolvet och led honom till toaletten där han får känna dig innanför kläderna.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1944,7 +1944,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Låt killen från baren dra ner dina trosor en kort stund på toaletten och känna dig med fingrarna.",
     "environments": [
-      "club",
+      "nightclub",
       "bar_pub"
     ]
   },
@@ -1974,7 +1974,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Låt främlingen från dansgolvet smeka dig innanför trosorna i ett lekrum med insyn medan partnern ser att du inte backar.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -1992,7 +1992,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Sätt dig i knäet på främlingen från dansgolvet i ett bås och rid mot hans skrev genom kläderna.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2080,7 +2080,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Ta med främlingen från dansgolvet till bilen och ge honom några djupa sug innan ni går tillbaka.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2112,7 +2112,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med främlingen från dansgolvet till ett bås och låt honom slicka dig tills du måste stoppa honom.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2120,7 +2120,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Sätt dig på huk framför främlingen från dansgolvet i ett avskilt hörn och ta honom i munnen en kort stund.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2128,7 +2128,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Ta med främlingen från dansgolvet till rökplatsen när det är lugnt och låt honom kyssa dig med handen under toppen.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2167,7 +2167,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Ställ dig framför främlingen från dansgolvet i bilen och låt honom öppna dina kläder tillräckligt för att röra dig.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2208,7 +2208,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Låt främlingen från dansgolvet dra ner dina trosor i bilen och röra dig en kort stund innan ni avbryter.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2229,7 +2229,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Dra främlingen från dansgolvet nära i hotellkorridoren och låt honom smeka dig innanför trosorna en kort stund.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2250,7 +2250,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Låt främlingen från dansgolvet dra ner dina trosor en kort stund i ett privat rum och röra dig med fingrarna.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2266,7 +2266,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med mannen som partnern pekat ut till toaletten och låt honom smeka dig tills du själv stoppar honom.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2274,7 +2274,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med främlingen från dansgolvet till ett privat rum och låt honom slicka dig en kort stund.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2282,7 +2282,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med främlingen från dansgolvet till toaletten och låt honom känna dig innanför kläderna innan ni går tillbaka.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2295,7 +2295,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Ta med främlingen från dansgolvet till hotellkorridoren och låt hans hand glida innanför dina byxor en kort stund.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2303,7 +2303,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Sitt bredvid främlingen från dansgolvet och låt hans fingrar glida innanför kanten på dina byxor.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2316,7 +2316,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Ta med mannen du valt till toaletten och låt honom slicka dig en kort stund innan ni går tillbaka.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2349,7 +2349,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Gå undan med killen från baren till toaletten och låt honom slicka dig innan ni går tillbaka.",
     "environments": [
-      "club",
+      "nightclub",
       "bar_pub"
     ]
   },
@@ -2358,7 +2358,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Tryck upp främlingen från dansgolvet mot väggen och kyss honom hårt medan din hand öppnar hans gylf.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2366,7 +2366,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med främlingen från dansgolvet till lekrummet och sug honom snabbt innan ni går tillbaka.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2374,7 +2374,7 @@ const VIXEN_DATABASE = [
     "level": 4,
     "text": "Följ med mannen vid bordet till toaletten och ge honom några snabba sug innan ni går tillbaka.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2671,7 +2671,7 @@ const VIXEN_DATABASE = [
     "level": 5,
     "text": "Välj en man i klubben och låt honom knulla dig i ett rum där partnern kan se in.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2705,7 +2705,7 @@ const VIXEN_DATABASE = [
     "level": 5,
     "text": "Låt en man från klubben knulla dig i gungan medan partnern står bredvid och ser allt.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2776,7 +2776,7 @@ const VIXEN_DATABASE = [
     "level": 5,
     "text": "Välj två män i klubben och låt dem följa med till ett privat rum där de får dela på dig.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2804,7 +2804,7 @@ const VIXEN_DATABASE = [
     "level": 5,
     "text": "Gå till ett privat rum på klubben med mannen du valt och låt partnern följa med som åskådare.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2812,7 +2812,7 @@ const VIXEN_DATABASE = [
     "level": 5,
     "text": "Sätt dig i gungan i klubben och låt partnern välja mannen som får börja.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2855,7 +2855,7 @@ const VIXEN_DATABASE = [
     "level": 5,
     "text": "Ta med två män från klubben till lekrummet och låt dem dela på dig medan partnern står bredvid.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2931,7 +2931,7 @@ const VIXEN_DATABASE = [
     "level": 5,
     "text": "Låt partnern välja en man i klubben och följ med honom till lekrummet där du låter honom ta dig inför partnerns blick.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {
@@ -2989,7 +2989,7 @@ const VIXEN_DATABASE = [
     "level": 5,
     "text": "Ta med en man till bilen efter klubben och låt partnern se hur snabbt flirten blir till knull.",
     "environments": [
-      "club"
+      "nightclub"
     ]
   },
   {

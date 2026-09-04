@@ -10,9 +10,9 @@ const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 const rules = [
   { environments: ['swingers_club'], pattern: /(?<![\p{L}])swingersklubb(?:en)?(?![\p{L}])/iu },
   { environments: ['private_party'], pattern: /(?<![\p{L}])(?:privat fest|hemma|hem|bjud hem)(?![\p{L}])/iu },
-  { environments: ['club'], pattern: /(?<![\p{L}])(?:klubb(?:en|ar)?|dansgolv(?:et)?|uteställe(?:t)?|toalett(?:en)?)(?![\p{L}])/iu },
+  { environments: ['nightclub'], pattern: /(?<![\p{L}])(?:klubb(?:en|ar)?|dansgolv(?:et)?|uteställe(?:t)?|toalett(?:en)?)(?![\p{L}])/iu },
   { environments: ['bar_pub'], pattern: /(?<![\p{L}])(?:bar(?:en|er)?|pub(?:en|ar)?|bardisk(?:en)?|drink(?:en|ar)?)(?![\p{L}])/iu },
-  { environments: ['city'], pattern: /(?<![\p{L}])(?:på stan|stan|gatan|butik(?:en)?|taxi(?:n)?|tåg(?:et)?)(?![\p{L}])/iu }
+  { environments: ['on_the_town'], pattern: /(?<![\p{L}])(?:på stan|stan|gatan|butik(?:en)?|taxi(?:n)?|tåg(?:et)?)(?![\p{L}])/iu }
 ];
 
 function environmentsFor(text) {

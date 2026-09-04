@@ -11,7 +11,7 @@ let userProgress = {
 };
 
 const ENVIRONMENTS = {
-    city: {
+    on_the_town: {
         label: 'På stan',
         description: 'Ni rör er mellan vuxna sociala platser i stan. Nya uppdrag väljs för möten som kan uppstå längs kvällen.'
     },
@@ -19,7 +19,7 @@ const ENVIRONMENTS = {
         label: 'Bar eller pub',
         description: 'Ni är på en bar eller pub där samtal med nya vuxna människor får växa naturligt under kvällen.'
     },
-    club: {
+    nightclub: {
         label: 'Uteställe eller klubb',
         description: 'Ni är i en klubbmiljö med musik, rörelse och plats för spontana samtal med vuxna människor.'
     },
@@ -76,12 +76,15 @@ function normalizeProgress(progress) {
         };
     });
 
+    const environmentAliases = { city: 'on_the_town', club: 'nightclub' };
+    const environment = environmentAliases[progress.environment] || progress.environment;
+
     return {
         activeTasks,
         completedTasks,
         skippedTasks,
         completedTaskDetails,
-        environment: ENVIRONMENTS[progress.environment] ? progress.environment : 'bar_pub',
+        environment: ENVIRONMENTS[environment] ? environment : 'bar_pub',
         lastSavedCount: Math.max(0, Math.min(
             typeof progress.lastSavedCount === 'number' ? progress.lastSavedCount : completedTasks.length,
             completedTasks.length
@@ -148,11 +151,11 @@ function getTaskEnvironments(task) {
     }
 
     const text = task.text.toLowerCase();
-    if (/\bswingersklubb\b/.test(text)) return ['swingers_club'];
-    if (/\b(privat fest|hemma|hem|bjud hem)\b/.test(text)) return ['private_party'];
-    if (/\b(klubb|dansgolv|bås|toalett)\b/.test(text)) return ['club', 'swingers_club'];
-    if (/\b(bar|pub|uteställe|drink|bardisk)\b/.test(text)) return ['bar_pub', 'club'];
-    if (/\b(på stan|stan|gatan|butik|taxi|tåg)\b/.test(text)) return ['city'];
+    if (/(?<![\p{L}])swingersklubb(?![\p{L}])/iu.test(text)) return ['swingers_club'];
+    if (/(?<![\p{L}])(?:privat fest|hemma|hem|bjud hem)(?![\p{L}])/iu.test(text)) return ['private_party'];
+    if (/(?<![\p{L}])(?:klubb|dansgolv|bås|toalett)(?![\p{L}])/iu.test(text)) return ['nightclub', 'swingers_club'];
+    if (/(?<![\p{L}])(?:bar|pub|uteställe|drink|bardisk)(?![\p{L}])/iu.test(text)) return ['bar_pub', 'nightclub'];
+    if (/(?<![\p{L}])(?:på stan|stan|gatan|butik|taxi|tåg)(?![\p{L}])/iu.test(text)) return ['on_the_town'];
     return Object.keys(ENVIRONMENTS);
 }
 
