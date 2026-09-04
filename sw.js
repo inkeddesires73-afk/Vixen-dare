@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vixen-dare-cache-v14';
+const CACHE_NAME = 'vixen-dare-cache-v17';
 const ASSETS = [
   './',
   './index.html',
@@ -14,7 +14,13 @@ const ASSETS = [
   './assets/levels/level-2.png',
   './assets/levels/level-3.png',
   './assets/levels/level-4.png',
-  './assets/levels/level-5.png'
+  './assets/levels/level-5.png',
+  './assets/concepts/vixen-fox.png',
+  './assets/concepts/stag-deer.png',
+  './assets/concepts/pride-spark.png',
+  './assets/concepts/hotwife-stiletto.png',
+  './assets/concepts/hotwife-balance.png',
+  './assets/concepts/hotwife-observer.png'
 ];
 
 self.addEventListener('install', event => {

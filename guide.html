@@ -170,6 +170,40 @@
             background: linear-gradient(135deg, #e0c384, #a77f35) !important;
             box-shadow: 0 8px 24px rgba(197,160,89,.2);
         }
+        .subnav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .subnav-icon {
+            width: 17px;
+            height: 17px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,.45));
+        }
+        .concept-structure-list li {
+            display: grid;
+            grid-template-columns: 46px minmax(0, 1fr);
+            align-items: center;
+            gap: 12px;
+        }
+        .concept-icon-shell {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            border: 1px solid rgba(197, 160, 89, .24);
+            border-radius: 14px;
+            background: radial-gradient(circle at 50% 35%, rgba(197,160,89,.13), rgba(8,8,8,.35) 72%);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 7px 18px rgba(0,0,0,.22);
+        }
+        .concept-icon {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,.48));
+        }
         table { background: rgba(12,12,12,.7) !important; }
         thead tr { background: rgba(197,160,89,.08) !important; }
         footer {
@@ -281,9 +315,9 @@
                 <h2 class="text-3xl font-serif italic text-stone-800">Vem är hon?</h2>
                 <p class="text-muted text-sm max-w-lg mx-auto leading-relaxed text-center">Särskiljandet av rollerna och energin i dynamiken. Här går vi igenom vad som karaktäriserar de olika vägarna.</p>
                 <div class="flex justify-center space-x-2 mt-6">
-                    <button onclick="switchSubTab('vixen')" id="subnav-vixen" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 subtab-active">🦊 Vixen</button>
-                    <button onclick="switchSubTab('hotwife')" id="subnav-hotwife" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 text-stone-400">🔥 Hotwife</button>
-                    <button onclick="switchSubTab('analys')" id="subnav-analys" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 text-stone-400">🆚 Analys</button>
+                    <button onclick="switchSubTab('vixen')" id="subnav-vixen" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 subtab-active"><img class="subnav-icon" src="assets/concepts/vixen-fox.png" alt="">Vixen</button>
+                    <button onclick="switchSubTab('hotwife')" id="subnav-hotwife" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 text-stone-400"><img class="subnav-icon" src="assets/concepts/hotwife-stiletto.png" alt="">Hotwife</button>
+                    <button onclick="switchSubTab('analys')" id="subnav-analys" class="subnav-btn px-4 py-1.5 rounded-full text-[10px] uppercase font-black tracking-widest border border-stone-200 text-stone-400"><img class="subnav-icon" src="assets/concepts/hotwife-balance.png" alt="">Analys</button>
                 </div>
             </div>
 
@@ -293,10 +327,10 @@
                     <div class="nude-card p-8 rounded-3xl space-y-4 border-t-4 border-t-[#c5a059]">
                         <h3 class="text-lg font-bold uppercase tracking-tighter text-stone-800">Stag & Vixen</h3>
                         <p class="text-xs text-stone-600 font-bold uppercase tracking-tighter">Grundstruktur:</p>
-                        <ul class="text-[11px] space-y-3 text-stone-500">
-                            <li>🦌 Ett par där hon (Vixen) har sex med andra män.</li>
-                            <li>💪 Han (Stag) är medveten, stolt och ofta närvarande.</li>
-                            <li>✨ Fokus på att hon är åtrådd och att han “visar upp” henne.</li>
+                        <ul class="concept-structure-list text-[11px] space-y-3 text-stone-500">
+                            <li><span class="concept-icon-shell"><img class="concept-icon" src="assets/concepts/vixen-fox.png" alt="Vixen – rävhona"></span><span>Ett par där hon (Vixen) har sex med andra män.</span></li>
+                            <li><span class="concept-icon-shell"><img class="concept-icon" src="assets/concepts/stag-deer.png" alt="Stag – kronhjort"></span><span>Han (Stag) är medveten, stolt och ofta närvarande.</span></li>
+                            <li><span class="concept-icon-shell"><img class="concept-icon" src="assets/concepts/pride-spark.png" alt="Stolthet och åtrå"></span><span>Fokus på att hon är åtrådd och att han “visar upp” henne.</span></li>
                         </ul>
                     </div>
                     <div class="nude-card p-8 rounded-3xl space-y-4">
@@ -321,10 +355,10 @@
                     <div class="nude-card p-8 rounded-3xl space-y-4 border-t-4 border-t-stone-300">
                         <h3 class="text-lg font-bold uppercase tracking-tighter text-stone-800">Klassisk Hotwife</h3>
                         <p class="text-xs text-stone-600 font-bold uppercase tracking-tighter">Struktur:</p>
-                        <ul class="text-[11px] space-y-3 text-stone-500">
-                            <li>👠 Hon har sex med andra män, han får upphetsning av det.</li>
-                            <li>⚖️ Ofta en tydligare ensidig struktur.</li>
-                            <li>🗝️ Han är inte alltid sexuellt aktiv med andra själv.</li>
+                        <ul class="concept-structure-list text-[11px] space-y-3 text-stone-500">
+                            <li><span class="concept-icon-shell"><img class="concept-icon" src="assets/concepts/hotwife-stiletto.png" alt="Hotwife – guldsko"></span><span>Hon har sex med andra män, han får upphetsning av det.</span></li>
+                            <li><span class="concept-icon-shell"><img class="concept-icon" src="assets/concepts/hotwife-balance.png" alt="Asymmetrisk balans"></span><span>Ofta en tydligare ensidig struktur.</span></li>
+                            <li><span class="concept-icon-shell"><img class="concept-icon" src="assets/concepts/hotwife-observer.png" alt="Medveten partner – öga och ring"></span><span>Han är inte alltid sexuellt aktiv med andra själv.</span></li>
                         </ul>
                     </div>
                     <div class="nude-card p-8 rounded-3xl space-y-4">
