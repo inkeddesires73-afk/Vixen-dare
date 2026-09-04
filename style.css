@@ -187,6 +187,42 @@ h1 {
     text-align: center;
 }
 
+.evening-context {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 12px;
+    margin: 0 0 18px;
+    padding: 15px 17px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 14px;
+    background: rgba(197, 160, 89, 0.055);
+}
+
+.context-mark {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(197, 160, 89, 0.5);
+    border-radius: 50%;
+    color: var(--vixen-gold);
+    font-size: 0.75rem;
+}
+
+.evening-context h2 {
+    color: var(--vixen-gold);
+    font-size: 0.67rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.evening-context p {
+    margin-top: 4px;
+    color: #aaa094;
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+
 /* ==========================================
    4. LEVEL-KNAPPAR
    ========================================== */
