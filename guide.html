@@ -36,6 +36,16 @@
             margin: 0 auto;
             height: 320px;
         }
+        .levels-chart-panel {
+            position: relative;
+            margin: 0 0 1rem;
+            padding: 0.35rem 0.75rem;
+            background: rgba(253, 252, 251, 0.98);
+            border: 1px solid rgba(197, 160, 89, 0.22);
+            border-radius: 1.5rem;
+            box-shadow: 0 12px 28px rgba(42, 36, 30, 0.1);
+            backdrop-filter: blur(12px);
+        }
         .tab-active {
             border-bottom: 3px solid var(--accent-gold);
             color: var(--accent-gold);
@@ -63,6 +73,22 @@
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .tab-content { transition: opacity 0.3s ease-in-out; }
+        #content-levels { scroll-margin-top: 96px; }
+        @media (max-width: 640px) {
+            .levels-chart-panel {
+                position: relative;
+                top: auto;
+                z-index: auto;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0;
+                background: transparent;
+                border: 0;
+                box-shadow: none;
+                backdrop-filter: none;
+            }
+            .levels-chart-panel .chart-container { height: 250px; }
+        }
     </style>
 </head>
 <body class="min-h-screen pb-32">
@@ -133,6 +159,12 @@
             
             <div class="p-8 bg-stone-50 rounded-2xl text-center text-xs italic text-stone-500">
                 Funktionen är enkel: Dra ett kort när ni gemensamt har beslutat att ni är redo för nästa steg. Korten ger vägledningen, men det är i ert agerande som den faktiska förändringen sker.
+            </div>
+
+            <div class="nude-card p-8 rounded-2xl space-y-3">
+                <h3 class="text-[#c5a059] uppercase tracking-widest text-xs font-bold">Välj kvällens miljö</h3>
+                <p class="text-sm text-stone-600 leading-relaxed">Varje gång ni öppnar spelet väljer ni först var ni befinner er under <strong>"Var är du ikväll?"</strong> – till exempel på stan, i en bar eller på en privat fest. När ni trycker på <strong>"Dra nya uppdrag"</strong> får ni upp till fem slumpade kort som passar den valda miljön.</p>
+                <p class="text-sm text-stone-600 leading-relaxed">Trycker ni igen ersätts de aktiva korten av en ny slumpad omgång. Ett kort kan dyka upp igen senare, eftersom det kanske passar bättre vid ett annat tillfälle.</p>
             </div>
         </section>
 
@@ -256,8 +288,10 @@
                 <p class="text-muted text-sm px-8 leading-relaxed">Analysera nivåernas profil. Klicka på nivåerna för att se hur balansen mellan risk, exponering och intensitet skiftar.</p>
             </div>
 
-            <div class="chart-container py-4">
-                <canvas id="levelChart"></canvas>
+            <div class="levels-chart-panel">
+                <div class="chart-container py-4">
+                    <canvas id="levelChart"></canvas>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 gap-3 px-2">
@@ -316,12 +350,12 @@
                     <div class="w-10 h-10 bg-[#fdfcfb] rounded-full flex items-center justify-center border border-stone-100 shadow-inner text-xl">🔒</div>
                     <h3 class="font-bold uppercase tracking-[0.2em] text-xs">Total Diskretion</h3>
                 </div>
-                <p class="text-sm text-stone-600 leading-relaxed text-left">Ingen data lämnar någonsin din enhet. Det finns ingen server, inga molntjänster och ingen insyn utifrån. Allt lagras lokalt i din webbläsare. Priset för denna säkerhet är att ansvaret för backup ligger helt på dig. Om du rensar historiken eller byter mobil, nollställs allt permanent.</p>
+                <p class="text-sm text-stone-600 leading-relaxed text-left">Dina framsteg lagras lokalt i webbläsaren och skickas inte till någon server. Du kan dessutom välja en automatisk backupfil i The Vault. Om du rensar webbplatsdata eller byter enhet följer den lokala historiken inte med – då återställer du från backupfilen eller en Vixen Key.</p>
                 
                 <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl space-y-3">
                     <h4 class="text-red-900 font-black uppercase text-[10px] tracking-widest">⚠️ VIKTIGT: En statisk ögonblicksbild</h4>
                     <p class="text-red-800 text-[11px] font-bold leading-relaxed">
-                        Tänk på att din nyckel är en <strong>statisk ögonblicksbild</strong> av din historik. Den uppdateras inte automatiskt. En gammal nyckel tar dig bara tillbaka till den tidpunkt då den skapades. Spara en ny nyckel ofta!
+                        En Vixen Key är en <strong>statisk ögonblicksbild</strong> av din historik. Den uppdateras inte automatiskt. För löpande backup kan du i stället välja en automatisk backupfil i The Vault.
                     </p>
                 </div>
             </div>
@@ -353,8 +387,9 @@
                     </button>
                     <div id="key-how" class="hidden px-4 text-[11px] text-stone-500 py-4 space-y-4 border-l-2 border-stone-200 ml-2">
                         <p>1. Gå till <strong>"The Vault"</strong> längst ner på startsidan.</p>
-                        <p>2. Klicka på knappen <strong>"Generera Vixen Key"</strong>.</p>
+                        <p>2. Klicka på <strong>"Skapa backup-nyckel"</strong>.</p>
                         <p>3. Kopiera koden och spara den på ett säkert ställe.</p>
+                        <p>Vill du att samma fil ska uppdateras automatiskt? Klicka på <strong>"Välj automatisk backupfil"</strong> och välj en fil på datorn. Funktionen stöds främst i Chrome och Edge.</p>
                     </div>
 
                     <button onclick="toggleDetail('key-where')" class="w-full text-left p-4 bg-white/80 rounded-xl text-xs font-bold flex justify-between items-center group">
@@ -467,8 +502,11 @@
         }
 
         function updateLevelChart(idx) {
+            if (!levelChart) initLevelChart();
             levelChart.data.datasets[0].data = levelData[idx];
             levelChart.update();
+            const levelsSection = document.getElementById('content-levels');
+            if (levelsSection) levelsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             document.querySelectorAll('.lvl-btn').forEach((b, i) => {
                 const tag = b.querySelector('span');
                 const status = b.querySelector('.lvl-status');

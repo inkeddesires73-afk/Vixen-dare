@@ -6,10 +6,118 @@ let userProgress = {
     completedTasks: [],
     skippedTasks: [],
     completedTaskDetails: {},
-    environment: 'bar_pub',
+    environment: '',
     offeredByEnvironment: {},
     lastSavedCount: 0 
 };
+
+// Lagringslagret hålls samlat här så att en framtida molnsynk kan läggas till
+// utan att spelmotorn behöver känna till var framstegen sparas.
+const STORAGE_KEY = 'vixen_progress';
+const STORAGE_BACKUP_KEYS = ['vixen_progress_backup_1', 'vixen_progress_backup_2', 'vixen_progress_backup_3'];
+const BACKUP_HANDLE_DB = 'vixen_dare_backup';
+const BACKUP_HANDLE_STORE = 'handles';
+let automaticBackupFile = null;
+
+function openBackupHandleDb() {
+    return new Promise((resolve, reject) => {
+        if (!('indexedDB' in window)) return reject(new Error('IndexedDB saknas'));
+        const request = indexedDB.open(BACKUP_HANDLE_DB, 1);
+        request.onupgradeneeded = () => request.result.createObjectStore(BACKUP_HANDLE_STORE);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error || new Error('Kunde inte öppna backupminnet'));
+    });
+}
+
+async function loadAutomaticBackupFile() {
+    try {
+        const db = await openBackupHandleDb();
+        const handle = await new Promise((resolve, reject) => {
+            const request = db.transaction(BACKUP_HANDLE_STORE, 'readonly').objectStore(BACKUP_HANDLE_STORE).get('backup');
+            request.onsuccess = () => resolve(request.result || null);
+            request.onerror = () => reject(request.error);
+        });
+        db.close();
+        automaticBackupFile = handle;
+        updateBackupFileStatus();
+        await writeAutomaticBackupFile();
+    } catch (e) { /* Äldre webbläsare saknar detta; vanlig backup fungerar ändå. */ }
+}
+
+function updateBackupFileStatus(message) {
+    const status = document.getElementById('file-backup-status');
+    if (!status) return;
+    status.textContent = message || (automaticBackupFile
+        ? 'Automatisk backup är aktiverad.'
+        : '');
+}
+
+async function chooseAutomaticBackupFile() {
+    if (!window.showSaveFilePicker) {
+        updateBackupFileStatus('Din webbläsare stöder inte automatisk uppdatering av samma fil. Använd Vixen Key som backup.');
+        return;
+    }
+    try {
+        const handle = await window.showSaveFilePicker({
+            suggestedName: 'vixen-dare-backup.json',
+            types: [{ description: 'Vixen Dare backup', accept: { 'application/json': ['.json'] } }]
+        });
+        automaticBackupFile = handle;
+        const db = await openBackupHandleDb();
+        await new Promise((resolve, reject) => {
+            const request = db.transaction(BACKUP_HANDLE_STORE, 'readwrite').objectStore(BACKUP_HANDLE_STORE).put(handle, 'backup');
+            request.onsuccess = resolve;
+            request.onerror = () => reject(request.error);
+        });
+        db.close();
+        await writeAutomaticBackupFile();
+        updateBackupFileStatus(`Automatisk backup sparas i ${handle.name}.`);
+    } catch (e) {
+        if (e && e.name !== 'AbortError') updateBackupFileStatus('Backupfilen kunde inte väljas.');
+    }
+}
+
+async function writeAutomaticBackupFile() {
+    if (!automaticBackupFile || !automaticBackupFile.createWritable) return;
+    try {
+        const writable = await automaticBackupFile.createWritable();
+        await writable.write(JSON.stringify({ ...userProgress, exportedAt: new Date().toISOString() }, null, 2));
+        await writable.close();
+        updateBackupFileStatus(`Senast sparad: ${new Date().toLocaleString('sv-SE')}`);
+    } catch (e) {
+        updateBackupFileStatus('Backupfilen behöver väljas igen.');
+    }
+}
+
+function isProgressShape(value) {
+    return value && typeof value === 'object' &&
+        Array.isArray(value.activeTasks) &&
+        Array.isArray(value.completedTasks) &&
+        Array.isArray(value.skippedTasks);
+}
+
+function readProgressCandidate(raw) {
+    if (!raw) return null;
+    try {
+        const parsed = JSON.parse(raw);
+        return isProgressShape(parsed) ? parsed : null;
+    } catch (e) {
+        return null;
+    }
+}
+
+function loadStoredProgress() {
+    try {
+        const candidates = [STORAGE_KEY, ...STORAGE_BACKUP_KEYS];
+        for (const key of candidates) {
+            const parsed = readProgressCandidate(localStorage.getItem(key));
+            if (parsed) return parsed;
+        }
+    } catch (e) {
+        console.error('Kunde inte läsa sparade framsteg:', e);
+    }
+    return null;
+}
 
 const ENVIRONMENTS = {
     on_the_town: {
@@ -28,6 +136,10 @@ const ENVIRONMENTS = {
         label: 'Privat fest',
         description: 'Ni är på en privat vuxenfest där stämningen och sällskapet redan känns bekant och tryggt.'
     },
+    at_home: {
+        label: 'Hemma',
+        description: 'Ni är hemma i en privat och avskild miljö där ni själva styr tempo, ramar och stämning.'
+    },
     swingers_club: {
         label: 'Swingersklubb',
         description: 'Ni är på en vuxenklubb med tydliga husregler och utrymme att ta saker i er egen takt.'
@@ -35,23 +147,20 @@ const ENVIRONMENTS = {
 };
 
 try {
-    const saved = localStorage.getItem('vixen_progress');
-    if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed && typeof parsed === 'object') {
+    const parsed = loadStoredProgress();
+    if (parsed) {
             userProgress = {
                 activeTasks: Array.isArray(parsed.activeTasks) ? parsed.activeTasks : [],
                 completedTasks: Array.isArray(parsed.completedTasks) ? parsed.completedTasks : [],
                 skippedTasks: Array.isArray(parsed.skippedTasks) ? parsed.skippedTasks : [],
                 completedTaskDetails: parsed.completedTaskDetails && typeof parsed.completedTaskDetails === 'object' ? parsed.completedTaskDetails : {},
-                environment: typeof parsed.environment === 'string' ? parsed.environment : 'bar_pub',
+                environment: typeof parsed.environment === 'string' ? parsed.environment : '',
                 offeredByEnvironment: parsed.offeredByEnvironment && typeof parsed.offeredByEnvironment === 'object' ? parsed.offeredByEnvironment : {},
                 lastSavedCount: typeof parsed.lastSavedCount === 'number' ? parsed.lastSavedCount : 0
             };
             if (typeof parsed.lastSavedCount === 'undefined') {
                 userProgress.lastSavedCount = userProgress.completedTasks.length;
             }
-        }
     }
 } catch (e) {
     console.error("Kunde inte läsa från minnet:", e);
@@ -95,7 +204,7 @@ function normalizeProgress(progress) {
         completedTasks,
         skippedTasks,
         completedTaskDetails,
-        environment: ENVIRONMENTS[environment] ? environment : 'bar_pub',
+        environment: ENVIRONMENTS[environment] ? environment : '',
         offeredByEnvironment,
         lastSavedCount: Math.max(0, Math.min(
             typeof progress.lastSavedCount === 'number' ? progress.lastSavedCount : completedTasks.length,
@@ -106,13 +215,23 @@ function normalizeProgress(progress) {
 
 function saveToDevice() {
     try {
-        localStorage.setItem('vixen_progress', JSON.stringify(userProgress));
+        const serialized = JSON.stringify(userProgress);
+        const previous = localStorage.getItem(STORAGE_KEY);
+        if (previous && readProgressCandidate(previous)) {
+            for (let i = STORAGE_BACKUP_KEYS.length - 1; i > 0; i--) {
+                const older = localStorage.getItem(STORAGE_BACKUP_KEYS[i - 1]);
+                if (older) localStorage.setItem(STORAGE_BACKUP_KEYS[i], older);
+            }
+            localStorage.setItem(STORAGE_BACKUP_KEYS[0], previous);
+        }
+        localStorage.setItem(STORAGE_KEY, serialized);
     } catch (e) {
         console.error("Kunde inte spara på enheten:", e);
         alert("Kunde inte spara dina framsteg på den här enheten.");
     }
     renderLists();
     checkUnsavedProgress(); 
+    void writeAutomaticBackupFile();
 }
 
 // ==========================================
@@ -123,6 +242,13 @@ function drawTasks(level) {
     if (typeof VIXEN_DATABASE === 'undefined') { 
         alert("Systemfel: tasks.js saknas!"); 
         return; 
+    }
+
+    if (!ENVIRONMENTS[userProgress.environment]) {
+        alert('Välj först var du är i kväll.');
+        const select = document.getElementById('environment-select');
+        if (select) select.focus();
+        return;
     }
 
     const available = VIXEN_DATABASE.filter(t =>
@@ -320,7 +446,8 @@ function importProgress() {
 
 function panicReset() {
     if(confirm("Radera ALLA framsteg permanent?")) {
-        localStorage.removeItem('vixen_progress');
+        localStorage.removeItem(STORAGE_KEY);
+        STORAGE_BACKUP_KEYS.forEach(key => localStorage.removeItem(key));
         localStorage.removeItem('vixen_visited_before');
         location.reload();
     }
@@ -355,7 +482,7 @@ function renderLists() {
     const environmentContextEl = document.getElementById('environment-context-text');
 
     if (environmentSelect) environmentSelect.value = userProgress.environment;
-    if (environmentContextEl) environmentContextEl.textContent = ENVIRONMENTS[userProgress.environment].description;
+    if (environmentContextEl) environmentContextEl.textContent = ENVIRONMENTS[userProgress.environment]?.description || 'Välj miljö för att anpassa uppdragen.';
 
     if (activeEl) {
         activeEl.innerHTML = '';
@@ -448,6 +575,10 @@ function closeWelcomeModal() {
 
 window.onload = function() {
     userProgress = normalizeProgress(userProgress);
+    // Miljön gäller bara för den aktuella spelsessionen. Vid varje ny öppning
+    // måste användaren aktivt välja var kvällen utspelar sig.
+    userProgress.environment = '';
+    void loadAutomaticBackupFile();
     saveToDevice();
     renderLists();
     checkUnsavedProgress(); 

@@ -26,10 +26,12 @@
         <div>
             <label id="evening-context-title" for="environment-select">Var är du i kväll?</label>
             <select id="environment-select" onchange="setEnvironment(this.value)">
+                <option value="" selected disabled>Välj miljö först…</option>
                 <option value="on_the_town">På stan</option>
                 <option value="bar_pub">Bar eller pub</option>
                 <option value="nightclub">Uteställe eller klubb</option>
                 <option value="private_party">Privat fest</option>
+                <option value="at_home">Hemma</option>
                 <option value="swingers_club">Swingersklubb</option>
             </select>
             <p id="environment-context-text">Nya uppdrag anpassas efter den miljö du väljer.</p>
@@ -39,11 +41,11 @@
     <section class="controls luxury-panel">
         <h2>Dra nya instruktioner</h2>
         <div class="btn-grid">
-            <button onclick="drawTasks(1)" class="level-btn btn-n1" title="Vanilla">🍦</button>
-            <button onclick="drawTasks(2)" class="level-btn btn-n2" title="Spicy">🌶️🌶️</button>
-            <button onclick="drawTasks(3)" class="level-btn btn-n3" title="Hot">🌶️🌶️🌶️</button>
-            <button onclick="drawTasks(4)" class="level-btn btn-n4" title="Extra Hot">🌶️🌶️🌶️🌶️</button>
-            <button onclick="drawTasks(5)" class="level-btn btn-n5" title="Insane">🌶️🌶️🌶️🌶️🌶️</button>
+            <div class="level-choice"><button onclick="drawTasks(1)" class="level-btn btn-n1" title="Nivå 1 – Flirt"><img src="assets/levels/level-1.png" alt="Nivå 1 – Flirt"></button><span>Nivå 1&nbsp;–&nbsp;Flirt</span></div>
+            <div class="level-choice"><button onclick="drawTasks(2)" class="level-btn btn-n2" title="Nivå 2 – Tease"><img src="assets/levels/level-2.png" alt="Nivå 2 – Tease"></button><span>Nivå 2&nbsp;–&nbsp;Tease</span></div>
+            <div class="level-choice"><button onclick="drawTasks(3)" class="level-btn btn-n3" title="Nivå 3 – Temptation"><img src="assets/levels/level-3.png" alt="Nivå 3 – Temptation"></button><span>Nivå 3&nbsp;–&nbsp;Temptation</span></div>
+            <div class="level-choice"><button onclick="drawTasks(4)" class="level-btn btn-n4" title="Nivå 4 – Risk"><img src="assets/levels/level-4.png" alt="Nivå 4 – Risk"></button><span>Nivå 4&nbsp;–&nbsp;Risk</span></div>
+            <div class="level-choice"><button onclick="drawTasks(5)" class="level-btn btn-n5" title="Nivå 5 – No Limits"><img src="assets/levels/level-5.png" alt="Nivå 5 – No Limits"></button><span>Nivå 5&nbsp;–&nbsp;No Limits</span></div>
         </div>
     </section>
 
@@ -84,6 +86,8 @@
         <p class="vault-info" id="vault-info-text">Spara din backup med en <strong>Vixen Key</strong>.</p>
         <div class="backup-box">
             <button class="vault-btn" id="export-btn" onclick="exportProgress()">SKAPA BACKUP-NYCKEL</button>
+            <button class="vault-btn secondary-vault-btn" id="file-backup-btn" onclick="chooseAutomaticBackupFile()">VÄLJ AUTOMATISK BACKUPFIL</button>
+            <span id="file-backup-status" class="vault-info" role="status"></span>
             <textarea id="backup-key-area" readonly style="display:none;"></textarea>
             <button class="vault-btn secondary-vault-btn" id="copy-backup-btn" onclick="copyBackupKey()">KOPIERA NYCKEL</button>
         </div>
