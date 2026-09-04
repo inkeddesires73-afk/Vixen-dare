@@ -7,6 +7,7 @@ let userProgress = {
     skippedTasks: [],
     completedTaskDetails: {},
     environment: 'bar_pub',
+    offeredByEnvironment: {},
     lastSavedCount: 0 
 };
 
@@ -44,6 +45,7 @@ try {
                 skippedTasks: Array.isArray(parsed.skippedTasks) ? parsed.skippedTasks : [],
                 completedTaskDetails: parsed.completedTaskDetails && typeof parsed.completedTaskDetails === 'object' ? parsed.completedTaskDetails : {},
                 environment: typeof parsed.environment === 'string' ? parsed.environment : 'bar_pub',
+                offeredByEnvironment: parsed.offeredByEnvironment && typeof parsed.offeredByEnvironment === 'object' ? parsed.offeredByEnvironment : {},
                 lastSavedCount: typeof parsed.lastSavedCount === 'number' ? parsed.lastSavedCount : 0
             };
             if (typeof parsed.lastSavedCount === 'undefined') {
@@ -78,6 +80,15 @@ function normalizeProgress(progress) {
 
     const environmentAliases = { city: 'on_the_town', club: 'nightclub' };
     const environment = environmentAliases[progress.environment] || progress.environment;
+    const offeredByEnvironment = {};
+    if (progress.offeredByEnvironment && typeof progress.offeredByEnvironment === 'object') {
+        Object.entries(progress.offeredByEnvironment).forEach(([key, ids]) => {
+            const normalizedKey = environmentAliases[key] || key;
+            if (ENVIRONMENTS[normalizedKey] && Array.isArray(ids)) {
+                offeredByEnvironment[normalizedKey] = uniqueValidIds(ids);
+            }
+        });
+    }
 
     return {
         activeTasks,
@@ -85,6 +96,7 @@ function normalizeProgress(progress) {
         skippedTasks,
         completedTaskDetails,
         environment: ENVIRONMENTS[environment] ? environment : 'bar_pub',
+        offeredByEnvironment,
         lastSavedCount: Math.max(0, Math.min(
             typeof progress.lastSavedCount === 'number' ? progress.lastSavedCount : completedTasks.length,
             completedTasks.length
@@ -113,22 +125,37 @@ function drawTasks(level) {
         return; 
     }
 
+    const currentEnvironment = userProgress.environment;
+    const offered = new Set(userProgress.offeredByEnvironment[currentEnvironment] || []);
+
+    // Ett nytt drag ersätter alltid de aktiva korten. De gamla markeras som redan erbjudna.
+    userProgress.activeTasks.forEach(id => offered.add(id));
+    userProgress.offeredByEnvironment[currentEnvironment] = [...offered];
+
     const available = VIXEN_DATABASE.filter(t =>
         t.level === level && 
         !userProgress.activeTasks.includes(t.id) && 
         !userProgress.completedTasks.includes(t.id) &&
         !userProgress.skippedTasks.includes(t.id) &&
+        !offered.has(t.id) &&
         isTaskCompatibleWithEnvironment(t, userProgress.environment)
     );
 
-    if (available.length === 0) { 
+    const fallbackAvailable = VIXEN_DATABASE.filter(t =>
+        t.level === level &&
+        !userProgress.completedTasks.includes(t.id) &&
+        !userProgress.skippedTasks.includes(t.id) &&
+        isTaskCompatibleWithEnvironment(t, userProgress.environment)
+    );
+    const pool = available.length >= 5 ? available : fallbackAvailable;
+
+    if (pool.length === 0) {
         alert("Det finns inga fler passande uppdrag på nivå " + level + " i den valda miljön.");
         return; 
     }
 
-    const randomAmount = Math.floor(Math.random() * 3) + 3;
-    const count = Math.min(randomAmount, available.length);
-    const shuffled = [...available];
+    const count = Math.min(5, pool.length);
+    const shuffled = [...pool];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -137,6 +164,9 @@ function drawTasks(level) {
     const general = shuffled.filter(task => !hasExplicitEnvironment(task));
     const selected = [...targeted, ...general].slice(0, count);
 
+    selected.forEach(task => offered.add(task.id));
+    userProgress.offeredByEnvironment[currentEnvironment] = [...offered];
+    userProgress.activeTasks = [];
     selected.forEach(task => { 
         userProgress.activeTasks.push(task.id); 
     });
