@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Vixen Dare</title>
     <link rel="stylesheet" href="style.css">
-	<link rel="manifest" href="manifest.webmanifest?v=32">
+	<link rel="manifest" href="manifest.webmanifest?v=33">
+	<script>
+        // Chrome kan erbjuda installation mycket tidigt under sidladdningen.
+        // Spara händelsen redan i dokumenthuvudet, innan den stora kortfilen laddas.
+        window.__vixenInstallPrompt = null;
+        window.addEventListener('beforeinstallprompt', event => {
+            event.preventDefault();
+            window.__vixenInstallPrompt = event;
+            window.dispatchEvent(new Event('vixeninstallready'));
+        });
+    </script>
 </head>
 <body>
 
@@ -140,7 +150,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js?v=32', { updateViaCache: 'none' }).catch(() => {});
+                navigator.serviceWorker.register('./sw.js?v=33', { updateViaCache: 'none' }).catch(() => {});
             });
         }
     </script>

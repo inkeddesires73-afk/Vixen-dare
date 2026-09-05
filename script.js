@@ -19,7 +19,7 @@ const BACKUP_HANDLE_DB = 'vixen_dare_backup';
 const BACKUP_HANDLE_STORE = 'handles';
 let automaticBackupFile = null;
 let currentDrawLevel = null;
-let deferredInstallPrompt = null;
+let deferredInstallPrompt = window.__vixenInstallPrompt || null;
 
 function isStandaloneMode() {
     return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
@@ -39,6 +39,7 @@ function updateWelcomeInstallButton() {
 
 async function installVixenPwa() {
     const help = document.getElementById('install-help');
+    deferredInstallPrompt = deferredInstallPrompt || window.__vixenInstallPrompt || null;
     if (deferredInstallPrompt) {
         deferredInstallPrompt.prompt();
         await deferredInstallPrompt.userChoice;
@@ -54,14 +55,14 @@ async function installVixenPwa() {
     }
 }
 
-window.addEventListener('beforeinstallprompt', event => {
-    event.preventDefault();
-    deferredInstallPrompt = event;
+window.addEventListener('vixeninstallready', () => {
+    deferredInstallPrompt = window.__vixenInstallPrompt;
     updateWelcomeInstallButton();
 });
 
 window.addEventListener('appinstalled', () => {
     deferredInstallPrompt = null;
+    window.__vixenInstallPrompt = null;
     updateWelcomeInstallButton();
 });
 
@@ -633,12 +634,13 @@ function escapeHtml(value) {
 }
 
 function closeWelcomeModal() {
-    localStorage.setItem('vixen_visited_before', 'true');
     const modal = document.getElementById('welcome-modal');
     if (modal) modal.style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
 window.onload = function() {
+    window.scrollTo({ top: 0, behavior: 'auto' });
     userProgress = normalizeProgress(userProgress);
     // Miljön gäller bara för den aktuella spelsessionen. Vid varje ny öppning
     // måste användaren aktivt välja var kvällen utspelar sig.
@@ -648,8 +650,6 @@ window.onload = function() {
     renderLists();
     checkUnsavedProgress(); 
     updateWelcomeInstallButton();
-    if (!localStorage.getItem('vixen_visited_before')) {
-        const modal = document.getElementById('welcome-modal');
-        if (modal) modal.style.display = 'flex';
-    }
+    const modal = document.getElementById('welcome-modal');
+    if (modal) modal.style.display = 'flex';
 };
