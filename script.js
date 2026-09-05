@@ -19,6 +19,51 @@ const BACKUP_HANDLE_DB = 'vixen_dare_backup';
 const BACKUP_HANDLE_STORE = 'handles';
 let automaticBackupFile = null;
 let currentDrawLevel = null;
+let deferredInstallPrompt = null;
+
+function isStandaloneMode() {
+    return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+
+function updateWelcomeInstallButton() {
+    const button = document.getElementById('welcome-install-btn');
+    if (!button) return;
+    if (isStandaloneMode()) {
+        button.style.display = 'none';
+        return;
+    }
+    button.innerHTML = deferredInstallPrompt
+        ? 'INSTALLERA PÅ HEMSKÄRM <span aria-hidden="true">↗</span>'
+        : 'LÄGG TILL PÅ HEMSKÄRM <span aria-hidden="true">↗</span>';
+}
+
+async function installVixenPwa() {
+    const help = document.getElementById('install-help');
+    if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt = null;
+        updateWelcomeInstallButton();
+        return;
+    }
+    if (help) {
+        help.textContent = /iPhone|iPad|iPod/i.test(navigator.userAgent)
+            ? 'I Safari: tryck Dela och välj ”Lägg till på hemskärmen”.'
+            : 'Öppna webbläsarens meny och välj ”Installera app” eller ”Lägg till på hemskärmen”.';
+        help.classList.add('is-visible');
+    }
+}
+
+window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    updateWelcomeInstallButton();
+});
+
+window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    updateWelcomeInstallButton();
+});
 
 function openBackupHandleDb() {
     return new Promise((resolve, reject) => {
@@ -602,6 +647,7 @@ window.onload = function() {
     saveToDevice();
     renderLists();
     checkUnsavedProgress(); 
+    updateWelcomeInstallButton();
     if (!localStorage.getItem('vixen_visited_before')) {
         const modal = document.getElementById('welcome-modal');
         if (modal) modal.style.display = 'flex';

@@ -737,37 +737,54 @@ button:focus-visible, .top-guide-btn:focus-visible, summary:focus-visible {
 }
 
 .modal-content {
-    background: #111;
+    background: linear-gradient(150deg, #171512 0%, #0e0e0e 48%, #080808 100%);
     width: 90%;
     max-width: 450px;
-    padding: 40px 30px;
-    border-radius: 30px;
-    border: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 24px 28px;
+    border-radius: 28px;
+    border: 1px solid rgba(197, 160, 89, 0.42);
     text-align: center;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 25px 60px rgba(0,0,0,0.72), 0 0 70px rgba(197, 160, 89, 0.08);
+}
+
+.welcome-logo {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 8px;
+}
+
+.welcome-eyebrow {
+    color: #bfa064;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    margin: 0 0 9px;
 }
 
 .modal-content h2 {
-    font-family: serif;
+    font-family: Georgia, 'Times New Roman', serif;
     font-style: italic;
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: clamp(1.65rem, 6vw, 1.95rem);
+    margin-bottom: 9px;
     color: #fff;
     letter-spacing: 1px;
 }
 
+.modal-content h2 span { color: #d4ad57; }
+
 .modal-intro {
     font-size: 0.95rem;
     color: #888;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     line-height: 1.6;
 }
 
 .instruction-box {
-    background: rgba(255,255,255,0.02);
-    padding: 25px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+    padding: 4px 18px;
     border-radius: 20px;
-    margin-bottom: 35px;
+    margin-bottom: 16px;
     text-align: left;
     border: 1px solid rgba(255,255,255,0.05);
 }
@@ -775,15 +792,36 @@ button:focus-visible, .top-guide-btn:focus-visible, summary:focus-visible {
 .instruction-step {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 25px;
+    padding: 13px 0;
+    margin-bottom: 0;
 }
 
-.instruction-step:last-child { margin-bottom: 0; }
+.instruction-step + .instruction-step { border-top: 1px solid rgba(197, 160, 89, 0.15); }
 
 .step-icon {
-    font-size: 1.6rem;
-    margin-right: 20px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin-right: 13px;
     flex-shrink: 0;
+    border: 1px solid rgba(197, 160, 89, 0.36);
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 28%, rgba(220,179,92,0.18), transparent 58%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 7px 18px rgba(0,0,0,0.22);
+}
+
+.step-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #d4ad57;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.step-icon .icon-accent { stroke: #f0d38e; }
 }
 
 .step-text h4 {
@@ -791,7 +829,7 @@ button:focus-visible, .top-guide-btn:focus-visible, summary:focus-visible {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-weight: 800;
 }
 
@@ -801,21 +839,55 @@ button:focus-visible, .top-guide-btn:focus-visible, summary:focus-visible {
     color: #aaa;
 }
 
-.start-btn {
-    background: #c5a059;
-    color: #000;
-    border: none;
+.welcome-install-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    padding: 20px;
-    border-radius: 15px;
+    margin-top: 10px;
+    padding: 9px 12px 9px 13px;
+    border: 1px solid rgba(212, 173, 87, 0.7);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(197,160,89,0.2), rgba(197,160,89,0.045));
+    color: #e4c57e;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1.35px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 18px rgba(0,0,0,0.2);
+    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.welcome-install-btn span { font-size: 1rem; line-height: 0; }
+.welcome-install-btn:hover { border-color: #f0d38e; background: linear-gradient(135deg, rgba(197,160,89,0.3), rgba(197,160,89,0.08)); transform: translateY(-1px); }
+.welcome-install-btn:active { transform: translateY(1px) scale(.99); }
+.install-help { display: none; margin-top: 9px; color: #a99f90 !important; font-size: .74rem !important; line-height: 1.4 !important; }
+.install-help.is-visible { display: block; }
+
+.start-btn {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #e0bd70 0%, #b5893f 47%, #e1bd6e 100%);
+    color: #120e07;
+    border: 1px solid rgba(255, 225, 159, 0.9);
+    width: 100%;
+    padding: 13px 18px;
+    border-radius: 12px;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-size: 0.76rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 25px rgba(197, 160, 89, 0.25);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.42), inset 0 -2px 0 rgba(93,61,18,0.3), 0 12px 28px rgba(197, 160, 89, 0.22);
 }
+
+.start-btn::before { content: ''; position: absolute; inset: 1px 45% 1px 1px; border-radius: 10px; background: linear-gradient(90deg, rgba(255,255,255,.17), transparent); pointer-events: none; }
+.start-btn i { font-style: normal; font-size: 1.08rem; line-height: 0; }
 
 .start-btn:hover {
     filter: brightness(1.1);
@@ -825,6 +897,7 @@ button:focus-visible, .top-guide-btn:focus-visible, summary:focus-visible {
 .start-btn:active {
     transform: scale(0.98);
 }
+
 .secondary-vault-btn {
     margin-top: 10px;
     background: transparent !important;
