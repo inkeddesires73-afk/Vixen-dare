@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vixen-dare-cache-v17';
+const CACHE_NAME = 'vixen-dare-cache-v24';
 const ASSETS = [
   './',
   './index.html',
