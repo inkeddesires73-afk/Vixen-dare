@@ -61,8 +61,8 @@
       "environments": [
         "on_the_town"
       ],
-      "context": "Ni står i en långsam kaffekö och mannen framför dig har en slående jacka eller klocka.",
-      "text": "Luta dig lätt framåt, kommentera detaljen med ett varmt tonfall och fråga om det finns en bra historia bakom. Håll samtalet levande medan din partner står tätt bakom och lyssnar."
+      "context": "Ni står i en långsam kaffekö och mannen framför dig har en snygg jacka eller klocka.",
+      "text": "Om det känns naturligt kan du säga något enkelt som “Fin jacka” eller bara möt hans blick med ett leende medan ni väntar."
     },
     {
       "id": "vix_n1_008",
@@ -71,7 +71,7 @@
         "on_the_town"
       ],
       "context": "Ni promenerar längs en gågata och möter en man som söker din blick på långt håll.",
-      "text": "Din partner släpper diskret din hand. Håll mannens blick oavbrutet hela vägen tills ni möts, vrid lätt på huvudet när ni passerar varandra och kika bakåt över axeln precis innan han försvinner i vimlet."
+      "text": "Håll hans blick några sekunder när ni närmar er varandra och ge ett litet leende när ni passerar."
     },
     {
       "id": "vix_n1_009",
@@ -89,7 +89,7 @@
         "on_the_town"
       ],
       "context": "Ni åker rulltrappa uppåt i en galleria och en stilig man åker nedåt i rulltrappan precis intill.",
-      "text": "Lås blicken vid hans ögon så tidigt du kan. Bit dig lätt i underläppen precis i korsningsögonblicket och vrid huvudet för att följa honom bakåt med blicken."
+      "text": "Möt hans blick när ni passerar varandra och ge ett litet leende."
     },
     {
       "id": "vix_n1_011",
@@ -107,7 +107,7 @@
         "on_the_town"
       ],
       "context": "Ni sitter på en uteservering med solglasögon och din partner ser att mannen snett emot kikar på dig.",
-      "text": "Skjut långsamt ner glasögonen på näsryggen med pekfingret, möt mannens blick över kanten med ett hemlighetsfullt leende och skjut sedan upp dem igen."
+      "text": "Skjut långsamt ner glasögonen lite, möt mannens blick över kanten med ett litet leende och skjut sedan upp dem igen."
     },
     {
       "id": "vix_n1_013",
@@ -367,8 +367,8 @@
       "environments": [
         "bar_pub"
       ],
-      "context": "En man vid bardisken står och tvekar länge över öllistan med rynkad panna.",
-      "text": "Kliv fram bredvid honom och säg: \"Ta den tredje uppifrån... jag garanterar att den räddar din kväll.\""
+      "context": "En man vid bardisken står och tvekar länge över öllistan.",
+      "text": "Ställ dig bredvid och titta också på listan. Om det känns naturligt kan du säga något enkelt som “Svårt att välja?” med ett leende."
     },
     {
       "id": "vix_n1_042",
@@ -620,7 +620,7 @@
         "nightclub"
       ],
       "context": "Ljuset sveper över dansgolvet och en man söker din blick genom stroboskop och rök.",
-      "text": "Lås blicken vid honom under tre ljussvep. När din partner tar din hand, bjud mannen på ett sista leende innan du vänder bort huvudet."
+      "text": "Lås blicken vid honom under ett par ljussvep och ge ett litet leende."
     },
     {
       "id": "vix_n1_070",
@@ -773,7 +773,7 @@
         "nightclub"
       ],
       "context": "Klubben har en upphöjd scen eller podium där folk dansar fritt.",
-      "text": "Kliv upp på kanten, dansa med full utstrålning och lås blicken vid en man nedanför som iakttar dig."
+      "text": "Om du kliver upp, dansa och möt blicken hos en man nedanför som tittar på dig."
     },
     {
       "id": "vix_n1_087",
@@ -1043,7 +1043,7 @@
         "private_party"
       ],
       "context": "En man reser sig för att gå hem och kramar om sällskapet i hallen.",
-      "text": "Ge honom en kram som dröjer kvar ett par sekunder extra, stryk lätt över hans rygg och viska: \"Kul att du kom... gå inte lika tidigt nästa gång.\""
+      "text": "Ge honom en kram som får pågå en sekund extra och möt hans blick med ett leende när ni släpper."
     },
     {
       "id": "vix_n1_117",
@@ -1151,7 +1151,7 @@
         "at_home"
       ],
       "context": "Ni visar runt i huset och kliver in i ert arbetsrum eller bibliotek med en manlig gäst.",
-      "text": "Din partner dröjer i dörröppningen. Stryk handen över skrivbordet eller bokryggarna, vänd dig mot mannen och fråga vad han tycker om er stil."
+      "text": "Möt hans blick och fråga vad han tycker om rummet med ett leende."
     },
     {
       "id": "vix_n1_129",
@@ -1267,8 +1267,8 @@
       "environments": [
         "at_home"
       ],
-      "context": "En gäst frågar efter lösenordet till ert trådlösa nätverk.",
-      "text": "Ta hans telefon för att knappa in det själv. Gör det långsamt, räck tillbaka telefonen och låt fingrarna stryka lätt över hans handflata."
+      "context": "En gäst frågar efter lösenordet till ert nätverk.",
+      "text": "Knappa in det åt honom eller säg det, och möt hans blick med ett leende."
     },
     {
       "id": "vix_n1_142",
@@ -1348,8 +1348,8 @@
       "environments": [
         "at_home"
       ],
-      "context": "Gästen kramar om er båda till avsked i dörröppningen inför hemfärden.",
-      "text": "Ge mannen en kram som varar två sekunder längre än förväntat, stryk lätt över hans nacke och viska: \"Kom tillbaka snart... det blir tomt här nu.\""
+      "context": "Gästen kramar om er båda till avsked.",
+      "text": "Ge mannen en kram som får pågå en sekund extra och möt hans blick med ett leende."
     },
     {
       "id": "vix_n1_151",
@@ -1375,8 +1375,8 @@
       "environments": [
         "swingers_club"
       ],
-      "context": "Ni står vid klubbens bar och väntar på dryck bland andra par och singelmän.",
-      "text": "Din partner kliver bakom dig. Lokalisera en stilig man vid disken, sök hans blick, håll den stadigt och bit dig lätt i läppen innan du vänder dig om."
+      "context": "Ni står vid klubbens bar och väntar på dryck.",
+      "text": "Sök en stilmans blick vid disken, håll den en stund och ge ett litet leende."
     },
     {
       "id": "vix_n1_154",
@@ -1393,8 +1393,8 @@
       "environments": [
         "swingers_club"
       ],
-      "context": "Ni sitter i klubbens soffor där ljuset är dämpat och en man slår sig ner i fåtöljen snett emot.",
-      "text": "Korsa långsamt dina ben, låt klänningen glida upp en aning och möt mannens blick med ett svalt, självsäkert leende utan att täcka över benet."
+      "context": "Ni sitter i sofforna och en man slår sig ner snett emot.",
+      "text": "Möt hans blick med ett självsäkert leende."
     },
     {
       "id": "vix_n1_156",
@@ -1510,8 +1510,8 @@
       "environments": [
         "swingers_club"
       ],
-      "context": "Ni står vid temarummet (bondage/dungeon) och tittar på inredningen bredvid en man.",
-      "text": "Fråga honom med ett snett leende: \"Har du provat den där utrustningen, eller föredrar du mjukare lekar här på klubben?\""
+      "context": "Ni står vid temarummet och tittar på inredningen bredvid en man.",
+      "text": "Möt hans blick och ge ett leende."
     },
     {
       "id": "vix_n1_169",
@@ -1519,8 +1519,8 @@
       "environments": [
         "swingers_club"
       ],
-      "context": "En man passerar er i den trånga korridoren mellan loungen och lekrummen.",
-      "text": "Dra in magen och låt din kropp stryka tätt förbi hans. Vänd på huvudet i steget och bjud på en ursäktande blick som andas ren inbjudan."
+      "context": "En man passerar er i den trånga korridoren.",
+      "text": "Möt hans blick när ni passerar varandra och ge ett litet leende."
     },
     {
       "id": "vix_n1_170",
@@ -1528,8 +1528,8 @@
       "environments": [
         "swingers_club"
       ],
-      "context": "Ni sitter i en cirkelformad soffgrupp och en man sätter sig bredvid dig med respektfullt avstånd.",
-      "text": "Glid ett par decimeter närmare honom, vänd knäna åt hans håll och fråga vad som lockade honom till klubben just ikväll."
+      "context": "En man sätter sig bredvid dig i en soffgrupp.",
+      "text": "Vänd dig lite mot honom och möt hans blick med ett leende."
     },
     {
       "id": "vix_n1_171",
@@ -1546,8 +1546,8 @@
       "environments": [
         "swingers_club"
       ],
-      "context": "En man vid baren har en väldigt vältränad rygg i en åtsittande svart skjorta.",
-      "text": "Gå förbi honom på väg till toaletten, låt baksidan av dina fingrar stryka fjäderlätt över hans skulderblad och fortsätt gå – vänd dig bara om i dörren och möt hans blick."
+      "context": "En man har en vältränad rygg i åtsittande skjorta.",
+      "text": "Möt hans blick när ni är nära och ge ett uppskattande leende."
     },
     {
       "id": "vix_n1_173",
@@ -1555,8 +1555,8 @@
       "environments": [
         "swingers_club"
       ],
-      "context": "Ni sitter i relaxavdelningen iförda handdukar och en man slår sig ner på bänken intill.",
-      "text": "Sätt dig tillrätta så att benen exponeras mjukt, möt hans blick när han noterar det och fråga hur länge han har rört sig i swingerlivsstilen."
+      "context": "Ni sitter i relaxavdelningen och en man slår sig ner intill.",
+      "text": "Möt hans blick med ett leende."
     },
     {
       "id": "vix_n1_174",
