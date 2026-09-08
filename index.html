@@ -104,6 +104,8 @@
         <div class="import-box">
             <input type="text" id="import-key-input" placeholder="Klistra in nyckel...">
             <button class="vault-btn" onclick="importProgress()">ÅTERSTÄLL DATA</button>
+            <button type="button" class="vault-btn secondary-vault-btn" onclick="document.getElementById('import-backup-file').click()">ÅTERSTÄLL FRÅN BACKUPFIL</button>
+            <input type="file" id="import-backup-file" accept=".json,application/json" hidden onchange="importBackupFile(this)">
         </div>
     </section>
 </main>
@@ -139,7 +141,7 @@
                 </span>
                 <div class="step-text">
                     <h4>Din Vixen Key</h4>
-                    <p>Skapa en nyckel i <strong>The Vault</strong> regelbundet. Det är din enda livlina om du byter enhet eller rensar cache.</p>
+                    <p>Spara en Vixen Key eller välj en backupfil i <strong>The Vault</strong>, så kan du återställa framstegen om du byter enhet eller rensar webbplatsdata.</p>
                 </div>
             </div>
         </div>

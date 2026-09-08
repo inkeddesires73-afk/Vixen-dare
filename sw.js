@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vixen-dare-cache-v41';
+const CACHE_NAME = 'vixen-dare-cache-v42';
 const ASSETS = [
   './',
   './index.html',
@@ -33,10 +33,9 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
-    ))
+      keys.filter(key => key.startsWith('vixen-dare-cache-') && key !== CACHE_NAME).map(key => caches.delete(key))
+    )).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
@@ -45,12 +44,17 @@ self.addEventListener('fetch', event => {
   // Startsidan ska alltid kontrolleras mot nätet först så att en installerad
   // app inte kan fastna på en gammal välkomstsida efter en uppdatering.
   if (event.request.mode === 'navigate') {
+    const page = new URL(event.request.url);
+    page.search = '';
+    if (page.pathname.endsWith('/')) page.pathname += 'index.html';
     event.respondWith(
       fetch(event.request).then(response => {
-        const copy = response.clone();
-        event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy)));
+        if (response.status === 200 && response.type === 'basic') {
+          const copy = response.clone();
+          event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(page.href, copy)));
+        }
         return response;
-      }).catch(() => caches.match('./index.html'))
+      }).catch(async () => (await caches.match(page.href)) || Response.error())
     );
     return;
   }

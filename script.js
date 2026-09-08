@@ -41,9 +41,11 @@ async function installVixenPwa() {
     const help = document.getElementById('install-help');
     deferredInstallPrompt = deferredInstallPrompt || window.__vixenInstallPrompt || null;
     if (deferredInstallPrompt) {
-        deferredInstallPrompt.prompt();
-        await deferredInstallPrompt.userChoice;
+        const prompt = deferredInstallPrompt;
         deferredInstallPrompt = null;
+        window.__vixenInstallPrompt = null;
+        await prompt.prompt();
+        await prompt.userChoice;
         updateWelcomeInstallButton();
         return;
     }
@@ -87,7 +89,7 @@ async function loadAutomaticBackupFile() {
         db.close();
         automaticBackupFile = handle;
         updateBackupFileStatus();
-        await writeAutomaticBackupFile();
+        // Skriv när framstegen ändras, inte bara för att appen öppnas.
     } catch (e) { /* Äldre webbläsare saknar detta; vanlig backup fungerar ändå. */ }
 }
 
@@ -117,8 +119,9 @@ async function chooseAutomaticBackupFile() {
             request.onerror = () => reject(request.error);
         });
         db.close();
-        await writeAutomaticBackupFile();
-        updateBackupFileStatus(`Automatisk backup sparas i ${handle.name}.`);
+        if (await writeAutomaticBackupFile()) {
+            updateBackupFileStatus(`Automatisk backup sparas i ${handle.name}.`);
+        }
     } catch (e) {
         if (e && e.name !== 'AbortError') updateBackupFileStatus('Backupfilen kunde inte väljas.');
     }
@@ -131,8 +134,10 @@ async function writeAutomaticBackupFile() {
         await writable.write(JSON.stringify({ ...userProgress, exportedAt: new Date().toISOString() }, null, 2));
         await writable.close();
         updateBackupFileStatus(`Senast sparad: ${new Date().toLocaleString('sv-SE')}`);
+        return true;
     } catch (e) {
         updateBackupFileStatus('Backupfilen behöver väljas igen.');
+        return false;
     }
 }
 
@@ -302,12 +307,13 @@ function drawTasks(level) {
 
     const available = VIXEN_DATABASE.filter(t =>
         t.level === level && 
-        !userProgress.activeTasks.includes(t.id) && 
         !userProgress.completedTasks.includes(t.id) &&
         !userProgress.skippedTasks.includes(t.id) &&
         isTaskCompatibleWithEnvironment(t, userProgress.environment)
     );
     if (available.length === 0) {
+        userProgress.activeTasks = [];
+        saveToDevice();
         alert("Det finns inga fler passande uppdrag på nivå " + level + " i den valda miljön.");
         return; 
     }
@@ -320,7 +326,10 @@ function drawTasks(level) {
     }
     const targeted = shuffled.filter(task => hasExplicitEnvironment(task));
     const general = shuffled.filter(task => !hasExplicitEnvironment(task));
-    const selected = [...targeted, ...general].slice(0, count);
+    const ordered = [...targeted, ...general];
+    const fresh = ordered.filter(task => !userProgress.activeTasks.includes(task.id));
+    const repeated = ordered.filter(task => userProgress.activeTasks.includes(task.id));
+    const selected = [...fresh, ...repeated].slice(0, count);
 
     // Ett nytt drag ersätter alltid de aktiva korten. De gamla blir tillgängliga igen senare.
     userProgress.activeTasks = [];
@@ -502,6 +511,25 @@ function importProgress() {
     }
 }
 
+async function importBackupFile(input) {
+    const file = input.files?.[0];
+    if (!file) return;
+    try {
+        const data = JSON.parse(await file.text());
+        if (!isProgressShape(data)) throw new Error('Ogiltig backup');
+        if (!confirm('Detta skriver över nuvarande framsteg med backupfilens innehåll. Fortsätt?')) return;
+        userProgress = normalizeProgress(data);
+        userProgress.environment = '';
+        currentDrawLevel = null;
+        saveToDevice();
+        alert('Framstegen är återställda. Välj miljö för att fortsätta.');
+    } catch (error) {
+        alert('Filen innehåller ingen giltig Vixen Dare-backup.');
+    } finally {
+        input.value = '';
+    }
+}
+
 function panicReset() {
     if(confirm("Radera ALLA framsteg permanent?")) {
         localStorage.removeItem(STORAGE_KEY);
@@ -522,7 +550,7 @@ function checkUnsavedProgress() {
 
     if (unsavedCount >= 3) { 
         if (vaultBtn) vaultBtn.classList.add('pulsing-warning');
-        if (vaultInfo) vaultInfo.innerHTML = `⚠️ Du har <strong>${unsavedCount}</strong> osparade framsteg!`;
+        if (vaultInfo) vaultInfo.innerHTML = `Du har klarat <strong>${unsavedCount}</strong> uppdrag sedan din senaste Vixen Key. Framstegen är sparade på enheten.`;
     } else {
         if (vaultBtn) vaultBtn.classList.remove('pulsing-warning');
         if (vaultInfo) vaultInfo.innerHTML = "Spara din backup med en <strong>Vixen Key</strong>.";

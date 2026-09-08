@@ -530,7 +530,8 @@
                         <p>1. Gå till <strong>"The Vault"</strong> längst ner på startsidan.</p>
                         <p>2. Klicka på <strong>"Skapa backup-nyckel"</strong>.</p>
                         <p>3. Kopiera koden och spara den på ett säkert ställe.</p>
-                        <p>Vill du att samma fil ska uppdateras automatiskt? Klicka på <strong>"Välj automatisk backupfil"</strong> och välj en fil på datorn. Funktionen stöds främst i Chrome och Edge.</p>
+                        <p>Vill du att samma fil ska uppdateras automatiskt? Klicka på <strong>"Välj automatisk backupfil"</strong> och välj en fil på datorn. Funktionen stöds främst i Chrome och Edge på dator. Kontrollera att en sparbekräftelse visas; webbläsaren kan behöva tillgång till filen igen.</p>
+                        <p>För att läsa tillbaka filen: välj <strong>"Återställ från backupfil"</strong> i The Vault och öppna din sparade JSON-fil. Det ersätter framstegen på enheten med filens innehåll. En Vixen Key klistrar du i stället in i nyckelfältet och väljer <strong>"Återställ data"</strong>.</p>
                     </div>
 
                     <button onclick="toggleDetail('key-where')" class="w-full text-left p-4 bg-white/80 rounded-xl text-xs font-bold flex justify-between items-center group">
@@ -608,8 +609,10 @@
 
     <script>
         // Charts state
-        Chart.defaults.color = '#a99a8b';
-        Chart.defaults.borderColor = 'rgba(197, 160, 89, 0.14)';
+        if (typeof Chart !== 'undefined') {
+            Chart.defaults.color = '#a99a8b';
+            Chart.defaults.borderColor = 'rgba(197, 160, 89, 0.14)';
+        }
         let termChart = null;
         let levelChart = null;
 
@@ -618,6 +621,7 @@
         ];
 
         function initTermChart() {
+            if (typeof Chart === 'undefined' || termChart) return;
             const ctx = document.getElementById('termChart').getContext('2d');
             termChart = new Chart(ctx, {
                 type: 'radar',
@@ -633,6 +637,7 @@
         }
 
         function initLevelChart() {
+            if (typeof Chart === 'undefined' || levelChart) return;
             const ctx = document.getElementById('levelChart').getContext('2d');
             levelChart = new Chart(ctx, {
                 type: 'radar',
@@ -646,8 +651,10 @@
 
         function updateLevelChart(idx) {
             if (!levelChart) initLevelChart();
-            levelChart.data.datasets[0].data = levelData[idx];
-            levelChart.update();
+            if (levelChart) {
+                levelChart.data.datasets[0].data = levelData[idx];
+                levelChart.update();
+            }
             const levelsSection = document.getElementById('content-levels');
             if (levelsSection) levelsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             document.querySelectorAll('.lvl-btn').forEach((b, i) => {
