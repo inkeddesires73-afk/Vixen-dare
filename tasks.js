@@ -4875,8 +4875,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni har skrivit med väntar precis innanför den mörka porten. Din partner stannar några steg bort och håller koll mot gatan.",
-    "text": "Ställ dig på knä precis innanför porten, dra ner mannens byxor och ta hans kuk i munnen. Sug honom snabbt medan din partner håller uppsikt utanför."
+    "context": "Mannen ni har skrivit med väntar längst in i en portgång som är helt skymd från gatan. Din partner stannar vid öppningen och håller uppsikt.",
+    "text": "Ställ dig på knä framför mannen, öppna hans byxor och ta hans kuk i munnen. Sug honom medan din partner håller koll mot gatan."
   },
   {
     "id": "vix_n4_003",
@@ -4884,8 +4884,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni träffar i den dämpade hotellfoajén har bjudits in av er för kvällen. Din partner leder er till ett undanskymt hörn.",
-    "text": "Sätt dig på huk framför mannen. Öppna jackan eller skjortan, blotta dina bröst och låt honom suga på dina bröstvårtor medan din partner ser på."
+    "context": "Mannen ni träffar i hotellfoajén följer med er upp till det rum ni har bokat. Din partner slår sig ner i fåtöljen.",
+    "text": "Ställ dig framför mannen, öppna toppen och blotta brösten. Låt honom suga på dina bröstvårtor medan din partner ser på."
   },
   {
     "id": "vix_n4_004",
@@ -4893,7 +4893,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "En man ni fått kontakt med möter er vid bilen på en undanskymd parkering sent på kvällen. Din partner står tätt bakom dig.",
+    "context": "En man ni fått kontakt med möter er vid bilen på en avskild parkering sent på kvällen. Din partner stannar några steg bort.",
     "text": "Dra upp kjolen och trosorna åt sidan. Luta dig mot bilens kaross och låt mannen föra in två fingrar i dig medan din partner ser på."
   },
   {
@@ -4902,8 +4902,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har chattat med en man i närheten under kvällen. Ni möter honom bakom en byggnad en bit från folkvimlet.",
-    "text": "Din partner följer dig med blicken. Sätt dig på huk framför mannen, ta fram hans kuk och runka honom tills han sprutar."
+    "context": "Mannen ni har skrivit med möter er bakom en byggnad i en nisch som är helt skymd från gångstråket. Din partner står några steg bort och håller uppsikt.",
+    "text": "Sätt dig på huk framför mannen, ta fram hans kuk och runka honom tills han sprutar medan din partner ser på."
   },
   {
     "id": "vix_n4_006",
@@ -4911,7 +4911,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Ni möter mannen på en avskild takterrass. Din partner lutar sig mot räcket och ser på.",
+    "context": "Ni möter en man på en avskild takterrass. Din partner lutar sig mot räcket och ser på.",
     "text": "Luta dig över räcket, lyft på kjolen och blotta din fitta för mannen. Låt honom gå ner bakom dig och slicka din fitta medan din partner ser på."
   },
   {
@@ -4920,7 +4920,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har pratat med mannen vid hotellentrén och tar med honom upp till ert privata rum.",
+    "context": "Din partner har pratat med en man vid hotellentrén och tar med honom upp till ert privata rum.",
     "text": "Gå ner på knä framför mannen direkt innanför dörren. Ta hans kuk i munnen och sug honom med djupa, fasta tag medan din partner ser på."
   },
   {
@@ -4929,8 +4929,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Ni har bjudit med en man upp till en folktom hiss i ett parkeringshus sent på kvällen efter lite kontakt på nätet.",
-    "text": "Din partner trycker på stoppknappen mellan våningarna. Vänd dig mot mannen, öppna hans gylf och ta hans kuk i munnen. Sug honom medan hissen står stilla."
+    "context": "Ni går ner i parkeringshuset tillsammans med mannen ni har skrivit med. Bilen står längst bort, utan insyn från gångstråket.",
+    "text": "Sätt dig i baksätet med mannen, öppna hans gylf och ta hans kuk i munnen. Sug honom medan din partner sitter i framsätet och ser bakåt."
   },
   {
     "id": "vix_n4_009",
@@ -4938,8 +4938,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni skrivit med under veckan möter upp er vid en undanskymd husvägg efter stängningsdags.",
-    "text": "Låt mannen dra ner dina trosor, lyfta ditt ena ben mot sin höft och slicka din fitta medan du håller din partners blick."
+    "context": "Mannen ni skrivit med under veckan möter er vid bilen på en lugn parkering sent på kvällen. Ni sätter er i baksätet medan din partner stannar i framsätet.",
+    "text": "Dra ner trosorna och lägg ena benet över sätet. Låt mannen gå ner mellan dina ben och slicka din fitta medan din partner ser bakåt."
   },
   {
     "id": "vix_n4_010",
@@ -4947,8 +4947,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Ni möter mannen på en avskild utsiktsplats sent på kvällen. Din partner ställer sig bredvid dig vid räcket.",
-    "text": "Luta dig över räcket, lyft på kjolen och blotta din fitta. Låt mannen gå ner på knä och slicka din fitta medan din partner ser på."
+    "context": "Ni möter en man på en avskild utsiktsplats sent på kvällen och går till bilen där ni kan vara ostörda.",
+    "text": "Sätt dig på kanten av baksätet, dra upp kjolen och sära på benen. Låt mannen slicka din fitta medan din partner står vid den öppna framdörren och ser på."
   },
   {
     "id": "vix_n4_011",
@@ -4956,8 +4956,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Efter en stunds intensiv blickväxling på stan har din partner gått fram, pratat med mannen och lett honom till en mörk passage bakom en kiosk.",
-    "text": "Gå fram till mannen och öppna hans jacka och skjorta helt. Sug hårt på hans bröstvårtor medan du smeker hans kuk genom byxorna."
+    "context": "Efter en stunds intensiv blickväxling på stan går din partner fram och pratar med en man. Du och mannen går in på en låsbar toalett i närheten medan din partner väntar utanför. Ni filmar uppdraget med mobilen.",
+    "text": "Öppna mannens jacka och skjorta, sug på hans bröstvårtor och smek hans kuk genom byxorna framför kameran. När ni är klara går ni ut till din partner igen."
   },
   {
     "id": "vix_n4_012",
@@ -4965,8 +4965,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni bjudit in till ett undanskymt hörn av ett parkeringsgarage väntar på er.",
-    "text": "Stå barbröstad framför mannen och låt honom smeka och suga på dina bröst medan din partner ser på."
+    "context": "Mannen ni bjudit in möter er längst in i parkeringsgaraget, bakom en vägg där platsen är skymd från både infart och gångstråk.",
+    "text": "Stå barbröstad framför mannen och låt honom smeka och suga på dina bröst medan din partner håller uppsikt några steg bort."
   },
   {
     "id": "vix_n4_013",
@@ -4974,8 +4974,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Ni har bokat in en träff med en man i en privat loge eller ett avskilt rum på en biograf som nästan är tom.",
-    "text": "Din partner sitter på sätesraden framför och ser bakåt. Gå ner på knä på golvet mellan sätena, öppna mannens byxor och ta hans kuk i munnen. Sug honom i mörkret."
+    "context": "Efter biobesöket följer en man ni har pratat med under kvällen med er till hotellrummet ni har bokat i närheten. Din partner sätter sig i fåtöljen.",
+    "text": "Gå ner på knä framför mannen, öppna hans byxor och ta hans kuk i munnen. Sug honom i det dämpade rummet medan din partner ser på."
   },
   {
     "id": "vix_n4_014",
@@ -4983,8 +4983,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har bjudit med en man ni stött på i krogen till en mörk gränd i närheten.",
-    "text": "Sätt dig på huk framför mannen, ta hans kuk i munnen och låt honom hålla i ditt hår och styra takten medan du suger honom djupt. Din partner ser på."
+    "context": "Din partner har bjudit med en man ni träffat på krogen till en portgång som ligger helt skymd från gatan.",
+    "text": "Sätt dig på huk framför mannen och ta hans kuk i munnen. Sug honom medan din partner håller uppsikt mot gatan."
   },
   {
     "id": "vix_n4_015",
@@ -5019,8 +5019,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har under kvällen pratat med en man på krogen och bjudit med honom till en mörk viadukt på väg hem.",
-    "text": "Din partner lutar sig mot bilen och ser på. Gå ner på knä på asfalten, ta mannens kuk i munnen och sug honom tills han är nära att komma."
+    "context": "När ni ska åka hem följer en man som din partner har pratat med på krogen med ut till bilen. Ni sätter er där bilen står ostörd.",
+    "text": "Gå ner mellan mannens ben i baksätet och ta hans kuk i munnen. Sug honom tills han är nära att komma medan din partner sitter i framsätet och ser bakåt."
   },
   {
     "id": "vix_n4_019",
@@ -5028,8 +5028,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen är inbjuden via en chattkonversation tidigare under dagen och möter upp er i en mörk del av ett torg.",
-    "text": "Din partner tittar på. Låt mannen smeka din fitta genom trosorna samtidigt som du tar hans kuk i munnen och suger honom med djupa tag."
+    "context": "Mannen ni har skrivit med möter er på stan. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni startar en videoinspelning på mobilen.",
+    "text": "Låt mannen smeka din fitta genom trosorna samtidigt som du tar hans kuk i munnen. Filma hela uppdraget och gå sedan ut till din partner igen."
   },
   {
     "id": "vix_n4_020",
@@ -5037,8 +5037,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Efter att ha bestämt träff med en man på nätet möts ni upp i en mörk, avskild del av en stadspark.",
-    "text": "Dra ner byxor och trosor och sätt dig på huk. Låt mannen slicka din fitta medan din partner filmar från några steg bort."
+    "context": "Ni möter en man vid stadsparken och går tillsammans till bilen som står parkerad på en avskild plats i närheten.",
+    "text": "Sätt dig i baksätet, dra ner byxor och trosor och sära på benen. Låt mannen slicka din fitta medan din partner sitter i framsätet och filmar bakåt."
   },
   {
     "id": "vix_n4_021",
@@ -5055,8 +5055,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har pratat med en man på uteserveringen och bjudit med honom till en mörk gränd bakom.",
-    "text": "Låt mannen lyfta dig mot tegelväggen och linda benen runt hans midja. Låt honom fingra dig medan din partner ser på en bit bort."
+    "context": "Din partner har pratat med en man på uteserveringen och bjudit med honom till en smal gränd bakom huset där ni är skymda från både gata och uteservering.",
+    "text": "Låt mannen lyfta dig mot tegelväggen och linda benen runt hans midja. Låt honom fingra dig medan din partner håller uppsikt några steg bort."
   },
   {
     "id": "vix_n4_023",
@@ -5064,8 +5064,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i den ödsliga gångtunneln.",
-    "text": "Gå ner på knä framför mannen, ta fram hans kuk och runka honom med båda händerna medan du låter tungan följa ollonet. Din partner ser på."
+    "context": "Mannen ni har skrivit med möter er på stan. Ni går tillsammans till bilen som står parkerad en bit bort från gångstråket.",
+    "text": "Sätt dig på knä mellan mannens ben i baksätet, ta fram hans kuk och runka honom med båda händerna medan du låter tungan följa ollonet. Din partner ser på från framsätet."
   },
   {
     "id": "vix_n4_024",
@@ -5073,8 +5073,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Efter en stunds blickväxling på tågperrongen har din partner gått fram och pratat med mannen och bjudit med honom till ett mörkt hörn.",
-    "text": "Blotta dina bröst för mannen och låt honom suga på dem medan du smeker din fitta. Din partner ser på."
+    "context": "Efter en stunds blickväxling på tågstationen går din partner fram och pratar med en man. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Blotta brösten för mannen och låt honom suga på dem medan du smeker din fitta framför kameran. Klä på dig och gå ut till din partner igen."
   },
   {
     "id": "vix_n4_025",
@@ -5082,8 +5082,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni har skrivit med möter er på en folktom rastplats sent på kvällen.",
-    "text": "Håll din partners blick. Gå ner på knä framför mannen och ta hans kuk i munnen. Sug honom tills han kommer och ta emot satsen i munnen."
+    "context": "Mannen ni har skrivit med möter er på en rastplats sent på kvällen. Ni sätter er i bilen, som står längst bort på parkeringen.",
+    "text": "Gå ner mellan mannens ben i baksätet och ta hans kuk i munnen. Sug honom tills han kommer i din mun medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_026",
@@ -5091,8 +5091,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har bjudit med en man ni träffat på på väg hem till en mörk portgång.",
-    "text": "Låt mannen trycka upp din kjol, föra in fingrarna i din fitta och kyssa din hals medan din partner ser på."
+    "context": "Din partner har bjudit med en man ni träffat på väg hem till en djup portgång som ligger skymd från gatan.",
+    "text": "Låt mannen trycka upp din kjol, föra in fingrarna i din fitta och kyssa din hals medan din partner håller uppsikt mot gatan."
   },
   {
     "id": "vix_n4_027",
@@ -5100,8 +5100,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Via en chatt har ni bjudit in en man att möta er vid en tågstation enligt överenskommelse.",
-    "text": "Din partner tittar på. Dra ner mannens gylf, ta hans kuk i munnen och sug honom tills han griper tag i ditt hår av lust."
+    "context": "Mannen ni har skrivit med möter er vid tågstationen. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget med mobilen.",
+    "text": "Öppna mannens gylf, ta hans kuk i munnen och sug honom medan kameran rullar. När ni är klara går ni ut till din partner igen."
   },
   {
     "id": "vix_n4_028",
@@ -5109,8 +5109,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni har skrivit med väntar på er vid den mörka delen av hamnkajen.",
-    "text": "Gå ner på knä på betongen och sug mannen tills han sprutar framför din partner. Res dig sedan och kyss din partner med smaken kvar i munnen."
+    "context": "Mannen ni har skrivit med möter er vid hamnen. Ni går till bilen som står parkerad i en mörk och avskild del av området, och din partner sätter sig i framsätet.",
+    "text": "Sätt dig mellan mannens ben i baksätet och sug honom tills han kommer medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_029",
@@ -5118,8 +5118,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har pratat med en man i baren och lett med sig honom till ett mörkt utrymme vid en bakingång.",
-    "text": "Låt mannen trycka upp dig mot väggen, dra trosorna åt sidan och föra in två fingrar i dig medan din partner ser på."
+    "context": "Din partner har pratat med en man i baren och lett med honom ut till en skymd lastnisch vid bakingången, utan insyn från gäster eller gata.",
+    "text": "Låt mannen trycka upp dig mot väggen, dra trosorna åt sidan och föra in två fingrar i dig medan din partner håller uppsikt några steg bort."
   },
   {
     "id": "vix_n4_030",
@@ -5136,8 +5136,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man i baren och bjudit med honom till en mörk korridor nära toaletterna.",
-    "text": "Gå ner på knä framför mannen, öppna hans byxor och ta hans kuk i munnen. Sug honom djupt medan din partner ser på."
+    "context": "Din partner har pratat med en man i baren. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget med mobilen.",
+    "text": "Gå ner på knä framför mannen, öppna hans byxor och ta hans kuk i munnen. Sug honom djupt framför kameran och gå sedan tillbaka ut till din partner."
   },
   {
     "id": "vix_n4_032",
@@ -5145,8 +5145,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med dyker upp på puben. Ni drar er undan till ett mörkt bås längst in.",
-    "text": "Din partner sitter mittemot och tittar på. Glid ner på knä under bordet, ta mannens hårda kuk i munnen och sug honom medan ni pratar om helt vanliga saker med partnern."
+    "context": "Mannen ni har skrivit med dyker upp på puben. Ni går ut till bilen en stund och sätter er där, med din partner i framsätet.",
+    "text": "Sätt dig mellan mannens ben i baksätet, ta hans kuk i munnen och sug honom medan din partner ser bakåt. När ni är klara går ni tillbaka in på puben."
   },
   {
     "id": "vix_n4_033",
@@ -5154,8 +5154,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har spanat in en man vid bardisken, gått fram och presenterat er, och lett honom till personalutgången.",
-    "text": "Dra ner toppen och blotta brösten för mannen. Låt honom suga på dina bröstvårtor medan du runkar hans kuk och din partner ser på från några steg bort."
+    "context": "Din partner har spanat in en man vid bardisken och presenterat er. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Dra ner toppen och blotta brösten. Låt mannen suga på dina bröstvårtor medan du runkar hans kuk framför kameran. Klä på dig och gå tillbaka ut till din partner."
   },
   {
     "id": "vix_n4_034",
@@ -5163,8 +5163,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har bjudit dit följer med er ut på pubens stängda innergård.",
-    "text": "Böj dig fram över bordet, dra ner trosorna och låt mannen gå ner bakom dig och slicka din fitta medan din partner ser på från andra sidan gården."
+    "context": "Mannen ni har bjudit dit följer med er ut till bilen en stund. Din partner sätter sig i framsätet medan du och mannen tar baksätet.",
+    "text": "Lägg dig över baksätet, dra ner trosorna och låt mannen gå ner bakom dig och slicka din fitta medan din partner ser bakåt. Gå sedan tillbaka in på puben."
   },
   {
     "id": "vix_n4_035",
@@ -5172,8 +5172,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man och bjudit med honom till ett undanskymt hörn nära städutrymmet.",
-    "text": "Gå ner på knä framför mannen, ta hans kuk i munnen och sug honom tills han kommer i din mun medan din partner ser på."
+    "context": "Din partner har pratat med en man på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget.",
+    "text": "Gå ner på knä framför mannen, ta hans kuk i munnen och sug honom tills han kommer i din mun framför kameran. Gå sedan ut till din partner igen."
   },
   {
     "id": "vix_n4_036",
@@ -5181,8 +5181,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "En man ni haft kontakt med på en kontaktsida möter upp er på puben och bjuder med er till ett privat lagerutrymme.",
-    "text": "Sätt dig på en kartong, dra upp kjolen och sära på benen. Låt mannen gå ner mellan dina ben och slicka din fitta medan din partner ser på."
+    "context": "En man ni haft kontakt med möter upp er på puben. Ni går ut till bilen en stund och sätter er där ostörda.",
+    "text": "Sätt dig på baksätet, dra upp kjolen och sära på benen. Låt mannen slicka din fitta medan din partner sitter i framsätet och ser bakåt. Gå sedan tillbaka in på puben."
   },
   {
     "id": "vix_n4_037",
@@ -5190,8 +5190,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit in en man från grannbordet till pubens loungeavdelning i en djup hörnsoffa.",
-    "text": "Din partner sitter i fåtöljen intill. För in din hand under mannens byxor, dra ut hans kuk och runka honom hårt i knät medan du kysser honom."
+    "context": "Din partner har bjudit in en man från grannbordet. Du och mannen går ut till bilen en stund medan din partner följer med.",
+    "text": "Sätt dig tätt intill mannen i baksätet, ta fram hans kuk och runka honom medan du kysser honom. Din partner sitter i framsätet och ser bakåt."
   },
   {
     "id": "vix_n4_038",
@@ -5199,8 +5199,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar i korridoren utanför toaletterna.",
-    "text": "Låt mannen trycka upp dig mot dörren, dra ner dina trosor och föra in fingrarna i din fitta medan du kysser honom. Din partner ser på."
+    "context": "Mannen ni har skrivit med väntar på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni startar kameran på mobilen.",
+    "text": "Låt mannen dra ner dina trosor, föra in fingrarna i din fitta och kyssa dig framför kameran. Klä på dig och gå sedan ut till din partner."
   },
   {
     "id": "vix_n4_039",
@@ -5208,8 +5208,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit in en man till ert djupt avskilda bås på puben.",
-    "text": "Din partner ser på från andra sidan bordet. Kryp ner på golvet, ta fram mannens kuk ur gylfen och sug honom lugnt under bordsskivan."
+    "context": "Din partner har bjudit in en man till puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar själva.",
+    "text": "Gå ner på knä framför mannen, ta fram hans kuk och sug honom framför kameran. När ni är klara går ni ut till din partner."
   },
   {
     "id": "vix_n4_040",
@@ -5217,8 +5217,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Efter en kvälls flirtande följer mannen med er till en avskild del vid pubens garderob där det står en låg disk.",
-    "text": "Sätt dig på disken, dra upp klänningen och sära på benen. Låt mannen gå ner på knä framför dig och slicka din fitta medan din partner ser på."
+    "context": "Efter en kvälls flirtande följer en man med er ut till bilen en stund. Din partner stannar i framsätet.",
+    "text": "Sätt dig på kanten av baksätet, dra upp klänningen och sära på benen. Låt mannen gå ner mellan dina ben och slicka din fitta medan din partner ser bakåt."
   },
   {
     "id": "vix_n4_041",
@@ -5226,8 +5226,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med möter er i ett privat hörn av pubens källarvåning.",
-    "text": "Gå ner på knä mellan mannen och din partner. Sug mannen tills han kommer i din mun och håll din partners blick när du sväljer."
+    "context": "Mannen ni har skrivit med möter er på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget med mobilen.",
+    "text": "Gå ner på knä framför mannen och sug honom tills han kommer i din mun framför kameran. När ni är klara går ni ut till din partner igen."
   },
   {
     "id": "vix_n4_042",
@@ -5235,8 +5235,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man på puben och bjudit med er till uteserveringen sent på natten.",
-    "text": "Din partner tittar på. Öppna din blus, blotta dina bröst och låt mannen suga hårt på dina bröstvårtor medan du smeker hans kuk."
+    "context": "Din partner har pratat med en man på puben. Ni går ut till bilen en stund och sätter er där, ostörda från andra gäster.",
+    "text": "Öppna blusen och blotta brösten. Låt mannen suga på dina bröstvårtor medan du smeker hans kuk. Din partner ser på från framsätet."
   },
   {
     "id": "vix_n4_043",
@@ -5244,8 +5244,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar vid biljardbordet på puben.",
-    "text": "Sätt dig grensle över mannen, dra upp kjolen och ta fram hans kuk. Gnid din bara fitta mot den utan att låta kuken glida in medan din partner ser på."
+    "context": "Mannen ni har skrivit med väntar vid biljardbordet på puben. Efter en stund går ni tre ut till bilen och sätter er där ostörda.",
+    "text": "Sätt dig grensle över mannen i baksätet, dra upp kjolen och ta fram hans kuk. Gnid din bara fitta mot den utan att låta kuken glida in medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_044",
@@ -5253,8 +5253,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit med en man från baren till ett tomt sidorum på puben.",
-    "text": "Din partner tittar på. Be mannen ställa sig framför dig. Gå ner på knä, öppna hans gylf och runka honom med båda händerna tills han stönar och kommer över dina händer."
+    "context": "Din partner har bjudit med en man från baren. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Gå ner på knä framför mannen, öppna hans gylf och runka honom med båda händerna tills han kommer över dina händer framför kameran."
   },
   {
     "id": "vix_n4_045",
@@ -5262,8 +5262,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar i en dörrnisch inne på puben när lokalen börjar tömmas.",
-    "text": "Låt mannen trycka upp dig mot väggen, föra in två fingrar i din fitta och kyssa din hals medan din partner ser på några steg bort."
+    "context": "Mannen ni har skrivit med möter er på puben. Ni går ut genom bakdörren till en helt skymd lastzon utan insyn från gäster eller gata.",
+    "text": "Låt mannen trycka upp dig mot väggen, föra in två fingrar i din fitta och kyssa din hals medan din partner håller uppsikt några steg bort."
   },
   {
     "id": "vix_n4_046",
@@ -5271,8 +5271,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man och bjudit med honom till en avskild soffgrupp i dämpat ljus.",
-    "text": "Stå tätt intill mannen och stoppa handen innanför hans byxor. Ta fram hans kuk och runka honom hårt i mörkret medan du håller din partners blick."
+    "context": "Din partner har pratat med en man på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget själva.",
+    "text": "Stå tätt intill mannen, ta fram hans kuk och runka honom medan kameran rullar. Gå sedan ut till din partner igen."
   },
   {
     "id": "vix_n4_047",
@@ -5280,8 +5280,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med möter upp er i pubens bakre korridor.",
-    "text": "Böj dig fram mot väggen och låt mannen dra ner dina trosor. Låt honom slicka din fitta bakifrån medan din partner ser på."
+    "context": "Mannen ni har skrivit med möter upp er på puben. Ni går ut till bilen en stund, och din partner sätter sig i framsätet.",
+    "text": "Böj dig fram över baksätet och låt mannen dra ner dina trosor. Låt honom slicka din fitta bakifrån medan din partner ser bakåt."
   },
   {
     "id": "vix_n4_048",
@@ -5289,8 +5289,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit med en man från puben till ett litet bås bakom baren.",
-    "text": "Gå ner på knä framför mannen och ta hans kuk i munnen. Sug honom djupt medan din partner sitter en bit bort och ser på."
+    "context": "Din partner har bjudit med en man från puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Gå ner på knä framför mannen och ta hans kuk i munnen. Sug honom djupt framför kameran och gå sedan tillbaka ut till din partner."
   },
   {
     "id": "vix_n4_049",
@@ -5298,8 +5298,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man i loungen och tar med honom till ett mörkt hörn.",
-    "text": "Sätt dig bredvid mannen och blotta ena bröstet. Låt honom suga på bröstvårtan medan du runkar hans kuk och din partner ser på från andra sidan båset."
+    "context": "Din partner har pratat med en man i loungen. Ni går ut till bilen en stund och sätter er där ostörda.",
+    "text": "Sätt dig bredvid mannen i baksätet och blotta ena bröstet. Låt honom suga på bröstvårtan medan du runkar hans kuk och din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_050",
@@ -5307,8 +5307,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man vid disken och bjudit med honom till trapphuset på väg ner till källaren.",
-    "text": "Ställ dig ett trappsteg nedanför mannen, öppna hans byxor och ta kuken i munnen. Sug honom med djupa tag medan din partner står ovanför och ser på."
+    "context": "Din partner har pratat med en man vid disken. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar själva.",
+    "text": "Gå ner på knä framför mannen, öppna hans byxor och ta kuken i munnen. Sug honom med djupa tag framför kameran."
   },
   {
     "id": "vix_n4_051",
@@ -5316,8 +5316,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med möter er i det mörka båset längst in på puben.",
-    "text": "Sätt dig grensle över mannen, dra ner hans byxor och gnid din bara fitta mot hans kuk utan att låta den glida in. Din partner sitter intill och ser på."
+    "context": "Mannen ni har skrivit med möter er på puben. Ni går ut till bilen en stund och tar plats i baksätet.",
+    "text": "Sätt dig grensle över mannen, ta fram hans kuk och gnid din bara fitta mot den utan att låta den glida in. Din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_052",
@@ -5325,8 +5325,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har gått fram till en man i baren och fått med honom till en avskild del vid pubens köksingång.",
-    "text": "Ställ dig framför mannen, öppna hans byxor och runka hans kuk medan din partner står några steg bort och ser på."
+    "context": "Din partner har gått fram till en man i baren. Ni går ut genom bakdörren till en skymd del av lastzonen där ni inte syns från puben eller gatan.",
+    "text": "Ställ dig framför mannen, öppna hans byxor och runka hans kuk medan din partner håller uppsikt några steg bort."
   },
   {
     "id": "vix_n4_053",
@@ -5334,8 +5334,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i ett mörkt hörn av pubens biljardrum.",
-    "text": "Din partner sätter sig framför er. Gå ner på knä, ta mannens kuk i munnen och sug honom tills han sprutar över ditt ansikte."
+    "context": "Mannen ni har skrivit med möter er på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget själva.",
+    "text": "Gå ner på knä, ta mannens kuk i munnen och sug honom tills han sprutar över ditt ansikte framför kameran. Torka av dig och gå sedan ut till din partner."
   },
   {
     "id": "vix_n4_054",
@@ -5343,8 +5343,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit med en man till en avstängd loungedel där en soffa står tom.",
-    "text": "Lägg dig över mannens knä i soffan och dra upp klänningen. Låt honom smeka din bara fitta medan din partner sitter mitt emot och ser på."
+    "context": "Din partner har bjudit med en man från puben ut till bilen en stund. Ni sätter er där utan insyn.",
+    "text": "Lägg dig över mannens knä i baksätet och dra upp klänningen. Låt honom smeka din bara fitta medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_055",
@@ -5352,8 +5352,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er vid pubens bakdörr. Din partner stannar några steg bort och ser på.",
-    "text": "Dra ner trosorna, böj dig fram mot väggen och låt mannen gå ner bakom dig och slicka din fitta."
+    "context": "Mannen ni har skrivit med väntar på er på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget med mobilen.",
+    "text": "Dra ner trosorna, böj dig fram mot handfatet och låt mannen gå ner bakom dig och slicka din fitta framför kameran. Klä på dig och gå sedan ut till din partner."
   },
   {
     "id": "vix_n4_056",
@@ -5361,8 +5361,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit med en man från pubens lounge till en avskild soffa.",
-    "text": "Gå ner på knä framför mannen och sug honom djupt medan din partner sitter mittemot och ser på."
+    "context": "Din partner har bjudit med en man från pubens lounge ut till bilen en stund. Din partner sätter sig i framsätet.",
+    "text": "Gå ner mellan mannens ben i baksätet och sug honom djupt medan din partner ser bakåt. När ni är klara går ni tillbaka in på puben."
   },
   {
     "id": "vix_n4_057",
@@ -5370,8 +5370,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar i en mörk korridor på puben.",
-    "text": "Låt mannen föra in två fingrar i din fitta medan du kysser honom. Din partner ser på."
+    "context": "Mannen ni har skrivit med väntar på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Låt mannen föra in två fingrar i din fitta medan du kysser honom framför kameran. Gå sedan ut till din partner igen."
   },
   {
     "id": "vix_n4_058",
@@ -5379,8 +5379,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man på uteserveringen och bjudit med honom till ett avskilt hörn sent på natten.",
-    "text": "Gå ner på knä framför mannen, ta hans kuk i munnen och sug honom medan din partner ser på från några steg bort."
+    "context": "Din partner har pratat med en man på uteserveringen. Ni går ut till bilen en stund och sätter er där ostörda.",
+    "text": "Gå ner mellan mannens ben i baksätet, ta hans kuk i munnen och sug honom medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_059",
@@ -5388,8 +5388,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar i en mörk nisch vid pubens garderob.",
-    "text": "Låt mannen dra ner dina byxor och smeka din fitta medan han kysser din hals. Din partner ser på från några steg bort."
+    "context": "Mannen ni har skrivit med möter er på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar själva.",
+    "text": "Låt mannen dra ner dina trosor och smeka din fitta medan han kysser din hals framför kameran. Klä på dig och gå sedan ut till din partner."
   },
   {
     "id": "vix_n4_060",
@@ -5397,8 +5397,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit in en man ni chattat med till pubens mörka hörn vid nödutgången.",
-    "text": "Gå ner på knä framför mannen och ta hans kuk i munnen. Sug honom tills han kommer och håll din partners blick när du sväljer."
+    "context": "Din partner har bjudit in en man ni chattat med till puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Gå ner på knä framför mannen och sug honom tills han kommer i din mun framför kameran. Gå sedan ut och möt din partner igen."
   },
   {
     "id": "vix_n4_061",
@@ -5406,8 +5406,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har pekat ut en man på dansgolvet, gått fram och pratat, och lett honom till en mörk korridor bakom.",
-    "text": "Gå ner på knä framför mannen, dra ner hans byxor och ta hans kuk i munnen. Sug honom tills han griper tag i ditt hår medan din partner ser på."
+    "context": "Din partner har pekat ut en man på dansgolvet och presenterat er. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget själva.",
+    "text": "Gå ner på knä framför mannen, öppna hans byxor och ta hans kuk i munnen. Sug honom framför kameran tills han griper tag i ditt hår. Gå sedan tillbaka ut till din partner."
   },
   {
     "id": "vix_n4_062",
@@ -5415,8 +5415,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i klubbens VIP-lounge med skärmade bås.",
-    "text": "Din partner sitter mittemot och ser på. Sätt dig grensle över mannens knä, dra ner hans byxor och pressa din fitta mot hans kuk. Gnid dig hårt mot honom utan att låta kuken glida in."
+    "context": "Mannen ni har skrivit med väntar på er på klubben. Ni går ut till bilen en stund och sätter er där ostörda.",
+    "text": "Sätt dig grensle över mannen i baksätet, ta fram hans kuk och pressa din bara fitta mot den. Gnid dig mot honom utan att låta kuken glida in medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_063",
@@ -5424,8 +5424,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har pratat med en man i baren och lett honom till den mörka och dimmiga gången nära toaletterna.",
-    "text": "Låt mannen trycka upp dig mot väggen och dra trosorna åt sidan. Ställ ena foten på ett lågt stöd och låt honom gå ner på knä och slicka din fitta medan din partner ser på."
+    "context": "Din partner har pratat med en man i baren. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Dra trosorna åt sidan, sätt ena foten på toalettlocket och låt mannen gå ner på knä och slicka din fitta framför kameran."
   },
   {
     "id": "vix_n4_064",
@@ -5433,8 +5433,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med möter er på klubbens terrass.",
-    "text": "Öppna din topp, blotta brösten och låt mannen suga på dina bröstvårtor i nattluften medan din partner ser på."
+    "context": "Mannen ni har skrivit med möter er på klubben. Ni går ut till bilen en stund och sätter er där utan insyn.",
+    "text": "Öppna toppen och blotta brösten. Låt mannen suga på dina bröstvårtor medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_065",
@@ -5442,8 +5442,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben en stund och kör till en avskild parkering. Mannen ni träffat följer med.",
-    "text": "Sätt dig mellan mannens ben i baksätet och ta hans kuk i munnen medan din partner sitter i framsätet och ser på."
+    "context": "Under klubbkvällen går ni ut till bilen en stund tillsammans med en man ni har pratat med på klubben. Bilen står parkerad utan insyn.",
+    "text": "Sätt dig mellan mannens ben i baksätet och ta hans kuk i munnen medan din partner sitter i framsätet och ser bakåt. När ni är klara går ni tillbaka in på klubben."
   },
   {
     "id": "vix_n4_066",
@@ -5451,8 +5451,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med möter upp er vid klubbens entré och leds till ett bås med sammetsdraperier.",
-    "text": "Din partner drar för draperiet och ser på. Sätt dig på huk framför mannen, ta fram hans kuk och runka honom tills han sprutar."
+    "context": "Mannen ni har skrivit med möter er på klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget själva.",
+    "text": "Sätt dig på huk framför mannen, ta fram hans kuk och runka honom tills han sprutar framför kameran. Gå sedan tillbaka ut till din partner."
   },
   {
     "id": "vix_n4_067",
@@ -5460,8 +5460,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har bjudit med en man från dansgolvet till klubbens mörka rökrum.",
-    "text": "Låt mannen föra in två fingrar i din fitta under kjolen medan du kysser honom. Din partner står intill och ser på."
+    "context": "Din partner har bjudit med en man från dansgolvet. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Låt mannen föra in två fingrar i din fitta under kjolen medan du kysser honom framför kameran. Gå sedan tillbaka ut till din partner."
   },
   {
     "id": "vix_n4_068",
@@ -5469,8 +5469,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar i den trånga passagen mellan två dansgolv. Din partner står en bit bort och ser på.",
-    "text": "Låt mannen dra ner byxlinningen och föra in två fingrar i dig medan du håller i hans arm."
+    "context": "Mannen ni har skrivit med väntar på klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget själva.",
+    "text": "Låt mannen dra ner byxlinningen och föra in två fingrar i dig medan du håller i hans arm framför kameran. Gå sedan ut till din partner."
   },
   {
     "id": "vix_n4_069",
@@ -5478,8 +5478,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har pratat med en man i baren och bjudit med honom till klubbens loungeavdelning med djupa soffor.",
-    "text": "Din partner sitter i soffan mittemot. Gå ner på knä framför mannen, ta hans kuk i munnen och sug honom medan musiken dånar utanför."
+    "context": "Din partner har pratat med en man i baren. Ni går ut till bilen en stund och sätter er där ostörda.",
+    "text": "Sätt dig på knä mellan mannens ben i baksätet och sug honom medan din partner följer er från framsätet."
   },
   {
     "id": "vix_n4_070",
@@ -5487,8 +5487,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har bjudit med en man till en mörk soffnisch nära klubbens nödutgång.",
-    "text": "Sätt dig på soffkanten och sära på benen. Låt mannen gå ner på knä framför dig och slicka din fitta medan din partner ser på från sidan."
+    "context": "Din partner har bjudit med en man från klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Sätt dig på toalettlocket, sära på benen och låt mannen gå ner på knä framför dig och slicka din fitta framför kameran."
   },
   {
     "id": "vix_n4_071",
@@ -5496,8 +5496,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i en undanskymd korridor på klubben.",
-    "text": "Din partner lutar sig mot väggen och ser på. Gå ner på knä framför mannen, ta hans kuk i munnen och sug honom med djupa tag tills han kommer i din mun."
+    "context": "Mannen ni har skrivit med väntar på klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar själva.",
+    "text": "Gå ner på knä framför mannen, ta hans kuk i munnen och sug honom med djupa tag tills han kommer i din mun framför kameran."
   },
   {
     "id": "vix_n4_072",
@@ -5505,8 +5505,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har pratat med en man på klubben och bjudit med honom till uteserveringen.",
-    "text": "Din partner tittar på. Blotta brösten och låt mannen suga och bita löst på dina bröstvårtor medan du smeker hans kuk."
+    "context": "Din partner har pratat med en man på klubben. Ni går ut till bilen en stund och sätter er där utan insyn.",
+    "text": "Blotta brösten och låt mannen suga på dina bröstvårtor medan du smeker hans kuk. Din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_073",
@@ -5514,8 +5514,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i ett avskilt hörn av klubben med sammetskuddar.",
-    "text": "Sätt dig grensle över mannen, öppna hans gylf och tryck hans kuk mot din bara fitta. Gnid dig mot honom utan att låta kuken glida in medan din partner ser på."
+    "context": "Mannen ni har skrivit med väntar på klubben. Ni går ut till bilen en stund och tar plats i baksätet.",
+    "text": "Sätt dig grensle över mannen, ta fram hans kuk och tryck den mot din bara fitta. Gnid dig mot honom utan att låta kuken glida in medan din partner ser bakåt."
   },
   {
     "id": "vix_n4_074",
@@ -5523,8 +5523,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har gått fram till en man i loungen och bjudit med honom till en mörk dörröppning i källaren.",
-    "text": "Be mannen ställa sig framför dig, öppna hans gylf och ta hans kuk i handen. Runka honom tills han kommer över din hand medan din partner ser på."
+    "context": "Din partner har gått fram till en man i loungen. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Öppna mannens gylf, ta hans kuk i handen och runka honom tills han kommer över din hand framför kameran."
   },
   {
     "id": "vix_n4_075",
@@ -5532,8 +5532,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar i den trånga passagen bakom garderoben.",
-    "text": "Låt mannen trycka upp dig mot väggen, föra in fingrarna i din fitta och kyssa din hals medan din partner ser på."
+    "context": "Mannen ni har skrivit med möter er vid klubbens bar. Du går in på en enskild låsbar toalett med honom medan din partner stannar utanför. Mobilen spelar in.",
+    "text": "Låt mannen trycka upp dig mot väggen, föra in fingrarna i din fitta och kyssa din hals framför kameran."
   },
   {
     "id": "vix_n4_076",
@@ -5541,8 +5541,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har pratat med en man vid baren och bjudit med honom till en mörk hörnsoffa i VIP-delen.",
-    "text": "Ställ dig tätt intill mannen, stoppa handen i hans byxor och ta fram hans kuk. Runka honom hårt i mörkret medan du håller din partners blick."
+    "context": "Din partner har pratat med en man vid baren. Ni går ut till bilen en stund och sätter er där ostörda.",
+    "text": "Stå på knä i baksätet framför mannen, ta fram hans kuk och runka honom medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_077",
@@ -5550,8 +5550,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har bjudit dit möter er i den mörka korridoren på väg mot toaletterna.",
-    "text": "Böj dig fram mot väggen och låt mannen dra trosorna åt sidan. Låt honom gå ner bakom dig och slicka din fitta medan din partner ser på."
+    "context": "Mannen ni har bjudit dit möter er på klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Böj dig fram mot handfatet, dra trosorna åt sidan och låt mannen gå ner bakom dig och slicka din fitta framför kameran."
   },
   {
     "id": "vix_n4_078",
@@ -5559,8 +5559,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har bjudit med en man från dansgolvet till ett mörkt hörn vid scenen.",
-    "text": "Gå ner på knä framför mannen och ta hans kuk i munnen. Sug honom djupt medan din partner ser på från sidan."
+    "context": "Din partner har bjudit med en man från dansgolvet. Ni går ut till bilen en stund och sätter er där ostörda.",
+    "text": "Gå ner mellan mannens ben i baksätet och ta hans kuk i munnen. Sug honom djupt medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_079",
@@ -5568,8 +5568,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i ett mörkt bås på klubbens övervåning.",
-    "text": "Sätt dig grensle över mannen i det mörka båset och dra ner toppen. Låt honom suga på ditt bröst medan du runkar hans kuk och din partner ser på från andra sidan båset."
+    "context": "Mannen ni har skrivit med väntar på klubben. Ni går ut till bilen en stund och sätter er längst bort på parkeringen.",
+    "text": "Sätt dig grensle över mannen i baksätet, dra ner toppen och låt honom suga på ditt bröst medan du runkar hans kuk. Din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_080",
@@ -5577,8 +5577,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har pratat med en man och bjudit med honom till klubbens trapphus i dämpat ljus.",
-    "text": "Sätt dig på trappsteget framför mannen och öppna hans byxor. Ta hans kuk i munnen och sug honom med snabba tag medan din partner står bakom och ser på."
+    "context": "Din partner har pratat med en man på klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget.",
+    "text": "Gå ner på knä framför mannen, öppna hans byxor och ta hans kuk i munnen. Sug honom med snabba tag framför kameran."
   },
   {
     "id": "vix_n4_081",
@@ -5586,8 +5586,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar i en mörk soffgrupp på klubben.",
-    "text": "Dra mannen ner i soffan och sätt dig grensle över honom. Ta fram hans kuk och gnid din bara fitta mot den utan att låta den glida in medan din partner ser på."
+    "context": "Mannen ni har skrivit med väntar på klubben. Ni går ut till bilen en stund och sätter er i baksätet.",
+    "text": "Sätt dig grensle över mannen, ta fram hans kuk och gnid din bara fitta mot den utan att låta kuken glida in. Din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_082",
@@ -5595,8 +5595,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har lett en man från baren till en undanskymd passage.",
-    "text": "Sätt dig grensle över mannen i fåtöljen, ta fram hans kuk och gnid din bara fitta mot den utan att låta den glida in. Din partner sitter mittemot och ser på."
+    "context": "Din partner har lett en man från baren ut till bilen en stund. Ni sätter er där utan insyn.",
+    "text": "Sätt dig grensle över mannen i baksätet, ta fram hans kuk och gnid din bara fitta mot den utan att låta den glida in. Din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_083",
@@ -5604,8 +5604,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i ett mörkt hörn av klubben där musiken dånar.",
-    "text": "Gå ner på knä framför mannen och sug honom tills han är nära. Ta kuken ur munnen, blotta brösten och låt honom spruta över dem medan din partner ser på."
+    "context": "Mannen ni har skrivit med väntar vid klubbens lounge. Du tar med honom in på en låsbar toalett medan din partner väntar utanför. Ni startar videon på mobilen.",
+    "text": "Gå ner på knä framför mannen och sug honom tills han är nära. Ta kuken ur munnen, blotta brösten och låt honom spruta över dem framför kameran."
   },
   {
     "id": "vix_n4_084",
@@ -5613,8 +5613,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har bjudit med en man till en mörk dörrnisch på klubben.",
-    "text": "Sätt dig på knä framför mannen, öppna hans gylf och ta hans kuk i munnen. Sug honom medan din partner står vid sidan och ser på."
+    "context": "Din partner har bjudit med en man från klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar uppdraget själva.",
+    "text": "Sätt dig på knä framför mannen, öppna hans gylf och ta hans kuk i munnen. Sug honom framför kameran och gå sedan ut till din partner."
   },
   {
     "id": "vix_n4_085",
@@ -5622,8 +5622,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar i ett mörkt hörn vid klubbens bakutgång.",
-    "text": "Dra ner trosorna, böj dig fram mot väggen och låt mannen gå ner bakom dig och slicka din fitta medan din partner ser på."
+    "context": "Mannen ni har skrivit med väntar på klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Dra ner trosorna, böj dig fram mot handfatet och låt mannen gå ner bakom dig och slicka din fitta framför kameran."
   },
   {
     "id": "vix_n4_086",
@@ -5631,8 +5631,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har pratat med en man i baren och bjudit med honom till en mörk soffa när klubben börjar tömmas.",
-    "text": "Din partner sjunker ner i soffan bredvid. Gå ner på knä framför mannen och sug honom djupt medan partnern ser på."
+    "context": "Din partner har pratat med en man vid klubbens bar. Ni tar med honom ut till bilen en stund och sätter er där utan insyn.",
+    "text": "Gå ner mellan mannens ben i baksätet och sug honom djupt medan din partner sitter i framsätet och ser bakåt."
   },
   {
     "id": "vix_n4_087",
@@ -5640,8 +5640,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med möter er i en mörk korridor på klubben.",
-    "text": "Låt mannen smeka din fitta under trosorna medan du kysser honom. Din partner ser på."
+    "context": "Mannen ni har skrivit med möter er på klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar själva.",
+    "text": "Låt mannen smeka din fitta under trosorna medan du kysser honom framför kameran."
   },
   {
     "id": "vix_n4_088",
@@ -5649,8 +5649,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har bjudit med en man från uteserveringen till ett avskilt hörn.",
-    "text": "Sätt dig på stolkanten, öppna mannens gylf och ta hans kuk i munnen. Sug honom medan din partner sitter mittemot och ser på."
+    "context": "Din partner har bjudit med en man från uteserveringen ut till bilen en stund. Ni sätter er där utan insyn.",
+    "text": "Sätt dig mellan mannens ben i baksätet, öppna hans gylf och ta hans kuk i munnen. Sug honom medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n4_089",
@@ -5658,8 +5658,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Mannen ni har skrivit med väntar i en mörk nisch vid klubbens entré.",
-    "text": "Låt mannen dra ner dina trosor och smeka din fitta medan han kysser din hals. Din partner står några steg bort och ser på."
+    "context": "Mannen ni har skrivit med möter er vid klubbens entré. Du tar med honom in på en låsbar toalett och din partner väntar utanför. Ni sätter mobilen på inspelning.",
+    "text": "Låt mannen dra ner dina trosor och smeka din fitta medan han kysser din hals framför kameran."
   },
   {
     "id": "vix_n4_090",
@@ -5667,8 +5667,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Din partner har bjudit in en man ni chattat med till ett mörkt hörn i nattklubben.",
-    "text": "Sätt dig på knä framför mannen och sug honom tills han kommer i din mun. Kryp sedan fram till din partner och kyss honom."
+    "context": "Din partner har bjudit in en man ni chattat med till klubben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar själva.",
+    "text": "Sätt dig på knä framför mannen och sug honom tills han kommer i din mun framför kameran. När du går ut igen drar du din partner intill och kysser honom."
   },
   {
     "id": "vix_n4_091",
@@ -5964,7 +5964,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Efter middagen följer mannen med dig ut på balkongen medan din partner plockar undan.",
+    "context": "Efter middagen följer en manlig gäst med dig ut på balkongen medan din partner plockar undan.",
     "text": "Ställ mannen mot räcket, öppna hans gylf och runka honom medan din partner ser på genom den öppna balkongdörren."
   },
   {
@@ -5982,7 +5982,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Ni har blivit ensamma i köket efter att de andra gått tillbaka till vardagsrummet.",
+    "context": "Under hemmafesten blir du och en manlig gäst ensamma i köket när de andra gästerna går in i vardagsrummet. Din partner stannar i dörröppningen.",
     "text": "Sätt dig på köksbänken, dra honom mellan dina ben och låt honom slicka din fitta medan din partner ser på från dörren."
   },
   {
@@ -5991,7 +5991,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen visar dig ett avskilt gästrum där han lagt sin jacka.",
+    "context": "En manlig gäst visar dig gästrummet där han lagt sin jacka. Din partner stannar i hallen utanför.",
     "text": "Följ med mannen in i gästrummet och lämna dörren på glänt. Gå ner på knä framför honom, öppna hans byxor och sug honom medan din partner ser på från hallen."
   },
   {
@@ -6000,8 +6000,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Din partner ber mannen hjälpa dig att bära undan några stolar efter festen.",
-    "text": "När ni hamnar bakom de andra, ställ dig framför honom, öppna hans gylf och runka honom tills han sprutar över din hand."
+    "context": "Efter festen hjälper en manlig gäst dig att bära undan några stolar medan din partner är kvar i vardagsrummet.",
+    "text": "När du och mannen är ensamma i hallen, ställ dig framför honom, öppna hans gylf och runka honom tills han sprutar över din hand."
   },
   {
     "id": "vix_n4_128",
@@ -6027,7 +6027,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen följer med dig till förrådet för att hämta fler flaskor. Din partner stannar i dörröppningen.",
+    "context": "En manlig gäst följer med dig till förrådet för att hämta fler flaskor. Din partner stannar i dörröppningen.",
     "text": "Gå ner på knä framför mannen i förrådet och ta hans kuk i munnen. Sug honom medan din partner ser på från dörröppningen."
   },
   {
@@ -6036,8 +6036,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Efter desserten blir mannen kvar bredvid dig vid matbordet.",
-    "text": "Lägg hans hand innanför dina trosor under bordet och låt honom fingra dig medan du fortsätter samtalet med de andra som om ingenting händer."
+    "context": "Efter desserten sitter ni kvar runt matbordet med några gäster, och en manlig gäst blir kvar bredvid dig.",
+    "text": "Lägg hans hand innanför dina trosor under bordet och låt honom fingra dig medan du fortsätter samtalet med de andra gästerna som om ingenting händer."
   },
   {
     "id": "vix_n4_132",
@@ -6045,7 +6045,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Din partner börjar duka av och lämnar dig och mannen vid köksön.",
+    "context": "Din partner börjar duka av och lämnar dig och en manlig gäst vid köksön.",
     "text": "Dra ner hans byxor, sätt dig på huk och slicka hans ollon lugnt innan du tar hela kuken i munnen."
   },
   {
@@ -6063,7 +6063,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Ni står i tvättstugan och letar efter extra handdukar när mannen följer efter.",
+    "context": "Ni står i tvättstugan och letar efter extra handdukar när en manlig gäst följer efter.",
     "text": "Öppna hans byxor, ta hans kuk i handen och runka honom mot tvättmaskinen medan du kysser hans hals."
   },
   {
@@ -6072,7 +6072,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen sitter kvar i fåtöljen när de andra börjar lämna festen.",
+    "context": "En manlig gäst sitter kvar i fåtöljen när de andra gästerna börjar lämna festen.",
     "text": "Ställ dig framför honom, dra ner dina trosor och sätt hans ansikte mellan dina lår tills du själv drar dig undan."
   },
   {
@@ -6090,7 +6090,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen hjälper dig att fylla på is i köket medan din partner står kvar i dörröppningen.",
+    "context": "En manlig gäst hjälper dig att fylla på is i köket medan din partner står kvar i dörröppningen.",
     "text": "Ställ dig framför mannen, öppna hans gylf och gå ner på knä. Ta hans kuk i munnen och sug honom medan din partner ser på."
   },
   {
@@ -6108,7 +6108,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen följer med dig från vardagsrummet för att hämta sin jacka.",
+    "context": "En manlig gäst följer med dig från vardagsrummet för att hämta sin jacka.",
     "text": "Tryck mannen mot väggen och sug honom tills han är nära. Ta kuken ur munnen, dra ner toppen och låt honom spruta över dina bröst."
   },
   {
@@ -6117,7 +6117,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Din partner sitter kvar med gästerna när du går ut i hallen med mannen.",
+    "context": "Din partner sitter kvar med gästerna när du går ut i hallen med en manlig gäst.",
     "text": "Gå ner på knä framför mannen och runka honom tills han är nära. Öppna munnen under hans kuk och låt honom spruta över tungan medan din partner ser på från rummet."
   },
   {
@@ -6126,7 +6126,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen frågar om han får hjälpa dig att stänga altandörren.",
+    "context": "En manlig gäst frågar om han får hjälpa dig att stänga altandörren medan din partner står kvar vid bordet.",
     "text": "Låt honom dra upp din kjol bakifrån, böj dig över bordet och låt honom slicka din fitta medan du håller blicken på din partner."
   },
   {
@@ -6144,7 +6144,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen ni bjudit in kommer tillbaka från toaletten och stannar i den tomma hallen när han får syn på dig. Din partner ser er från vardagsrummet.",
+    "context": "En manlig gäst kommer ut från toaletten och stannar i den tomma hallen när han får syn på dig. Din partner ser er från vardagsrummet.",
     "text": "Gå fram till mannen, öppna hans byxor och gå ner på knä. Ta hans kuk i munnen och sug honom medan din partner ser på från rummet."
   },
   {
@@ -6153,7 +6153,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Din partner ber mannen följa med dig till gästrummet efter middagen.",
+    "context": "Din partner ber en manlig gäst följa med dig till gästrummet efter middagen.",
     "text": "Sätt dig på knä framför honom, sug honom djupt och låt honom hålla ditt hår medan partnern lutar sig mot dörrkarmen."
   },
   {
@@ -6162,7 +6162,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen står bakom dig när du plockar undan glas från bordet.",
+    "context": "En manlig gäst står bakom dig när du plockar undan glas från bordet.",
     "text": "För hans hand under din kjol och låt honom fingra dig mot bordskanten medan du fortsätter duka av."
   },
   {
@@ -6180,7 +6180,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen blir kvar i vardagsrummet när den sista gästen har gått hem. Din partner sätter sig i soffan.",
+    "context": "En manlig gäst blir kvar i vardagsrummet när den sista gästen har gått hem. Din partner sätter sig i soffan.",
     "text": "Gå ner på knä framför mannen, öppna hans byxor och ta hans kuk i munnen. Sug honom medan din partner sitter i soffan och ser på."
   },
   {
@@ -6207,7 +6207,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Du och mannen går in i arbetsrummet medan din partner stannar i dörröppningen.",
+    "context": "Du och en manlig gäst går in i arbetsrummet medan din partner stannar i dörröppningen.",
     "text": "Lägg dig över skrivbordet, dra upp kjolen och låt mannen gå ner bakom dig och slicka din fitta medan din partner ser på."
   },
   {
@@ -6504,8 +6504,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni träffar i en dämpad hotellfoajé har bjudits in av er för kvällen i ett bokat rum.",
-    "text": "Sätt dig grensle över mannen i fåtöljen, ta hans kuk i dig och rid honom medan din partner ser på."
+    "context": "Mannen ni möter i hotellfoajén följer med upp till rummet ni har bokat för kvällen. Din partner sätter sig i fåtöljen medan mannen stannar vid sängkanten.",
+    "text": "Sätt dig grensle över mannen på sängkanten, ta hans kuk i dig och rid honom medan din partner ser på."
   },
   {
     "id": "vix_n5_004",
@@ -6522,8 +6522,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har chattat med en man i närheten under kvällen. Han möter er i hotellrummet ni bokat.",
-    "text": "Låt mannen knulla dig stående mot dörren medan din partner ser på från några steg bort."
+    "context": "Mannen ni har skrivit med möter er på stan. Ni går ut till bilen som står parkerad avskilt en bit bort.",
+    "text": "Ställ dig på knä över baksätet och låt mannen knulla dig bakifrån medan din partner sitter i framsätet och ser bakåt."
   },
   {
     "id": "vix_n5_006",
@@ -6540,8 +6540,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i ett diskret hotellrum i stadens utkant.",
-    "text": "Lägg dig på rygg, sära på benen och låt mannen knulla dig hårt tills du kommer medan din partner ser på."
+    "context": "Mannen ni har skrivit med möter er på stan. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar allt själva.",
+    "text": "Ställ mobilen så att kameran får med er, dra ner trosorna och låt mannen knulla dig stående mot väggen tills du kommer."
   },
   {
     "id": "vix_n5_008",
@@ -6558,8 +6558,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Den man ni chattat med under veckan möter upp er på ett bokat hotellrum efter stängningsdags.",
-    "text": "Låt mannen lyfta ditt ena ben mot sin höft och knulla dig stående medan din partner ser på."
+    "context": "Den man ni chattat med under veckan möter er på stan. Ni går till bilen som står parkerad utan insyn.",
+    "text": "Lägg dig på rygg i baksätet, lyft ena benet mot mannens höft och låt honom knulla dig medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n5_010",
@@ -6567,7 +6567,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Två män står redo på hotellrummet.",
+    "context": "Du och din partner kommer in på hotellrummet där två män väntar på er.",
     "text": "Gå ner på knä framför den ene och sug honom medan den andre smeker dina bröst. Byt sedan plats och låt den andre knulla dig medan din partner ser på."
   },
   {
@@ -6585,8 +6585,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen har väntat på ditt initiativ på hotellrummet.",
-    "text": "Dra ner mannen över dig, ta hans kuk i dig och rid honom medan din partner ser på."
+    "context": "Mannen ni har valt ut följer med er ut till bilen. Ni sätter er i baksätet medan din partner sitter fram.",
+    "text": "Sätt dig grensle över mannen, ta hans kuk i dig och rid honom medan din partner ser bakåt."
   },
   {
     "id": "vix_n5_013",
@@ -6594,7 +6594,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Efter att ni pratat med mannen ute på stan går ni tillsammans till ett bokat hotellrum i närheten.",
+    "context": "Efter att ni pratat med en man ute på stan går ni tillsammans till ett bokat hotellrum i närheten.",
     "text": "Din partner ser på. Lägg dig över sängkanten och låt mannen knulla dig hårt bakifrån."
   },
   {
@@ -6603,8 +6603,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen väntar vid sängen på hotellrummet medan din partner sätter sig i fåtöljen bredvid.",
-    "text": "Ställ dig på alla fyra på sängen och låt mannen knulla dig bakifrån medan din partner ser på."
+    "context": "Mannen ni träffat följer med dig in på en låsbar toalett på stan. Din partner väntar utanför och ni filmar uppdraget själva.",
+    "text": "Böj dig fram mot handfatet och låt mannen knulla dig bakifrån medan kameran rullar."
   },
   {
     "id": "vix_n5_015",
@@ -6621,8 +6621,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni bjudit in har redan fått dig att bli ordentligt våt på hotellrummet.",
-    "text": "Låt honom föra in två fingrar i dig medan du suger honom. När du inte vill vänta längre, lägg dig på rygg och låt honom knulla dig medan din partner ser på."
+    "context": "Mannen ni bjudit in möter er på stan. Du tar med honom in på en låsbar toalett medan din partner väntar utanför. Ni startar videon på mobilen.",
+    "text": "Sug mannen medan han för in två fingrar i dig. Vänd dig sedan mot väggen och låt honom knulla dig medan inspelningen fortsätter."
   },
   {
     "id": "vix_n5_017",
@@ -6639,7 +6639,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen står bakom dig vid sängen på hotellrummet medan din partner sitter i fåtöljen och ser på.",
+    "context": "Mannen ni har bjudit in står bakom dig vid sängen på hotellrummet medan din partner sitter i fåtöljen och ser på.",
     "text": "Låt mannen slicka dig vid sängkanten tills du kommer. Lägg dig sedan på sidan och låt honom knulla dig analt medan din partner ser på."
   },
   {
@@ -6648,8 +6648,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Efter kvällens kontakt möter du och din partner mannen på hotellrummet som ni ordnat i förväg.",
-    "text": "Lägg dig på sängen, sära på benen och ta mannens kuk i munnen medan din partner ser på från fåtöljen."
+    "context": "Efter en stunds kontakt på stan möter ni en man igen. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar själva.",
+    "text": "Gå ner på knä och ta mannens kuk i munnen framför kameran. Res dig sedan, dra ner trosorna och låt honom knulla dig stående mot väggen medan filmen fortsätter."
   },
   {
     "id": "vix_n5_020",
@@ -6666,8 +6666,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har pratat med en man på uteserveringen och bjudit med honom till ert hotellrum.",
-    "text": "Lägg dig på rygg och låt mannen knulla dig med hårda tag. Möt din partners blick när du kommer."
+    "context": "Din partner har pratat med en man på uteserveringen. Ni går ut till bilen en stund och sätter er där utan insyn.",
+    "text": "Lägg dig på rygg i baksätet och låt mannen knulla dig med hårda tag medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n5_022",
@@ -6684,8 +6684,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Efter en stunds blickväxling på perrongen har din partner gått fram, pratat med mannen och lett honom till ett hotellrum.",
-    "text": "Låt mannen knulla dig bakifrån på sängen medan du möter din partners blick."
+    "context": "På tågstationen har du och en man flirtat öppet en stund. Din partner går fram och pratar med honom. Du och mannen går sedan in på en låsbar toalett medan din partner väntar utanför. Ni filmar med mobilen.",
+    "text": "Böj dig fram mot handfatet och låt mannen knulla dig bakifrån medan kameran rullar. Gå sedan ut till din partner igen."
   },
   {
     "id": "vix_n5_024",
@@ -6702,8 +6702,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Din partner har bjudit med en man ni träffat på på väg till ert hotellrum.",
-    "text": "Din partner står vid fönstret och ser på. Låt mannen lyfta upp dig mot väggen och knulla dig stående."
+    "context": "Din partner bjuder med en man ni träffat på stan ut till bilen som står parkerad avskilt.",
+    "text": "Böj dig fram över baksätet och låt mannen knulla dig bakifrån medan din partner sitter i framsätet och följer er i backspegeln."
   },
   {
     "id": "vix_n5_026",
@@ -6711,7 +6711,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ligger under dig på sängen i hotellrummet medan din partner sitter nära.",
+    "context": "Mannen ni har bjudit in ligger under dig på sängen i hotellrummet medan din partner sitter nära.",
     "text": "Rid mannen hårt tills han är nära. Dra dig undan i sista stund och låt honom spruta över dina bröst medan din partner ser på."
   },
   {
@@ -6720,8 +6720,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen ni bjudit in väntar på er på hotellrummet.",
-    "text": "Ställ dig på alla fyra på sängen och låt mannen knulla dig hårt bakifrån medan du möter din partners blick."
+    "context": "Mannen ni bjudit in möter er på stan. Ni går till bilen som står parkerad utan insyn och sätter er där.",
+    "text": "Ställ dig på alla fyra över baksätet och låt mannen knulla dig hårt bakifrån medan du möter din partners blick mot framsätet."
   },
   {
     "id": "vix_n5_028",
@@ -6747,8 +6747,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "on_the_town"
     ],
-    "context": "Mannen står framför dig medan din partner kommer nära på hotellrummet.",
-    "text": "Gå ner på knä framför mannen, ta hans kuk i munnen och sug honom tills han kommer. Res dig sedan och möt din partners blick."
+    "context": "Mannen ni träffat på stan följer med dig in på ett låsbart toalettutrymme. Din partner stannar utanför och ni sätter mobilen på inspelning.",
+    "text": "Gå ner på knä framför mannen och sug honom framför kameran. Res dig sedan, dra upp kjolen och låt honom knulla dig stående medan inspelningen fortsätter."
   },
   {
     "id": "vix_n5_031",
@@ -6756,8 +6756,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man i baren och bjudit med honom till pubens privata bakre rum.",
-    "text": "Låt mannen lägga dig på det lilla bordet i rummet, dra upp kjolen och knulla dig hårt medan din partner ser på."
+    "context": "Din partner har pratat med en man i baren. Ni går ut till bilen en stund och sätter er där utan insyn.",
+    "text": "Lägg dig över baksätet, dra upp kjolen och låt mannen knulla dig bakifrån medan din partner ser bakåt från framsätet. När ni är klara går ni tillbaka in på puben."
   },
   {
     "id": "vix_n5_032",
@@ -6765,8 +6765,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni valt ut väntar på er i ett avskilt rum med soffa intill baren.",
-    "text": "Gå ner på knä framför mannen och sug honom medan sorlet från baren hörs genom väggen. Böj dig sedan över soffan och låt honom knulla dig medan din partner ser på."
+    "context": "Mannen ni valt ut möter er på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar allt med mobilen.",
+    "text": "Gå ner på knä och sug mannen framför kameran. Res dig sedan, böj dig fram mot handfatet och låt honom knulla dig bakifrån medan inspelningen fortsätter."
   },
   {
     "id": "vix_n5_033",
@@ -6774,7 +6774,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har spanat in en man vid bardisken, presenterat er och lett honom till ett privat vilorum i anslutning till puben.",
+    "context": "Din partner har spanat in en man vid bardisken och presenterat er. Ni tar en kort promenad till hotellrummet ni har bokat i närheten.",
     "text": "Lägg dig på sängen och låt mannen knulla dig med djupa tag medan din partner sitter bredvid och ser på."
   },
   {
@@ -6783,8 +6783,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Två män följer med er in i pubens privata biljardrum. Din partner slår sig ner i soffan vid väggen.",
-    "text": "Lägg dig över biljardbordets kant och låt den ene mannen knulla dig bakifrån medan den andre står framför dig och kysser dig. Din partner ser på."
+    "context": "Två män ni har pratat med på puben följer med er till hotellrummet ni har bokat i närheten. Din partner slår sig ner i fåtöljen.",
+    "text": "Lägg dig över sängkanten och låt den ene mannen knulla dig bakifrån medan den andre står framför och kysser dig. Din partner ser på."
   },
   {
     "id": "vix_n5_035",
@@ -6792,8 +6792,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man och fått med honom till pubens privata loge med en soffa.",
-    "text": "Lägg dig på soffan och låt mannen knulla dig tills han kommer i dig medan din partner ser på från sidan."
+    "context": "Din partner får kontakt med en man på puben. Du tar med mannen till en enskild låsbar toalett och din partner stannar ute i korridoren. Ni startar kameran på mobilen.",
+    "text": "Ställ mobilen så att kameran får med er, dra upp kjolen och låt mannen knulla dig stående mot väggen medan inspelningen rullar."
   },
   {
     "id": "vix_n5_036",
@@ -6801,8 +6801,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "En man och en kvinna från baren följer med er in i det avskilda rummet intill loungen.",
-    "text": "Låt mannen knulla dig över soffkanten medan kvinnan sitter i din partners knä. Se dem kyssas och pressa höfterna hårdare tillbaka mot mannen."
+    "context": "En man och en kvinna från baren följer med er till hotellrummet ni har bokat i närheten.",
+    "text": "Låt mannen knulla dig över sängkanten medan kvinnan sätter sig i din partners knä. Se dem kyssas medan mannen fortsätter bakom dig."
   },
   {
     "id": "vix_n5_037",
@@ -6810,8 +6810,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit in en man från grannbordet till pubens privata avdelning.",
-    "text": "Lägg dig på golvmadrassen och dra mannen över dig. Låt honom knulla dig snabbt medan din partner sitter i fåtöljen och smeker sig själv."
+    "context": "Din partner har bjudit med en man från grannbordet till en privat efterfest i närheten. När ni kommer dit drar ni er undan till ett ledigt sovrum.",
+    "text": "Lägg dig på sängen och dra mannen över dig. Låt honom knulla dig medan din partner sitter i en stol bredvid och ser på."
   },
   {
     "id": "vix_n5_038",
@@ -6819,8 +6819,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni träffat har frågat vad du själv vill prova i ett avskilt rum i anslutning till baren där ni stämt träff.",
-    "text": "Sätt dig på bordskanten och dra mannens mun mellan dina ben. När han fått dig att komma, vänd dig om och låt honom knulla dig över bordet medan din partner ser på."
+    "context": "Mannen ni träffat på baren följer med dig in på en låsbar toalett. Din partner väntar utanför och ni filmar uppdraget själva.",
+    "text": "Sätt dig på handfatet och låt mannen slicka dig tills du kommer. Vänd dig sedan om och låt honom knulla dig bakifrån medan kameran fortsätter spela in."
   },
   {
     "id": "vix_n5_039",
@@ -6828,8 +6828,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har bjudit in en man till ett låst sidorum på puben där en soffa står längs väggen.",
-    "text": "Böj dig över soffans armstöd och låt mannen knulla dig bakifrån medan din partner ser på från andra sidan rummet."
+    "context": "Din partner har bjudit med en man från puben ut till bilen en stund. Ni parkerar längst bort där ni inte har insyn från andra gäster.",
+    "text": "Böj dig över baksätet och låt mannen knulla dig bakifrån medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n5_040",
@@ -6837,8 +6837,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Två män väntar på er i ett avskilt rum med soffa intill baren.",
-    "text": "Sug den ene mannen vid soffan medan den andre smeker dig under kjolen. Böj dig sedan över soffkanten och låt den andre knulla dig medan din partner ser på."
+    "context": "Två män ni har pratat med på puben följer med er till hotellrummet ni har bokat i närheten.",
+    "text": "Sug den ene mannen vid sängkanten medan den andre smeker dig under kjolen. Böj dig sedan över sängen och låt den andre knulla dig medan din partner ser på."
   },
   {
     "id": "vix_n5_041",
@@ -6846,8 +6846,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i ett avskilt rum i pubens källarvåning.",
-    "text": "Lägg dig på rygg, sära på benen och låt mannen knulla dig tills han kommer i dig medan du håller din partners blick."
+    "context": "Mannen ni har skrivit med möter er vid baren. Du går in på en låsbar toalett med honom medan din partner väntar utanför. Ni sätter mobilen på inspelning.",
+    "text": "Lägg ena benet på toalettlocket och låt mannen knulla dig stående tills han kommer i dig medan kameran rullar."
   },
   {
     "id": "vix_n5_042",
@@ -6855,8 +6855,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen väntar på ditt initiativ i ett avskilt rum med soffa intill baren.",
-    "text": "Sätt dig grensle över mannen i soffan, ta hans kuk i dig och rid honom medan din partner ser på."
+    "context": "En man ni har flirtat med på puben väntar på ditt initiativ. Ni går ut till bilen en stund och sätter er där utan insyn.",
+    "text": "Sätt dig grensle över mannen i baksätet, ta hans kuk i dig och rid honom medan din partner ser bakåt från framsätet."
   },
   {
     "id": "vix_n5_043",
@@ -6864,8 +6864,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar i pubens privata lounge.",
-    "text": "Sätt dig grensle över mannen, ta hans kuk i dig och rid honom tills du kommer medan din partner ser på."
+    "context": "Mannen ni har skrivit med möter er på puben. Ni går tillsammans till hotellrummet ni har bokat i närheten.",
+    "text": "Sätt dig över mannen på sängen, för in hans kuk och rid honom tills du kommer medan din partner sitter nära och ser på."
   },
   {
     "id": "vix_n5_044",
@@ -6873,8 +6873,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen väntar vid soffan i det avskilda rummet medan din partner sätter sig i fåtöljen mitt emot.",
-    "text": "Ställ dig på alla fyra över soffan och låt mannen knulla dig bakifrån medan din partner ser på."
+    "context": "Mannen ni har träffat på puben följer med er ut till bilen en stund. Din partner sätter sig i framsätet.",
+    "text": "Ställ dig på knä över baksätet och låt mannen knulla dig bakifrån medan din partner ser bakåt."
   },
   {
     "id": "vix_n5_045",
@@ -6882,7 +6882,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Efter puben fortsätter ni till en efterfest. Mannen följer med er in i ett ledigt sovrum.",
+    "context": "Efter puben fortsätter ni till en efterfest. En man ni träffat på puben följer med er in i ett ledigt sovrum.",
     "text": "Låt mannen trycka upp dig mot väggen och knulla dig stående medan din partner ser på."
   },
   {
@@ -6891,8 +6891,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni bjudit in väntar i ett avskilt rum med soffa intill baren.",
-    "text": "Sug mannen medan han fingrar dig under kjolen. Böj dig sedan över soffan och låt honom knulla dig medan din partner ser på."
+    "context": "Mannen ni bjudit in möter er på puben. Du och mannen går in på en låsbar toalett medan din partner väntar utanför. Ni filmar allt själva.",
+    "text": "Sug mannen medan han fingrar dig. Böj dig sedan fram mot handfatet och låt honom knulla dig bakifrån medan kameran rullar."
   },
   {
     "id": "vix_n5_047",
@@ -6900,8 +6900,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med möter upp er vid pubens bakre korridor och leds in i ett rum.",
-    "text": "Dra av trosorna, böj dig fram över sängen och låt mannen knulla dig hårt bakifrån medan din partner ser på."
+    "context": "Mannen ni har skrivit med möter upp er på puben. Ni går tillsammans till hotellrummet ni bokat i närheten.",
+    "text": "Dra av trosorna, böj dig fram över sängkanten och låt mannen knulla dig hårt bakifrån medan din partner ser på."
   },
   {
     "id": "vix_n5_048",
@@ -6909,8 +6909,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen står bakom dig vid soffan i det avskilda rummet medan din partner sitter mittemot.",
-    "text": "Sätt ena knät på soffan och låt mannen slicka dig bakifrån. Låt honom sedan knulla dig analt medan din partner ser på."
+    "context": "Mannen ni träffat på puben följer med er till hotellrummet ni har bokat. Din partner sätter sig i fåtöljen.",
+    "text": "Ställ dig på knä vid sängkanten och låt mannen slicka dig bakifrån. Lägg dig sedan på sidan och låt honom knulla dig analt medan din partner ser på."
   },
   {
     "id": "vix_n5_049",
@@ -6918,8 +6918,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Din partner har pratat med en man på puben och fått med honom till ett avskilt rum med soffa.",
-    "text": "Lägg dig på soffan och låt mannen knulla dig djupt. Smek dig själv medan din partner ser på."
+    "context": "Din partner har pratat med en man på puben. Ni går ut till bilen en stund och tar baksätet medan din partner sitter fram.",
+    "text": "Lägg dig på rygg i baksätet och låt mannen knulla dig djupt. Smek dig själv medan din partner ser bakåt."
   },
   {
     "id": "vix_n5_050",
@@ -6927,8 +6927,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni träffat väntar i ett avskilt rum intill baren medan din partner slår sig ner i soffan.",
-    "text": "Sätt dig grensle över mannen, ta hans kuk i dig och rid honom medan din partner ser på. Håll din partners blick när du kommer."
+    "context": "Mannen ni träffat på puben följer med er till hotellrummet ni bokat i närheten.",
+    "text": "Sätt dig grensle över mannen på sängen, ta hans kuk i dig och rid honom medan din partner ser på. Håll din partners blick när du kommer."
   },
   {
     "id": "vix_n5_051",
@@ -6945,8 +6945,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Två män ni har pratat med i baren följer med er till ett avskilt rum intill loungen. Din partner stänger dörren efter er.",
-    "text": "Böj dig över soffan och låt den ene mannen knulla dig bakifrån. Ta den andre mannens kuk i munnen medan din partner sitter bredvid och ser på."
+    "context": "Två män ni har pratat med i baren följer med er till hotellrummet ni har bokat i närheten. Din partner stänger dörren efter er.",
+    "text": "Böj dig över sängen och låt den ene mannen knulla dig bakifrån. Ta den andre mannens kuk i munnen medan din partner sitter i fåtöljen och ser på."
   },
   {
     "id": "vix_n5_053",
@@ -6954,8 +6954,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ni har skrivit med väntar på er i ett privat hörn av pubens källare.",
-    "text": "Lägg dig på rygg på madrassen och låt mannen knulla dig djupt. När mannen är nära, håll din partners blick och låt honom se mannen komma över dig."
+    "context": "Mannen ni har skrivit med kommer till puben. Du och mannen går in på ett låsbart toalettutrymme och din partner väntar kvar utanför. Mobilen får filma från handfatet.",
+    "text": "Sätt dig på handfatet och låt mannen knulla dig. När han är nära fortsätter ni framför kameran tills han kommer över dig."
   },
   {
     "id": "vix_n5_054",
@@ -6963,8 +6963,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Du, din partner och mannen ni träffat är ensamma i ett avskilt rum med soffa intill baren.",
-    "text": "Böj dig över soffans armstöd och låt mannen knulla dig bakifrån medan din partner sitter intill och ser på."
+    "context": "Du, din partner och mannen ni träffat går ut till bilen en stund. Ni sätter er där utan insyn från puben.",
+    "text": "Böj dig över baksätet och låt mannen knulla dig bakifrån medan din partner sitter i framsätet och ser bakåt."
   },
   {
     "id": "vix_n5_055",
@@ -6981,8 +6981,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen ligger i soffan i det avskilda rummet intill baren medan din partner sitter i fåtöljen mittemot.",
-    "text": "Sätt dig grensle över mannen och rid honom tills han är nära. Kliv av och låt honom spruta över dina bröst medan din partner ser på."
+    "context": "Mannen ni träffat på puben följer med er ut till bilen en stund. Din partner sitter i framsätet.",
+    "text": "Sätt dig grensle över mannen i baksätet och rid honom tills han är nära. Kliv av och låt honom spruta över dina bröst medan din partner ser bakåt."
   },
   {
     "id": "vix_n5_057",
@@ -6990,7 +6990,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Efter puben fortsätter ni till en privat efterfest. Mannen väntar i ett ledigt sovrum medan din partner följer med in.",
+    "context": "Efter puben fortsätter ni till en privat efterfest. En man ni träffat på puben väntar i ett ledigt sovrum medan din partner följer med in.",
     "text": "Böj dig över sängkanten och låt mannen knulla dig bakifrån medan din partner står framför och håller din blick."
   },
   {
@@ -6999,7 +6999,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Två män väntar på dig i det avskilda rummet intill baren medan din partner slår sig ner nära.",
+    "context": "Två män ni träffat på puben följer med er till hotellrummet ni har bokat i närheten. Din partner slår sig ner bredvid sängen.",
     "text": "Låt den ene mannen ligga mellan dina ben och slicka dig medan den andre håller om dig bakifrån. Dra sedan upp mannen över dig och låt honom knulla dig inför din partner."
   },
   {
@@ -7017,8 +7017,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "bar_pub"
     ],
-    "context": "Mannen står vid soffan i det avskilda rummet medan din partner sitter en bit bort.",
-    "text": "Gå ner på knä framför mannen och sug honom tills han kommer i din mun. Res dig sedan och möt din partners blick."
+    "context": "Mannen ni träffat på puben följer med dig in på en låsbar toalett. Din partner väntar utanför och ni filmar själva.",
+    "text": "Sug mannen framför kameran. Res dig sedan, dra upp kjolen och låt honom knulla dig stående mot väggen medan inspelningen fortsätter."
   },
   {
     "id": "vix_n5_061",
@@ -7026,8 +7026,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter att ni lämnat nattklubben går ni tillsammans till bilen på parkeringen. Mannen följer med.",
-    "text": "Klättra in i baksätet, lägg dig på rygg och låt mannen knulla dig medan din partner sitter i framsätet och ser bakåt."
+    "context": "Under klubbkvällen går ni ut till bilen en stund tillsammans med en man ni har träffat på klubben. Bilen står parkerad utan insyn.",
+    "text": "Klättra in i baksätet, lägg dig på rygg och låt mannen knulla dig medan din partner sitter i framsätet och ser bakåt. När ni är klara går ni tillbaka in på klubben."
   },
   {
     "id": "vix_n5_062",
@@ -7053,8 +7053,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben under kvällen och kör en sväng innan ni parkerar avskilt. Mannen ni pratat med följer med.",
-    "text": "Klättra in i baksätet och låt mannen knulla dig medan din partner sitter i framsätet och ser bakåt."
+    "context": "Under klubbkvällen går ni ut till bilen en stund tillsammans med en man ni har träffat på klubben. Bilen står på en avskild del av parkeringen.",
+    "text": "Klättra in i baksätet och låt mannen knulla dig medan din partner sitter i framsätet och ser bakåt. När ni är klara går ni tillbaka in på klubben."
   },
   {
     "id": "vix_n5_065",
@@ -7080,8 +7080,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben en stund och kör till en mörk parkering där bilen står ostörd. Mannen följer med.",
-    "text": "Låt mannen trycka upp dig mot bilen, linda benen runt hans midja och knulla dig stående medan din partner ser på."
+    "context": "Under klubbkvällen går ni ut till bilen en stund med en man ni har träffat på klubben. Ni sätter er i bilen där den står utan insyn.",
+    "text": "Ställ dig på knä över baksätet och låt mannen knulla dig bakifrån medan din partner sitter i framsätet och ser bakåt. Gå sedan tillbaka in på klubben."
   },
   {
     "id": "vix_n5_068",
@@ -7098,7 +7098,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter klubben fortsätter ni hem till vänner på efterfest. Mannen följer med er in i sovrummet.",
+    "context": "Efter klubben fortsätter ni hem till vänner på efterfest. En man ni träffat på klubben följer med er in i sovrummet.",
     "text": "Lägg dig på sängen och låt mannen knulla dig medan festen fortsätter på andra sidan dörren. Din partner sitter vid sängkanten och ser på."
   },
   {
@@ -7107,7 +7107,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben en stund och kör till en avskild parkering. Mannen följer med er till bilen.",
+    "context": "Under klubbkvällen går ni ut till bilen en stund med en man ni har träffat på klubben. Bilen står avskilt på parkeringen.",
     "text": "Gå ner på knä mellan din partner och mannen och växla munnen mellan deras kukar. Klättra sedan in i baksätet och låt mannen knulla dig medan din partner ser på."
   },
   {
@@ -7125,7 +7125,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter klubben fortsätter ni till en efterfest hemma hos vänner. Mannen följer med er i bilen dit.",
+    "context": "Efter klubben fortsätter ni till en efterfest hemma hos vänner. En man ni träffat på klubben följer med er i bilen dit.",
     "text": "Klättra över mannen i baksätet och ta hans kuk i dig. Rid honom med händerna mot biltaket medan din partner sitter i förarsätet och tittar på."
   },
   {
@@ -7134,8 +7134,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben en stund och parkerar bilen utom synhåll från vägen. Mannen följer med.",
-    "text": "Sätt dig grensle över mannen, ta hans kuk i dig och rid honom hårt medan din partner ser på."
+    "context": "Mitt under klubbkvällen går ni ut till bilen en stund tillsammans med en man ni har träffat på klubben. Bilen står längst bort på parkeringen, utan insyn från entrén.",
+    "text": "Sätt dig grensle över mannen i baksätet, ta hans kuk i dig och rid honom hårt medan din partner ser bakåt från framsätet. Gå sedan tillbaka in på klubben."
   },
   {
     "id": "vix_n5_074",
@@ -7143,8 +7143,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben och går ut till bilen. Mannen ni träffat följer med.",
-    "text": "Böj dig fram över motorhuven och låt mannen knulla dig bakifrån. Din partner står framför dig och låter dig suga honom samtidigt."
+    "context": "Mannen ni träffat på klubben följer med er till hotellrummet ni har bokat i närheten.",
+    "text": "Ställ dig på alla fyra på sängen och låt mannen knulla dig bakifrån. Ta samtidigt din partners kuk i munnen medan han står vid sängkanten."
   },
   {
     "id": "vix_n5_075",
@@ -7152,7 +7152,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter klubben fortsätter ni till en efterfest hos vänner. Mannen följer med er in i sovrummet.",
+    "context": "Efter klubben fortsätter ni till en efterfest hos vänner. En man ni träffat på klubben följer med er in i sovrummet.",
     "text": "Låt mannen trycka upp dig mot väggen och knulla dig med djupa tag medan din partner står vid dörröppningen och ser på."
   },
   {
@@ -7161,8 +7161,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni går ut från klubben och sätter er i bilen. Mannen ni träffat följer med.",
-    "text": "Sug mannen i baksätet medan han för in fingrarna i dig. Vänd dig sedan på alla fyra och låt honom knulla dig medan din partner sitter i framsätet och ser bakåt."
+    "context": "Under klubbkvällen går ni ut till bilen en stund med en man ni har träffat på klubben. Ni sätter er där bilen står utan insyn.",
+    "text": "Sug mannen i baksätet medan han fingrar dig. Vänd dig sedan på alla fyra och låt honom knulla dig medan din partner sitter i framsätet och ser bakåt. Gå sedan tillbaka in på klubben."
   },
   {
     "id": "vix_n5_077",
@@ -7170,7 +7170,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben och tar hissen upp till hotellrummet. Mannen följer med er in.",
+    "context": "Ni lämnar klubben och tar hissen upp till hotellrummet. En man ni träffat på klubben följer med er in.",
     "text": "Din partner står en bit bort och ser på. Lägg dig ner, sära på benen och låt mannen knulla dig hårt."
   },
   {
@@ -7179,7 +7179,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter klubben fortsätter ni till en efterfest med ett par ni känner. Mannen väntar på dig i gästrummet.",
+    "context": "Efter klubben fortsätter ni till en efterfest med ett par ni känner. En man ni träffat på klubben väntar på dig i gästrummet.",
     "text": "Ställ dig på knä vid sängkanten och låt mannen slicka dig bakifrån. Låt honom sedan knulla dig analt medan din partner står framför och ser på."
   },
   {
@@ -7188,8 +7188,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben och kör till en mörk parkering där bilen står ostörd. Mannen följer med.",
-    "text": "Din partner sitter i framsätet och ser bakåt. Låt mannen lägga dig på rygg och knulla dig medan du möter din partners blick."
+    "context": "Under klubbkvällen går ni ut till bilen en stund tillsammans med en man ni har träffat på klubben. Bilen står parkerad på en avskild del av parkeringen.",
+    "text": "Lägg dig på rygg i baksätet och låt mannen knulla dig medan du möter din partners blick mot framsätet. När ni är klara går ni tillbaka in på klubben."
   },
   {
     "id": "vix_n5_080",
@@ -7206,7 +7206,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter klubben fortsätter ni till en efterfest hos ett par ni känner. Mannen följer med er in i gästrummet.",
+    "context": "Efter klubben fortsätter ni till en efterfest hos ett par ni känner. En man ni träffat på klubben följer med er in i gästrummet.",
     "text": "Sätt dig grensle över mannen och rid honom hårt medan din partner ser på när du kommer."
   },
   {
@@ -7215,8 +7215,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben en stund och kör till en mörk parkering. Två män ni träffat följer efter och stannar vid bilen.",
-    "text": "Sätt dig grensle över den ene mannen i baksätet och rid honom. Låt den andre luta sig in genom den öppna dörren och ta hans kuk i munnen medan din partner sitter i framsätet och ser bakåt."
+    "context": "Två män ni träffat på klubben följer med er till hotellrummet ni har bokat i närheten. Din partner slår sig ner i fåtöljen.",
+    "text": "Sätt dig grensle över den ene mannen på sängen och rid honom. Ta den andre mannens kuk i munnen medan din partner ser på."
   },
   {
     "id": "vix_n5_083",
@@ -7224,7 +7224,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben och går upp till hotellrummet. Mannen följer med er in.",
+    "context": "Ni lämnar klubben och går upp till hotellrummet. En man ni träffat på klubben följer med er in.",
     "text": "Lägg dig på sängen och låt mannen knulla dig med djupa tag medan din partner sitter vid huvudändan och ser på."
   },
   {
@@ -7233,7 +7233,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter klubben fortsätter ni till en efterfest hemma hos vänner. Mannen följer med er till gästrummet.",
+    "context": "Efter klubben fortsätter ni till en efterfest hemma hos vänner. En man ni träffat på klubben följer med er till gästrummet.",
     "text": "Böj dig fram över sängkanten och låt mannen knulla dig bakifrån medan din partner sitter bredvid och ser på."
   },
   {
@@ -7242,8 +7242,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter klubbkvällen kör ni en bit bort och stannar på en avskild parkering. Mannen följer med och sätter sig i baksätet.",
-    "text": "Klättra in i baksätet, lägg dig på rygg och sära på benen. Låt mannen knulla dig hårt medan din partner ser på från framsätet."
+    "context": "Ni tar en paus från klubben och går ut till bilen med en man ni har träffat där inne. Bilen står avsides och ingen från kön eller entrén kan se in.",
+    "text": "Klättra in i baksätet, lägg dig på rygg och sära på benen. Låt mannen knulla dig hårt medan din partner ser bakåt från framsätet. Gå sedan tillbaka in på klubben."
   },
   {
     "id": "vix_n5_086",
@@ -7251,7 +7251,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben och tar hissen upp till hotellrummet. Mannen väntar vid sängen.",
+    "context": "Ni lämnar klubben och tar hissen upp till hotellrummet. En man ni träffat på klubben väntar vid sängen.",
     "text": "Rid mannen hårt tills han är nära. Lyft av och låt honom spruta över dina bröst medan din partner ser på."
   },
   {
@@ -7260,7 +7260,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Efter klubben fortsätter ni till en efterfest. Mannen följer med er in i ett ledigt sovrum.",
+    "context": "Efter klubben fortsätter ni till en efterfest. En man ni träffat på klubben följer med er in i ett ledigt sovrum.",
     "text": "Lägg dig på rygg på sängen och låt mannen knulla dig medan din partner sitter bredvid och ser på."
   },
   {
@@ -7269,8 +7269,8 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben och kör till en mörk parkering. Två män ni träffat följer efter i en annan bil.",
-    "text": "Lägg dig tvärs över baksätet och låt den ene mannen slicka dig medan den andre tar dina bröst i händerna. Dra sedan mannen vid dina ben över dig och låt honom knulla dig inför din partner."
+    "context": "Två män ni träffat på klubben följer med er till hotellrummet ni har bokat i närheten. Din partner sitter nära sängen.",
+    "text": "Lägg dig på sängen och låt den ene mannen slicka dig medan den andre tar dina bröst i händerna. Dra sedan mannen vid dina ben över dig och låt honom knulla dig inför din partner."
   },
   {
     "id": "vix_n5_089",
@@ -7278,7 +7278,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "Ni lämnar klubben och går upp till hotellrummet tillsammans med mannen.",
+    "context": "Ni lämnar klubben och går upp till hotellrummet tillsammans med en man ni träffat på klubben.",
     "text": "Låt mannen trycka upp dig mot hotellväggen och knulla dig stående medan din partner ser på."
   },
   {
@@ -7287,7 +7287,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "nightclub"
     ],
-    "context": "På efterfesten drar ni er undan med mannen till ett ledigt sovrum medan festen fortsätter utanför.",
+    "context": "På efterfesten drar ni er undan till ett ledigt sovrum med en man ni träffade på klubben medan festen fortsätter utanför.",
     "text": "Sätt dig på knä framför mannen vid sängkanten och ta hans kuk i munnen. Sug honom tills han kommer i din mun medan din partner ser på."
   },
   {
@@ -7377,7 +7377,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "private_party"
     ],
-    "context": "Två män står redo i gästrummet på festen.",
+    "context": "Du och din partner går in i gästrummet på festen där två män väntar på er.",
     "text": "Sätt dig på knä framför den ene mannen vid gästsängen och sug honom medan den andre fingrar dig bakifrån. Lägg dig sedan över sängen och låt den andre knulla dig inför din partner."
   },
   {
@@ -7395,7 +7395,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "private_party"
     ],
-    "context": "Mannen har väntat på ditt initiativ i gästrummet på festen.",
+    "context": "En man ni träffat på festen väntar på ditt initiativ i gästrummet.",
     "text": "Sätt dig grensle över mannen på gästsängen och rid honom medan din partner sitter bredvid och ser på."
   },
   {
@@ -7413,7 +7413,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "private_party"
     ],
-    "context": "Mannen står vid gästsängen medan din partner sitter vid sängkanten och ser på.",
+    "context": "En man ni träffat på festen står vid gästsängen medan din partner sitter vid sängkanten och ser på.",
     "text": "Ställ dig på alla fyra på gästsängen och låt mannen knulla dig bakifrån."
   },
   {
@@ -7449,7 +7449,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "private_party"
     ],
-    "context": "Mannen står bakom dig i gästrummet medan festen fortsätter på andra sidan dörren.",
+    "context": "En man ni träffat på festen står bakom dig i gästrummet medan festen fortsätter på andra sidan dörren.",
     "text": "Böj dig över sängen och låt mannen slicka dig bakifrån. Håll kvar din partners blick när mannen reser sig och knullar dig analt."
   },
   {
@@ -7521,7 +7521,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "private_party"
     ],
-    "context": "Mannen ligger under dig i gästrummet medan din partner sitter vid sängkanten.",
+    "context": "En man ni träffat på festen ligger under dig i gästrummet medan din partner sitter vid sängkanten.",
     "text": "Rid mannen på gästsängen tills han är nära. Dra dig undan och låt honom spruta över din mage medan din partner ser på."
   },
   {
@@ -7557,7 +7557,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "private_party"
     ],
-    "context": "Mannen står framför dig vid gästsängen medan din partner sitter en bit bort och ser på.",
+    "context": "En man ni träffat på festen står framför dig vid gästsängen medan din partner sitter en bit bort och ser på.",
     "text": "Gå ner på knä framför mannen och sug honom tills han kommer i din mun medan din partner ser på."
   },
   {
@@ -7584,7 +7584,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Ni har bett en manlig gäst stanna kvar en stund i sovrummet efter att de andra gått.",
+    "context": "Ni har bett en manlig gäst stanna kvar en stund i sovrummet efter att de övriga gästerna gått.",
     "text": "Låt mannen lägga dig på sängen och knulla dig med djupa tag. Din partner sitter mittemot och smeker sig själv medan han ser på."
   },
   {
@@ -7602,7 +7602,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Ni visar runt gästen i ert sovrum och stannar till vid sängen.",
+    "context": "Ni visar runt en manlig gäst i ert sovrum och stannar till vid sängen.",
     "text": "Lägg dig på sängen och låt mannen knulla dig hårt medan din partner står vid sängkanten och ser på."
   },
   {
@@ -7629,7 +7629,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Efter hemmafesten frågar mannen vad du själv vill göra i gästrummet.",
+    "context": "Efter hemmafesten går du, din partner och en manlig gäst in i gästrummet. Mannen frågar vad du själv vill göra.",
     "text": "Lägg dig på rygg på gästsängen och dra ner mannens ansikte mellan dina ben. Låt honom slicka dig tills du kommer, dra sedan upp honom över dig och låt mannen knulla dig medan din partner ser på."
   },
   {
@@ -7665,7 +7665,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen väntar på att du ska ta första steget när ni kommer in i gästrummet efter festen.",
+    "context": "En manlig gäst väntar på att du ska ta första steget när ni kommer in i gästrummet efter festen.",
     "text": "Dra ner mannen på sängen, sätt dig grensle över honom och rid honom medan din partner sitter bredvid och ser på."
   },
   {
@@ -7674,7 +7674,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "En gäst blir kvar i ert sovrum för att hjälpa till med sängarna.",
+    "context": "En manlig gäst blir kvar i ert sovrum för att hjälpa till med sängarna.",
     "text": "Din partner sitter i stolen och ser på. Sätt dig grensle över mannen på sängen, ta hans kuk i dig och rid honom."
   },
   {
@@ -7683,7 +7683,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen står vid sängen i gästrummet medan din partner stannar en bit bakom dig.",
+    "context": "En manlig gäst står vid sängen i gästrummet medan din partner stannar en bit bakom dig.",
     "text": "Böj dig över fotänden av sängen och låt mannen knulla dig bakifrån medan du möter din partners blick."
   },
   {
@@ -7710,7 +7710,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "En gäst följer med dig till gästrummet.",
+    "context": "Du och din partner går in i gästrummet tillsammans med en manlig gäst.",
     "text": "Låt gästen lägga dig över sängen och knulla dig djupt bakifrån medan din partner ser på."
   },
   {
@@ -7728,7 +7728,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Du, din partner och en manlig gäst har gått in i ert sovrum efter att de andra lämnat festen.",
+    "context": "Du, din partner och en manlig gäst har gått in i ert sovrum efter att de övriga gästerna lämnat festen.",
     "text": "Lägg dig på sängen och låt gästen knulla dig hårt medan din partner sitter bredvid och ser på."
   },
   {
@@ -7764,7 +7764,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Du, din partner och en manlig gäst är kvar i sovrummet när de andra har gått och lagt sig.",
+    "context": "Du, din partner och en manlig gäst är kvar i sovrummet när de övriga gästerna har gått och lagt sig.",
     "text": "Låt gästen lägga dig på sängen och knulla dig tills han sprutar i dig. Håll din partners blick när du känner mannen komma."
   },
   {
@@ -7773,7 +7773,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Ni har dragit er undan med mannen till gästrummet och fått rummet helt för er själva.",
+    "context": "Ni har dragit er undan till gästrummet med en manlig gäst och fått rummet helt för er själva.",
     "text": "Ställ dig på alla fyra på gästsängen och låt mannen knulla dig bakifrån medan din partner står framför och håller din blick."
   },
   {
@@ -7791,7 +7791,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen ligger under dig i gästrummet medan din partner sitter nära.",
+    "context": "En manlig gäst ligger under dig i gästrummet medan din partner sitter nära.",
     "text": "Rid mannen hårt och stanna när han är nära. Dra dig undan och låt honom spruta över dina bröst medan din partner ser på."
   },
   {
@@ -7827,7 +7827,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "at_home"
     ],
-    "context": "Mannen står framför dig vid sängen i gästrummet medan din partner sätter sig en bit bort och ser på.",
+    "context": "En manlig gäst står framför dig vid sängen i gästrummet medan din partner sätter sig en bit bort och ser på.",
     "text": "Sug mannen på sängkanten tills han kommer i din mun. Lägg dig sedan över din partner och kyss honom medan gästen ser på."
   },
   {
@@ -7908,7 +7908,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "En man i baren ber dig följa med till ett privat lekrum.",
+    "context": "Du och din partner pratar med en man i baren som ber er följa med till ett privat lekrum.",
     "text": "Din partner följer med in och ställer sig vid britsen. Lägg dig över kanten och låt mannen knulla dig bakifrån medan du håller partnerns blick."
   },
   {
@@ -7917,7 +7917,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "Två män står redo i ett privat lekrum på klubben.",
+    "context": "Du och din partner går in i ett privat lekrum på klubben där två män väntar på er.",
     "text": "Sätt dig på knä mellan de två männen och växla munnen mellan deras kukar. Lägg dig sedan på rygg och låt den ene mannen knulla dig medan den andre står över ditt ansikte och din partner ser på."
   },
   {
@@ -7926,7 +7926,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "En man bjuder in dig till ett avskilt lekrum på klubben.",
+    "context": "Du och din partner träffar en man på klubben som bjuder med er till ett avskilt lekrum.",
     "text": "Dra mannen över dig på sängen och låt honom knulla dig tills du kommer medan din partner ser på."
   },
   {
@@ -7935,7 +7935,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "Mannen ligger på sängen i ett privat lekrum medan din partner sitter i fåtöljen bredvid.",
+    "context": "En man ni träffat på klubben ligger på sängen i ett privat lekrum medan din partner sitter i fåtöljen bredvid.",
     "text": "Sätt dig grensle över mannen, ta hans kuk i dig och rid honom medan din partner ser på."
   },
   {
@@ -7953,7 +7953,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "Mannen väntar vid sängen i ett privat lekrum medan din partner sitter nära dörren.",
+    "context": "En man ni träffat på klubben väntar vid sängen i ett privat lekrum medan din partner sitter nära dörren.",
     "text": "Ställ dig på alla fyra på sängen och låt mannen knulla dig hårt bakifrån medan din partner ser på från dörren."
   },
   {
@@ -7962,7 +7962,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "En man bjuder in dig till en avskild säng i relaxavdelningen.",
+    "context": "Du och din partner träffar en man i relaxavdelningen som bjuder med er till en avskild säng.",
     "text": "Sätt dig grensle över mannen, ta hans kuk i dig och rid honom medan din partner sitter i stolen intill och ser på."
   },
   {
@@ -7980,7 +7980,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "En man bjuder med dig till ett mörkt lekrum.",
+    "context": "Du och din partner träffar en man på klubben som bjuder med er till ett mörkt lekrum.",
     "text": "Lägg dig på rygg och låt mannen knulla dig tills han kommer i dig medan din partner sitter vid sängen och ser på."
   },
   {
@@ -7989,7 +7989,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "Mannen står bakom dig i ett privat lekrum medan din partner kommer nära.",
+    "context": "En man ni träffat på klubben står bakom dig i ett privat lekrum medan din partner kommer nära.",
     "text": "Luta dig fram över sängen och låt mannen slicka dig bakifrån. Låt honom sedan knulla dig analt medan din partner sitter framför dig och ser på."
   },
   {
@@ -7998,7 +7998,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "En man erbjuder dig en nackmassage och drar dig mot ett privat rum.",
+    "context": "Du och din partner träffar en man i relaxavdelningen som erbjuder dig en nackmassage och bjuder med er till ett privat rum.",
     "text": "Din partner stannar vid dörren och ser på. Följ med mannen in, lägg dig på sängen och låt honom knulla dig i mörkret."
   },
   {
@@ -8016,7 +8016,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "En man visar upp sig för dig i ett avskilt lekrum.",
+    "context": "Du och din partner träffar en man på klubben som visar upp sig för dig i ett avskilt lekrum.",
     "text": "Lägg dig på rygg och låt mannen knulla dig med djupa tag tills han kommer i dig medan din partner ser på."
   },
   {
@@ -8061,7 +8061,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "Mannen ligger under dig i ett privat lekrum medan din partner sitter vid sängkanten.",
+    "context": "En man ni träffat på klubben ligger under dig i ett privat lekrum medan din partner sitter vid sängkanten.",
     "text": "Rid mannen hårt tills han är nära. Lyft av och låt honom spruta över dina bröst medan din partner sitter vid sängkanten och ser på."
   },
   {
@@ -8097,7 +8097,7 @@ const VIXEN_DATABASE = [
     "environments": [
       "swingers_club"
     ],
-    "context": "Mannen står framför dig medan din partner kommer nära i ett privat lekrum på klubben.",
+    "context": "En man ni träffat på klubben står framför dig i ett privat lekrum medan din partner kommer nära.",
     "text": "Gå ner på knä framför mannen och sug honom tills han kommer i din mun. Res dig, dra din partner intill och kyss honom medan mannen ser på."
   }
 ];
