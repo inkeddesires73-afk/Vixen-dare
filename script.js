@@ -685,7 +685,7 @@ function closeWelcomeModal() {
     window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
-window.onload = function() {
+window.addEventListener('load', function() {
     window.scrollTo({ top: 0, behavior: 'auto' });
     userProgress = normalizeProgress(userProgress);
     // Miljön gäller bara för den aktuella spelsessionen. Vid varje ny öppning
@@ -709,4 +709,4 @@ window.onload = function() {
     });
     const modal = document.getElementById('welcome-modal');
     if (modal) modal.style.display = 'flex';
-};
+});

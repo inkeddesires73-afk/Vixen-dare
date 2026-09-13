@@ -38,6 +38,12 @@
         if (activate) activate.hidden = signedIn;
     }
 
+    function openAuth() {
+        const form = $('cloud-auth-form');
+        if (form) form.hidden = false;
+        $('cloud-email')?.focus();
+    }
+
     function readState(userId) {
         try { return JSON.parse(localStorage.getItem(stateKey(userId))) || {}; } catch (_) { return {}; }
     }
@@ -382,7 +388,6 @@
         $('cloud-use-device-btn').onclick = () => { void useThisDevice(); };
         $('cloud-use-cloud-btn').onclick = () => { void useCloudVersion(); };
         $('cloud-resume-btn').onclick = () => { void resumeAfterDeletion(); };
-        $('cloud-activate-btn').onclick = () => { $('cloud-auth-form').hidden = false; $('cloud-email').focus(); };
         window.addEventListener('online', () => { void flush(); });
         cloud.client.auth.onAuthStateChange((event) => {
             if (event === 'SIGNED_OUT') { cloud.user = null; setSignedInUi(false); }
@@ -390,5 +395,5 @@
         void establishSession().catch(() => setStatus('Molnbackupen kan inte nås just nu. Lokala framsteg fungerar fortfarande.', 'warning'));
     }
 
-    window.VixenCloud = { initialize, queueProgress };
+    window.VixenCloud = { initialize, queueProgress, openAuth };
 })();

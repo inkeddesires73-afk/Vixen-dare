@@ -96,7 +96,7 @@
         <p class="vault-info" id="vault-info-text">Spara din backup med en <strong>Vixen Key</strong>.</p>
         <section class="cloud-backup-box" aria-labelledby="cloud-backup-title">
             <div class="cloud-heading"><div><h4 id="cloud-backup-title">Molnbackup</h4><p>Spara dina framsteg automatiskt och få tillbaka dem om du byter enhet. Logga in med din e-postadress.</p></div><span class="cloud-mark" aria-hidden="true">☁</span></div>
-            <button type="button" class="vault-btn" id="cloud-activate-btn">AKTIVERA MOLNBACKUP</button>
+            <button type="button" class="vault-btn" id="cloud-activate-btn" onclick="window.VixenCloud?.openAuth()">AKTIVERA MOLNBACKUP</button>
             <div id="cloud-auth-form" class="cloud-auth-form" hidden>
                 <label for="cloud-email">Din e-postadress</label><input type="email" id="cloud-email" autocomplete="email" inputmode="email" placeholder="namn@exempel.se">
                 <button type="button" class="vault-btn secondary-vault-btn" id="cloud-send-code">SKICKA INLOGGNINGSLÄNK</button>
