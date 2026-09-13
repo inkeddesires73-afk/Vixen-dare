@@ -672,6 +672,46 @@ textarea, input {
     font-weight: bold;
 }
 
+.backup-box, .import-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.backup-box .vault-action, .import-box .vault-action {
+    appearance: none;
+    -webkit-appearance: none;
+    width: auto;
+    min-height: 40px;
+    padding: 10px 16px;
+    margin: 0;
+    border: 1px solid rgba(197,160,89,.65) !important;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(197,160,89,.16), rgba(197,160,89,.02)) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 8px 24px rgba(0,0,0,.18);
+    color: var(--vixen-gold) !important;
+    font-size: .68rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.backup-box .vault-action:hover, .import-box .vault-action:hover {
+    border-color: #e4c783 !important;
+    box-shadow: 0 0 0 3px rgba(197,160,89,.08), 0 10px 24px rgba(0,0,0,.24);
+}
+
+.backup-box #export-btn, .import-box .vault-action:first-of-type {
+    border-color: rgba(213,174,85,.88) !important;
+    color: #e5c77f !important;
+}
+
+.backup-box #backup-key-area, .import-box input[type="text"] { flex: 1 0 100%; margin: 4px 0 0; }
+.backup-box #file-backup-status { flex: 1 0 100%; margin: 2px 0 0; }
+
 .pulsing-warning {
     animation: warnPulse 1s infinite alternate;
     color: #ff3333 !important;

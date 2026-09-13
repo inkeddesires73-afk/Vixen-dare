@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Vixen Dare</title>
-    <link rel="stylesheet" href="style.css?v=48">
+    <link rel="stylesheet" href="style.css?v=49">
 	<link rel="manifest" href="manifest.webmanifest?v=33">
 	<script>
         // Chrome kan erbjuda installation mycket tidigt under sidladdningen.
@@ -117,17 +117,17 @@
             <p id="cloud-backup-status" class="cloud-backup-status" role="status" aria-live="polite"></p>
         </section>
         <div class="backup-box">
-            <button class="vault-btn" id="export-btn" onclick="exportProgress()">SKAPA BACKUP-NYCKEL</button>
-            <button class="vault-btn secondary-vault-btn" onclick="downloadBackupFile()">LADDA NER BACKUPFIL</button>
-            <button class="vault-btn secondary-vault-btn" id="file-backup-btn" onclick="chooseAutomaticBackupFile()">AUTOMATISK BACKUPFIL <span class="button-platform">CHROME/EDGE</span></button>
+            <button class="vault-btn vault-action" id="export-btn" onclick="exportProgress()">Skapa backup-nyckel</button>
+            <button class="vault-btn vault-action secondary-vault-btn" onclick="downloadBackupFile()">Ladda ner backupfil</button>
+            <button class="vault-btn vault-action secondary-vault-btn" id="file-backup-btn" onclick="chooseAutomaticBackupFile()">Automatisk backupfil <span class="button-platform">Chrome/Edge</span></button>
             <span id="file-backup-status" class="vault-info" role="status"></span>
             <textarea id="backup-key-area" readonly style="display:none;"></textarea>
-            <button class="vault-btn secondary-vault-btn" id="copy-backup-btn" onclick="copyBackupKey()">KOPIERA NYCKEL</button>
+            <button class="vault-btn vault-action secondary-vault-btn" id="copy-backup-btn" onclick="copyBackupKey()">Kopiera nyckel</button>
         </div>
         <div class="import-box">
             <input type="text" id="import-key-input" placeholder="Klistra in nyckel...">
-            <button class="vault-btn" onclick="importProgress()">ÅTERSTÄLL DATA</button>
-            <button type="button" class="vault-btn secondary-vault-btn" onclick="document.getElementById('import-backup-file').click()">ÅTERSTÄLL FRÅN BACKUPFIL</button>
+            <button class="vault-btn vault-action" onclick="importProgress()">Återställ data</button>
+            <button type="button" class="vault-btn vault-action secondary-vault-btn" onclick="document.getElementById('import-backup-file').click()">Återställ från backupfil</button>
             <input type="file" id="import-backup-file" accept=".json,application/json" hidden onchange="importBackupFile(this)">
         </div>
     </section>
