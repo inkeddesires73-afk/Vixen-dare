@@ -912,6 +912,17 @@ button:focus-visible, .top-guide-btn:focus-visible, summary:focus-visible {
     border: 1px solid var(--vixen-gold) !important;
 }
 
+.button-platform {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 5px;
+    border: 1px solid rgba(197, 160, 89, 0.45);
+    border-radius: 999px;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    vertical-align: middle;
+}
+
 #backup-key-area {
     width: 100%;
     min-height: 110px;

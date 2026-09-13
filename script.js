@@ -103,7 +103,7 @@ function updateBackupFileStatus(message) {
 
 async function chooseAutomaticBackupFile() {
     if (!window.showSaveFilePicker) {
-        updateBackupFileStatus('Din webbläsare stöder inte automatisk uppdatering av samma fil. Använd Vixen Key som backup.');
+        updateBackupFileStatus('Din webbläsare stöder inte automatisk uppdatering av samma fil. Använd Ladda ner backupfil eller en Vixen Key.');
         return;
     }
     try {
@@ -456,6 +456,23 @@ function exportProgress() {
     showVixenKey(vixenKey);
     alert("Ny Vixen Key genererad. Spara eller kopiera denna kod!");
     checkUnsavedProgress();
+}
+
+function downloadBackupFile() {
+    const backup = JSON.stringify({
+        ...userProgress,
+        exportedAt: new Date().toISOString()
+    }, null, 2);
+    const blob = new Blob([backup], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `vixen-dare-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    updateBackupFileStatus('Backupfilen är nedladdad. Spara den på en plats du hittar igen.');
 }
 
 function copyBackupKey() {

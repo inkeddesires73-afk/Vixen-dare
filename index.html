@@ -96,7 +96,8 @@
         <p class="vault-info" id="vault-info-text">Spara din backup med en <strong>Vixen Key</strong>.</p>
         <div class="backup-box">
             <button class="vault-btn" id="export-btn" onclick="exportProgress()">SKAPA BACKUP-NYCKEL</button>
-            <button class="vault-btn secondary-vault-btn" id="file-backup-btn" onclick="chooseAutomaticBackupFile()">VÄLJ AUTOMATISK BACKUPFIL</button>
+            <button class="vault-btn secondary-vault-btn" onclick="downloadBackupFile()">LADDA NER BACKUPFIL</button>
+            <button class="vault-btn secondary-vault-btn" id="file-backup-btn" onclick="chooseAutomaticBackupFile()">AUTOMATISK BACKUPFIL <span class="button-platform">CHROME/EDGE</span></button>
             <span id="file-backup-status" class="vault-info" role="status"></span>
             <textarea id="backup-key-area" readonly style="display:none;"></textarea>
             <button class="vault-btn secondary-vault-btn" id="copy-backup-btn" onclick="copyBackupKey()">KOPIERA NYCKEL</button>
