@@ -926,6 +926,12 @@ button:focus-visible, .top-guide-btn:focus-visible, summary:focus-visible {
 .cloud-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
 .cloud-heading h4 { margin: 0 0 5px; color: #e5c77f; font-size: .78rem; letter-spacing: 1.7px; text-transform: uppercase; }
 .cloud-heading p, .cloud-conflict-actions p { color: #aaa094; font-size: .82rem; line-height: 1.45; }
+.cloud-explanation { margin-top: 11px; color: #aaa094; font-size: .78rem; line-height: 1.5; }
+.cloud-activate-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; padding: 0; border: 0; background: none; color: #e5c77f; font: inherit; font-size: .76rem; letter-spacing: 1.1px; text-transform: uppercase; cursor: pointer; }
+.cloud-activate-link span { font-size: 1rem; transition: transform .2s ease; }
+.cloud-activate-link:hover span { transform: translateX(3px); }
+.cloud-help-link { display: block; margin-top: 9px; color: #a99f90; font-size: .76rem; text-decoration: underline; text-decoration-color: rgba(197,160,89,.55); text-underline-offset: 3px; }
+.cloud-help-link:hover { color: #e5c77f; }
 .cloud-mark { display: grid; place-items: center; width: 31px; height: 31px; flex: 0 0 auto; border: 1px solid rgba(197,160,89,.48); border-radius: 50%; color: var(--vixen-gold); font-size: 1rem; }
 .cloud-backup-box .vault-btn { width: 100%; margin-top: 13px; }
 .cloud-auth-form, .cloud-account-actions, .cloud-conflict-actions { margin-top: 13px; }

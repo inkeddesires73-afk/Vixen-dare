@@ -35,10 +35,18 @@
         const activate = $('cloud-activate-btn');
         if (auth) auth.hidden = signedIn;
         if (account) account.hidden = !signedIn;
-        if (activate) activate.hidden = signedIn;
+        const deleted = Boolean(cloud.user && readState(cloud.user.id).deletedAt);
+        if (activate) {
+            activate.hidden = signedIn && !deleted;
+            activate.textContent = deleted ? 'BÖRJA OM MOLNBACKUP' : 'Aktivera molnbackup';
+        }
     }
 
     function openAuth() {
+        if (cloud.user && currentState().deletedAt) {
+            void resumeAfterDeletion();
+            return;
+        }
         const form = $('cloud-auth-form');
         if (form) form.hidden = false;
         $('cloud-email')?.focus();
