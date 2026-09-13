@@ -270,9 +270,19 @@
             return;
         }
         setStatus('Skickar inloggningslänk…', 'quiet');
-        const { error } = await cloud.client.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.href } });
+        // Use the clean app URL as callback. A query string from cache-busting or
+        // an old page must not make Supabase reject the redirect URL.
+        const redirectUrl = `${window.location.origin}${window.location.pathname}`.replace(/\/?$/, '/');
+        const { error } = await cloud.client.auth.signInWithOtp({ email, options: { emailRedirectTo: redirectUrl } });
         if (error) {
-            setStatus('Inloggningslänken kunde inte skickas just nu. Försök igen om en liten stund.', 'warning');
+            const message = String(error.message || '').toLowerCase();
+            if (/redirect|url/.test(message)) {
+                setStatus('Inloggningslänken stoppades eftersom appens returadress inte är godkänd ännu.', 'warning');
+            } else if (/rate|limit|too many|smtp|email service/.test(message)) {
+                setStatus('Supabase testutskick har nått sin begränsning. Vänta en stund och försök igen.', 'warning');
+            } else {
+                setStatus('Inloggningslänken kunde inte skickas just nu. Försök igen om en liten stund.', 'warning');
+            }
             return;
         }
         sessionStorage.setItem(PENDING_EMAIL_KEY, email);
