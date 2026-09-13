@@ -36,6 +36,12 @@
         if (auth) auth.hidden = signedIn;
         if (account) account.hidden = !signedIn;
         const deleted = Boolean(cloud.user && readState(cloud.user.id).deletedAt);
+        const resume = $('cloud-resume-btn');
+        const remove = $('cloud-delete-btn');
+        const versions = $('cloud-versions-btn');
+        if (resume) resume.hidden = !deleted;
+        if (remove) remove.hidden = deleted;
+        if (versions) versions.hidden = deleted;
         if (activate) {
             activate.hidden = signedIn && !deleted;
             activate.textContent = deleted ? 'BÖRJA OM MOLNBACKUP' : 'Aktivera molnbackup';
@@ -356,6 +362,7 @@
         state.conflictRemote = null;
         storeCurrent(state);
         $('cloud-version-list').hidden = true;
+        setSignedInUi(true);
         setStatus('Molnbackupen är raderad. Dina lokala framsteg finns kvar.', 'success');
     }
 
@@ -367,6 +374,7 @@
         state.deletedAt = null;
         state.revision = 0;
         storeCurrent(state);
+        setSignedInUi(true);
         queueProgress(cloud.hooks.getProgress());
     }
 

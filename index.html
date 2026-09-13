@@ -98,15 +98,20 @@
             <div class="cloud-heading"><div><h4 id="cloud-backup-title">Molnbackup</h4><p>Spara dina framsteg automatiskt och få tillbaka dem om du byter enhet. Logga in med din e-postadress.</p></div><span class="cloud-mark" aria-hidden="true">☁</span></div>
             <p class="cloud-explanation">De andra alternativen här nere skapar bara en lokal kopia på den här enheten. Försvinner eller återställs mobilen finns den kopian inte kvar. Med molnbackup sparas framstegen automatiskt och kan hämtas tillbaka på en ny enhet.</p>
             <button type="button" class="cloud-activate-link" id="cloud-activate-btn" onclick="window.VixenCloud?.openAuth()">Aktivera molnbackup <span aria-hidden="true">→</span></button>
-            <a class="cloud-help-link" href="guide.html#backup-help">Läs mer om backup och återställning</a>
+            <a class="cloud-help-link" href="guide.html#backup-help">Så fungerar backup och återställning <span aria-hidden="true">→</span></a>
             <div id="cloud-auth-form" class="cloud-auth-form" hidden>
                 <label for="cloud-email">Din e-postadress</label><input type="email" id="cloud-email" autocomplete="email" inputmode="email" placeholder="namn@exempel.se">
-                <button type="button" class="vault-btn secondary-vault-btn" id="cloud-send-code">SKICKA INLOGGNINGSLÄNK</button>
+                <button type="button" class="cloud-primary-action" id="cloud-send-code">Skicka inloggningslänk</button>
                 <div id="cloud-code-row" hidden></div>
             </div>
             <div id="cloud-account-actions" class="cloud-account-actions" hidden>
-                <button type="button" class="vault-btn secondary-vault-btn" id="cloud-versions-btn">TIDIGARE MOLNVERSIONER</button><div id="cloud-version-list" hidden></div>
-                <button type="button" class="vault-btn secondary-vault-btn" id="cloud-signout-btn">STÄNG AV PÅ DEN HÄR ENHETEN</button><button type="button" class="vault-btn cloud-danger-btn" id="cloud-delete-btn">RADERA MOLNBACKUP</button><button type="button" class="vault-btn secondary-vault-btn" id="cloud-resume-btn">BÖRJA OM MED MOLNBACKUP</button>
+                <button type="button" class="cloud-primary-action" id="cloud-resume-btn" hidden>Återaktivera med den här enhetens data</button>
+                <div class="cloud-action-links">
+                    <button type="button" class="cloud-action-link" id="cloud-versions-btn">Tidigare molnversioner</button>
+                    <button type="button" class="cloud-action-link" id="cloud-signout-btn">Logga ut på den här enheten</button>
+                    <button type="button" class="cloud-action-link cloud-danger-link" id="cloud-delete-btn">Radera molnbackup</button>
+                </div>
+                <div id="cloud-version-list" hidden></div>
             </div>
             <div id="cloud-conflict-actions" class="cloud-conflict-actions" hidden><p>Välj vilken version som ska fortsätta. Den andra finns kvar som en sparad molnversion.</p><button type="button" class="vault-btn secondary-vault-btn" id="cloud-use-device-btn">ANVÄND DENNA ENHETENS VERSION</button><button type="button" class="vault-btn secondary-vault-btn" id="cloud-use-cloud-btn">ÅTERSTÄLL MOLNVERSIONEN</button></div>
             <p id="cloud-backup-status" class="cloud-backup-status" role="status" aria-live="polite"></p>
@@ -170,7 +175,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js?v=36', { updateViaCache: 'none' }).catch(() => {});
+            navigator.serviceWorker.register('./sw.js?v=37', { updateViaCache: 'none' }).catch(() => {});
             });
         }
     </script>
