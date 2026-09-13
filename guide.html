@@ -696,7 +696,7 @@
             });
         }
 
-        function switchTab(tabId) {
+        function switchTab(tabId, scrollToTop = true) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.getElementById('content-' + tabId).classList.remove('hidden');
             document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -708,8 +708,19 @@
 
             if(tabId === 'levels' && !levelChart) setTimeout(initLevelChart, 50);
             if(tabId === 'terms' && !termChart) setTimeout(initTermChart, 50);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (scrollToTop) window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        function openBackupHelpFromLink() {
+            if (window.location.hash !== '#backup-help') return;
+            switchTab('safety', false);
+            requestAnimationFrame(() => {
+                document.getElementById('backup-help')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+
+        window.addEventListener('hashchange', openBackupHelpFromLink);
+        openBackupHelpFromLink();
 
         function switchSubTab(subId) {
             document.querySelectorAll('.sub-tab-content').forEach(el => el.classList.add('hidden'));
