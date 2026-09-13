@@ -502,7 +502,7 @@
                     <div class="w-10 h-10 bg-[#fdfcfb] rounded-full flex items-center justify-center border border-stone-100 shadow-inner text-xl">🔒</div>
                     <h3 class="font-bold uppercase tracking-[0.2em] text-xs">Total Diskretion</h3>
                 </div>
-                <p class="text-sm text-stone-600 leading-relaxed text-left">Dina framsteg lagras lokalt i webbläsaren och skickas inte till någon server. I The Vault kan du ladda ner en backupfil i alla webbläsare. Chrome och Edge på dator kan dessutom uppdatera samma backupfil automatiskt. Om du rensar webbplatsdata eller byter enhet följer den lokala historiken inte med – då återställer du från backupfilen eller en Vixen Key.</p>
+                <p class="text-sm text-stone-600 leading-relaxed text-left">Utan molnbackup lagras dina framsteg lokalt i webbläsaren. Om du aktiverar molnbackup i The Vault skickas bara dina framsteg och kort-ID:n till din privata backup, så att samma mejladress kan återställa dem på en ny enhet. Du kan även behålla Vixen Key och backupfil som egna kopior.</p>
                 
                 <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl space-y-3">
                     <h4 class="text-red-900 font-black uppercase text-[10px] tracking-widest">⚠️ VIKTIGT: En statisk ögonblicksbild</h4>
@@ -532,13 +532,16 @@
 
             <div class="nude-card p-8 rounded-3xl space-y-4">
                 <h3 class="font-bold uppercase tracking-[0.2em] text-xs flex items-center text-stone-800">Spara dina framsteg & backup</h3>
-                <p class="backup-help-copy">Spelet sparar automatiskt dina framsteg i den webbläsare du använder. Du behöver inte trycka på någon sparknapp när du har klarat ett uppdrag. En <strong>backup</strong> är en extra kopia som du sparar separat för att kunna återställa framstegen om du byter enhet eller rensar webbplatsdata.</p>
+                <p class="backup-help-copy">Spelet sparar automatiskt dina framsteg i den webbläsare du använder. Du behöver inte trycka på någon sparknapp när du har klarat ett uppdrag. Aktiverar du <strong>Molnbackup</strong> i The Vault skickas ändringarna också automatiskt när du har internet. Annars är en <strong>backup</strong> en extra kopia som du sparar själv för att kunna återställa framstegen efter enhetsbyte eller rensad webbplatsdata.</p>
                 <div class="space-y-2">
                     <button onclick="toggleDetail('key-how')" class="backup-help-button" aria-expanded="false" aria-controls="key-how">
                         <span>Hur gör jag en backup?</span>
                         <span class="text-[#c5a059] group-hover:translate-x-1 transition-transform">→</span>
                     </button>
                     <div id="key-how" class="backup-help-copy hidden px-4 py-4 space-y-4 border-l-2 border-stone-200 ml-2">
+                        <h4>Molnbackup – enklast mellan enheter</h4>
+                        <p>Tryck på <strong>Aktivera molnbackup</strong> i The Vault och skriv din e-postadress. Öppna sedan inloggningslänken du får i mejlet. Därefter sparas nya ändringar automatiskt. På en ny enhet använder du samma mejladress och öppnar länken i det nya mejlet. Om internet saknas ligger ändringen kvar på enheten tills anslutningen är tillbaka.</p>
+                        <p>Du kan stänga av molnbackup på en enhet utan att radera lokala framsteg. Knappen <strong>Radera molnbackup</strong> tar bort molnkopian och dess sparade tidigare versioner, men inte det som finns lokalt på enheten.</p>
                         <h4>Vixen Key – en kopia du sparar själv</h4>
                         <p>1. Öppna <strong>The Vault</strong> längst ner i spelet och tryck på <strong>Skapa backup-nyckel</strong>.<br>2. Tryck på <strong>Kopiera nyckel</strong>.<br>3. Klistra in hela koden i exempelvis en sparad anteckning eller lösenordshanterare.</p>
                         <p>Nyckeln innehåller framstegen från det ögonblick du skapade den. Den uppdateras inte automatiskt. Skapa och spara därför en ny efter en spelkväll. Att bara visa eller kopiera koden räcker inte – du behöver också spara den någonstans där du hittar den igen.</p>
@@ -550,7 +553,7 @@
                         <h4>Återställ en sparad kopia</h4>
                         <p><strong>Med Vixen Key:</strong> kopiera hela din sparade kod, klistra in den i nyckelfältet i The Vault och tryck på <strong>Återställ data</strong>.</p>
                         <p><strong>Med backupfil:</strong> tryck på <strong>Återställ från backupfil</strong> och välj den sparade JSON-filen. Använd denna knapp när du vill läsa in en gammal backup; <strong>Välj automatisk backupfil</strong> skriver i stället dina nuvarande framsteg till filen.</p>
-                        <p>Återställningen ersätter framstegen på enheten med den sparade kopian. Välj därför din senaste backup. Framsteg synkas inte automatiskt mellan olika enheter eller webbläsare.</p>
+                        <p>Återställningen ersätter framstegen på enheten med den sparade kopian. Välj därför din senaste backup. Har du molnbackup aktiverad gör appen en ny molnversion av återställningen i stället för att tyst kasta den tidigare.</p>
                     </div>
 
                     <button onclick="toggleDetail('key-where')" class="backup-help-button" aria-expanded="false" aria-controls="key-where">

@@ -1,9 +1,11 @@
-const CACHE_NAME = 'vixen-dare-cache-v44';
+const CACHE_NAME = 'vixen-dare-cache-v45';
 const ASSETS = [
   './',
   './index.html',
   './style.css',
   './script.js',
+  './cloud-config.js',
+  './cloud-sync.js',
   './tasks.js',
   './manifest.webmanifest?v=33',
   './guide.html',

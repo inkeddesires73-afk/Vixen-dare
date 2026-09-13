@@ -284,6 +284,7 @@ function saveToDevice() {
     renderLists();
     checkUnsavedProgress(); 
     void writeAutomaticBackupFile();
+    window.VixenCloud?.queueProgress(userProgress);
 }
 
 // ==========================================
@@ -548,7 +549,7 @@ async function importBackupFile(input) {
 }
 
 function panicReset() {
-    if(confirm("Radera ALLA framsteg permanent?")) {
+    if(confirm("Radera lokala framsteg på den här enheten? En eventuell molnbackup påverkas inte.")) {
         localStorage.removeItem(STORAGE_KEY);
         STORAGE_BACKUP_KEYS.forEach(key => localStorage.removeItem(key));
         localStorage.removeItem('vixen_visited_before');
@@ -695,6 +696,17 @@ window.onload = function() {
     renderLists();
     checkUnsavedProgress(); 
     updateWelcomeInstallButton();
+    window.VixenCloud?.initialize({
+        getProgress: () => userProgress,
+        normalizeProgress,
+        applyProgress: progress => {
+            userProgress = normalizeProgress(progress);
+            userProgress.environment = '';
+            currentDrawLevel = null;
+            saveToDevice();
+            renderLists();
+        }
+    });
     const modal = document.getElementById('welcome-modal');
     if (modal) modal.style.display = 'flex';
 };
