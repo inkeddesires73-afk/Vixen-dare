@@ -5,7 +5,7 @@ const path = require('path');
 
 const projectRoot = path.resolve(__dirname, '..');
 const sourcePath = path.join(projectRoot, 'data', 'tasks.json');
-const outputPath = path.join(projectRoot, 'Appen', 'tasks.js');
+const outputPath = path.join(projectRoot, 'tasks.js');
 const source = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
 
 if (!source || source.version !== 1 || !Array.isArray(source.tasks)) {
