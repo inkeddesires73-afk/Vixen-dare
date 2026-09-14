@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vixen-dare-cache-v53';
+const CACHE_NAME = 'vixen-dare-cache-v54';
 const ASSETS = [
   './',
   './index.html',
@@ -25,6 +25,34 @@ const ASSETS = [
   './assets/concepts/hotwife-observer.png'
 ];
 
+const CAR_SCENE_CLEANUP = `
+(() => {
+  if (typeof VIXEN_DATABASE === 'undefined' || !Array.isArray(VIXEN_DATABASE)) return;
+  for (const task of VIXEN_DATABASE) {
+    if (typeof task.text !== 'string') continue;
+    const number = Number((task.id.match(/\\d+$/) || ['0'])[0]);
+    const observer = number % 2 === 0
+      ? 'medan din partner ser på från framsätet'
+      : 'medan din partner tittar på från framsätet';
+    task.text = task.text
+      .replace(/medan din partner (?:ser|tittar) bakåt från framsätet/g, observer)
+      .replace(/medan din partner sitter i framsätet och (?:ser|tittar) bakåt/g, observer)
+      .replace(/din partner sitter i framsätet och ser bakåt/g, 'din partner ser på från framsätet')
+      .replace(/din partner sitter i framsätet och tittar bakåt/g, 'din partner tittar på från framsätet');
+  }
+})();
+`;
+
+async function patchCloudConfig(response) {
+  if (!response || response.status !== 200) return response;
+  const text = await response.text();
+  return new Response(`${text}\n${CAR_SCENE_CLEANUP}`, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers
+  });
+}
+
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
@@ -42,6 +70,29 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
+
+  const requestUrl = new URL(event.request.url);
+
+  // Kort-override-filen patchas efter att dess egna overrides har körts.
+  // Då träffas även kort som fortfarande kommer från grundbanken i tasks.js.
+  if (requestUrl.pathname.endsWith('/cloud-config.js')) {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-store' })
+        .then(async response => {
+          const patched = await patchCloudConfig(response);
+          if (patched && patched.status === 200) {
+            const copy = patched.clone();
+            event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)));
+          }
+          return patched;
+        })
+        .catch(async () => {
+          const cached = await caches.match(event.request);
+          return cached ? patchCloudConfig(cached) : Response.error();
+        })
+    );
+    return;
+  }
 
   // Startsidan ska alltid kontrolleras mot nätet först så att en installerad
   // app inte kan fastna på en gammal välkomstsida efter en uppdatering.
