@@ -6,6 +6,7 @@ let userProgress = {
     completedTasks: [],
     skippedTasks: [],
     completedTaskDetails: {},
+    historyVersion: 2,
     environment: '',
     offeredByEnvironment: {},
     lastSavedCount: 0 
@@ -200,44 +201,54 @@ const ENVIRONMENTS = {
 
 try {
     const parsed = loadStoredProgress();
-    if (parsed) {
-            userProgress = {
-                activeTasks: Array.isArray(parsed.activeTasks) ? parsed.activeTasks : [],
-                completedTasks: Array.isArray(parsed.completedTasks) ? parsed.completedTasks : [],
-                skippedTasks: Array.isArray(parsed.skippedTasks) ? parsed.skippedTasks : [],
-                completedTaskDetails: parsed.completedTaskDetails && typeof parsed.completedTaskDetails === 'object' ? parsed.completedTaskDetails : {},
-                environment: typeof parsed.environment === 'string' ? parsed.environment : '',
-                offeredByEnvironment: parsed.offeredByEnvironment && typeof parsed.offeredByEnvironment === 'object' ? parsed.offeredByEnvironment : {},
-                lastSavedCount: typeof parsed.lastSavedCount === 'number' ? parsed.lastSavedCount : 0
-            };
-            if (typeof parsed.lastSavedCount === 'undefined') {
-                userProgress.lastSavedCount = userProgress.completedTasks.length;
-            }
-    }
+    if (parsed) userProgress = normalizeProgress(parsed);
 } catch (e) {
     console.error("Kunde inte läsa från minnet:", e);
+}
+
+function isHistorySnapshot(snapshot, id) {
+    return snapshot && typeof snapshot === 'object' &&
+        snapshot.id === id &&
+        Number.isInteger(snapshot.level) && snapshot.level >= 1 && snapshot.level <= 5 &&
+        typeof snapshot.environment === 'string' && Boolean(ENVIRONMENTS[snapshot.environment]) &&
+        typeof snapshot.context === 'string' &&
+        typeof snapshot.text === 'string' && snapshot.text.trim().length > 0 &&
+        typeof snapshot.completedAt === 'string' &&
+        typeof snapshot.reflection === 'string';
 }
 
 function normalizeProgress(progress) {
     const validIds = new Set(VIXEN_DATABASE.map(task => task.id));
     const uniqueValidIds = ids => [...new Set(ids.filter(id => typeof id === 'string' && validIds.has(id)))];
-    const completedTasks = uniqueValidIds(progress.completedTasks || []);
-    const skippedTasks = uniqueValidIds((progress.skippedTasks || []).filter(id => !completedTasks.includes(id)));
-    const activeTasks = uniqueValidIds((progress.activeTasks || []).filter(id =>
-        !completedTasks.includes(id) && !skippedTasks.includes(id)
-    ));
     const rawDetails = progress.completedTaskDetails && typeof progress.completedTaskDetails === 'object'
         ? progress.completedTaskDetails
         : {};
     const completedTaskDetails = {};
 
-    completedTasks.forEach(id => {
-        const detail = rawDetails[id] && typeof rawDetails[id] === 'object' ? rawDetails[id] : {};
-        completedTaskDetails[id] = {
-            completedAt: typeof detail.completedAt === 'string' ? detail.completedAt : '',
-            reflection: typeof detail.reflection === 'string' ? detail.reflection.slice(0, 2000) : ''
-        };
-    });
+    // Den gamla ID-baserade utvecklingshistoriken rensas. Den får inte fyllas
+    // på med dagens korttext eftersom varje slutförande ska vara en snapshot.
+    if (progress.historyVersion === 2 && Array.isArray(progress.completedTasks)) {
+        [...new Set(progress.completedTasks.filter(id => typeof id === 'string'))].forEach(id => {
+            const snapshot = rawDetails[id];
+            if (isHistorySnapshot(snapshot, id)) {
+                completedTaskDetails[id] = {
+                    id: snapshot.id,
+                    level: snapshot.level,
+                    environment: snapshot.environment,
+                    context: snapshot.context,
+                    text: snapshot.text,
+                    completedAt: snapshot.completedAt,
+                    reflection: snapshot.reflection.slice(0, 2000)
+                };
+            }
+        });
+    }
+
+    const completedTasks = Object.keys(completedTaskDetails);
+    const skippedTasks = uniqueValidIds((progress.skippedTasks || []).filter(id => !completedTasks.includes(id)));
+    const activeTasks = uniqueValidIds((progress.activeTasks || []).filter(id =>
+        !completedTasks.includes(id) && !skippedTasks.includes(id)
+    ));
 
     const environmentAliases = { city: 'on_the_town', club: 'nightclub' };
     const environment = environmentAliases[progress.environment] || progress.environment;
@@ -256,6 +267,7 @@ function normalizeProgress(progress) {
         completedTasks,
         skippedTasks,
         completedTaskDetails,
+        historyVersion: 2,
         environment: ENVIRONMENTS[environment] ? environment : '',
         offeredByEnvironment,
         lastSavedCount: Math.max(0, Math.min(
@@ -381,12 +393,19 @@ function setEnvironment(environment) {
 }
 
 function completeTask(id) {
+    const task = VIXEN_DATABASE.find(candidate => candidate.id === id);
+    if (!task || !ENVIRONMENTS[userProgress.environment]) return;
     userProgress.activeTasks = userProgress.activeTasks.filter(tid => tid !== id);
     userProgress.skippedTasks = userProgress.skippedTasks.filter(tid => tid !== id);
     if (!userProgress.completedTasks.includes(id)) {
         userProgress.completedTasks.push(id);
     }
-    userProgress.completedTaskDetails[id] = userProgress.completedTaskDetails[id] || {
+    userProgress.completedTaskDetails[id] = {
+        id: task.id,
+        level: task.level,
+        environment: userProgress.environment,
+        context: typeof task.context === 'string' ? task.context : '',
+        text: task.text,
         completedAt: new Date().toISOString(),
         reflection: ''
     };
@@ -395,11 +414,9 @@ function completeTask(id) {
 
 function saveReflection(id, reflection) {
     if (!userProgress.completedTasks.includes(id)) return;
-    const previous = userProgress.completedTaskDetails[id] || {};
-    userProgress.completedTaskDetails[id] = {
-        completedAt: previous.completedAt || new Date().toISOString(),
-        reflection: String(reflection).slice(0, 2000)
-    };
+    const snapshot = userProgress.completedTaskDetails[id];
+    if (!isHistorySnapshot(snapshot, id)) return;
+    snapshot.reflection = String(reflection).slice(0, 2000);
     saveToDevice();
 }
 
@@ -635,14 +652,17 @@ function renderLists() {
     if (historyEl) {
         historyEl.innerHTML = '';
         userProgress.completedTasks.slice().reverse().forEach(id => {
-            const t = VIXEN_DATABASE.find(x => x.id === id);
-            if(t) {
-                const detail = userProgress.completedTaskDetails[id] || {};
-                const completedAt = detail.completedAt ? new Date(detail.completedAt) : null;
+            const snapshot = userProgress.completedTaskDetails[id];
+            if (isHistorySnapshot(snapshot, id)) {
+                const completedAt = new Date(snapshot.completedAt);
                 const dateText = completedAt && !Number.isNaN(completedAt.getTime())
                     ? completedAt.toLocaleDateString('sv-SE')
-                    : 'Tidigare slutfört';
-                historyEl.innerHTML += `<li><span class=\"history-lvl\">N${t.level}</span><div class=\"history-copy\">${t.text}<span class=\"history-date\">${dateText}</span><details class=\"reflection\"><summary>Reflektion</summary><textarea maxlength=\"2000\" placeholder=\"Vad tar du med dig från detta?\" onchange=\"saveReflection('${t.id}', this.value)\">${escapeHtml(detail.reflection || '')}</textarea></details></div></li>`;
+                    : snapshot.completedAt;
+                const environmentLabel = ENVIRONMENTS[snapshot.environment].label;
+                const context = snapshot.context.trim()
+                    ? `<p class=\"history-context\">${escapeHtml(snapshot.context)}</p>`
+                    : '';
+                historyEl.innerHTML += `<li><div class=\"history-copy\"><span class=\"history-lvl\">N${snapshot.level} · ${escapeHtml(environmentLabel)}</span>${context}<p class=\"history-text\">${escapeHtml(snapshot.text)}</p><span class=\"history-date\">${dateText}</span><details class=\"reflection\"><summary>Reflektion</summary><textarea maxlength=\"2000\" placeholder=\"Vad tar du med dig från detta?\" onchange=\"saveReflection('${snapshot.id}', this.value)\">${escapeHtml(snapshot.reflection)}</textarea></details></div></li>`;
             }
         });
     }

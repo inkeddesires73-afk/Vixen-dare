@@ -593,8 +593,6 @@ h1 {
 .history-box li {
     padding: 15px 0;
     border-bottom: 1px solid #111;
-    display: flex;
-    gap: 15px;
     font-size: 0.95rem;
     color: #999;
     text-align: left;
@@ -608,6 +606,21 @@ h1 {
 
 .history-copy {
     flex: 1;
+}
+
+.history-context {
+    margin: 8px 0 0;
+    color: #b9ab97;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.history-text {
+    margin: 9px 0 0;
+    color: var(--text-main);
+    line-height: 1.55;
 }
 
 .history-date {
