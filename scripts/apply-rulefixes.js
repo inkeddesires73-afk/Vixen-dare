@@ -2,46 +2,21 @@
 
 const fs = require('fs');
 const path = require('path');
-const vm = require('vm');
+const zlib = require('zlib');
 
 const projectRoot = path.resolve(__dirname, '..');
 const dataPath = path.join(projectRoot, 'data', 'tasks.json');
 const gamePath = path.join(projectRoot, 'tasks.js');
-const overridePath = path.join(projectRoot, 'cloud-config.js');
+const chunksDir = path.join(projectRoot, 'scripts', 'rulefix-chunks');
 
-const source = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+const packed = ['01.txt', '02.txt', '03.txt', '04.txt']
+  .map(name => fs.readFileSync(path.join(chunksDir, name), 'utf8').trim())
+  .join('');
+
+const source = JSON.parse(zlib.gunzipSync(Buffer.from(packed, 'base64')).toString('utf8'));
+
 if (!source || source.version !== 1 || !Array.isArray(source.tasks) || source.tasks.length !== 900) {
-  throw new Error('data/tasks.json måste innehålla version 1 och exakt 900 kort.');
-}
-
-const context = {
-  window: {},
-  VIXEN_DATABASE: source.tasks,
-  atob,
-  TextDecoder,
-  Uint8Array,
-  JSON,
-  Array,
-  Number,
-  String,
-  Object,
-  console
-};
-vm.createContext(context);
-vm.runInContext(fs.readFileSync(overridePath, 'utf8'), context, { filename: 'cloud-config.js' });
-
-for (const task of source.tasks) {
-  if (typeof task.text !== 'string') continue;
-  const number = Number((task.id.match(/\d+$/) || ['0'])[0]);
-  const observer = number % 2 === 0
-    ? 'medan din partner ser på från framsätet'
-    : 'medan din partner tittar på från framsätet';
-
-  task.text = task.text
-    .replace(/medan din partner (?:ser|tittar) bakåt från framsätet/g, observer)
-    .replace(/medan din partner sitter i framsätet och (?:ser|tittar) bakåt/g, observer)
-    .replace(/din partner sitter i framsätet och ser bakåt/g, 'din partner ser på från framsätet')
-    .replace(/din partner sitter i framsätet och tittar bakåt/g, 'din partner tittar på från framsätet');
+  throw new Error('Den regelverksfixade kortbanken måste innehålla version 1 och exakt 900 kort.');
 }
 
 const ids = new Set();
@@ -78,5 +53,5 @@ fs.writeFileSync(
   'utf8'
 );
 
-console.log(`Bakade in regelverksfixarna i ${source.tasks.length} kort.`);
+console.log(`Skrev ${source.tasks.length} regelverksfixade kort till data/tasks.json och tasks.js.`);
 console.log('Bilfras-kontroll: OK.');
