@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/apply-rulefixes.yml'
+      - 'scripts/apply-rulefixes.js'
 
 permissions:
   contents: write
