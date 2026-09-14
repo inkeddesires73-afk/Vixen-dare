@@ -1,0 +1,30 @@
+name: Apply Vixen card rule fixes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-rulefixes.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Apply final 900-card bank
+        run: node scripts/apply-rulefixes.js
+      - name: Commit generated game files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tasks.json tasks.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Bake rule-reviewed 900-card bank into game files"
+            git push
+          fi
