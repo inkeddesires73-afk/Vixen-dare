@@ -1,0 +1,21 @@
+name: Keep Supabase project active
+
+on:
+  schedule:
+    # Ett litet läsanrop varje dag. Tiden är UTC och behöver inte vara exakt.
+    - cron: '17 03 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Supabase Auth endpoint
+        run: |
+          curl --fail --silent --show-error \
+            'https://pxevuwvrmldscwlybyhz.supabase.co/auth/v1/settings' \
+            -H 'apikey: sb_publishable_-Lk-UQI7xep7MZH-jUrXmg_W5zjfNeS' \
+            -H 'Authorization: Bearer sb_publishable_-Lk-UQI7xep7MZH-jUrXmg_W5zjfNeS' \
+            -H 'Accept: application/json' > /dev/null
