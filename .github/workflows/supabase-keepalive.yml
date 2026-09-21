@@ -12,10 +12,12 @@ jobs:
   keepalive:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Supabase Auth endpoint
+      - name: Run database keepalive query
         run: |
-          curl --fail --silent --show-error \
-            'https://pxevuwvrmldscwlybyhz.supabase.co/auth/v1/settings' \
+          curl --fail --silent --show-error --get \
+            'https://pxevuwvrmldscwlybyhz.supabase.co/rest/v1/vixen_keepalive' \
+            --data-urlencode 'select=id' \
+            --data-urlencode 'limit=1' \
             -H 'apikey: sb_publishable_-Lk-UQI7xep7MZH-jUrXmg_W5zjfNeS' \
             -H 'Authorization: Bearer sb_publishable_-Lk-UQI7xep7MZH-jUrXmg_W5zjfNeS' \
             -H 'Accept: application/json' > /dev/null
