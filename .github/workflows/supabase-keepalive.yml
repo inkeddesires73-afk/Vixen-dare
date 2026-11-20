@@ -2,8 +2,10 @@ name: Keep Supabase project active
 
 on:
   schedule:
-    # Fyra små databasanrop per dag för att ge projektet återkommande aktivitet.
+    # Fyra små databasanrop per dag för återkommande aktivitet i Supabase.
     - cron: '17 3,9,15,21 * * *'
+    # Månatlig commit håller GitHubs schemalagda jobb aktiva i publika repos.
+    - cron: '37 3 1,15 * *'
   workflow_dispatch:
 
 permissions: {}
@@ -21,3 +23,20 @@ jobs:
             -H 'apikey: sb_publishable_-Lk-UQI7xep7MZH-jUrXmg_W5zjfNeS' \
             -H 'Authorization: Bearer sb_publishable_-Lk-UQI7xep7MZH-jUrXmg_W5zjfNeS' \
             -H 'Accept: application/json' > /dev/null
+
+  repository-activity:
+    if: github.event_name == 'schedule' && github.event.schedule == '37 3 1,15 * *'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Record monthly repository activity
+        run: |
+          date -u +'%Y-%m' > .github/repository-activity-heartbeat.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/repository-activity-heartbeat.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Record monthly workflow activity'
+          git push
